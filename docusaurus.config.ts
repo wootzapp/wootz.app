@@ -6,7 +6,6 @@ const config: Config = {
   title: "Wootzapp",
   tagline: "Wootzapp – The Crypto Browser that Pays You",
   favicon: "/img/favicon.ico",
-  description: "Wootzapp – The Crypto Browser that Pays You",
 
 
 // Set the production url of your site here
@@ -17,8 +16,8 @@ url: "https://www.wootzapp.com",
 //baseUrl: "/docusaurus-www/",
 baseUrl: "/",
 
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "wootzapp", // Usually your GitHub org/user name.
+  projectName: "docusaurus-www", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
