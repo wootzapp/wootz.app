@@ -6,6 +6,7 @@ const config: Config = {
   title: "Wootzapp",
   tagline: "Wootzapp – The Crypto Browser that Pays You",
   favicon: "/img/favicon.ico",
+  description: "Wootzapp – The Crypto Browser that Pays You",
 
 
 // Set the production url of your site here
