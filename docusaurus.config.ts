@@ -83,7 +83,28 @@ baseUrl: "/",
 
   themeConfig: {
     image: "/img/c63a0772-7469-4d2b-b8e6-102f2ef8cc28.png",
-    metadata: [{name: 'twitter:card', content: 'Wootzapp'}],
+    metadata: [
+    // 1) Standard meta description
+    {
+      name: 'description',
+      content: 'Wootzapp – The Crypto Browser that Pays You',
+    },
+    // 2) Open Graph description (used by Telegram, Facebook, LinkedIn…)
+    {
+      property: 'og:description',
+      content: 'Wootzapp – The Crypto Browser that Pays You',
+    },
+    // 3) Twitter Card description
+    {
+      name: 'twitter:description',
+      content: 'Wootzapp – The Crypto Browser that Pays You',
+    },
+    // (you can still leave twitter:card or override it to “summary_large_image”)
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+  ],
     navbar: {
       title: "WootzApp",
       logo: {
