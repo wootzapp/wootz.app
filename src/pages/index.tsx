@@ -14,7 +14,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 export default function Home() {
 	const {siteConfig} = useDocusaurusContext();
 	return (
-		<Layout title={`${siteConfig.title}`} description='Description will go into a meta tag in <head />'>
+		<Layout title={`${siteConfig.title}`} description={`${siteConfig.tagline}`}>
 			<div className='min-h-screen bg-brand-[#FEFAF8] -mt-[64px]'>
 				<div className='bg-brand-home_bg'>
 					<Hero />
