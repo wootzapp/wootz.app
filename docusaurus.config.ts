@@ -82,7 +82,7 @@ baseUrl: "/",
   ],
 
   themeConfig: {
-    image: "/img/docusaurus-social-card.jpg",
+    image: "/img/c63a0772-7469-4d2b-b8e6-102f2ef8cc28.png",
     navbar: {
       title: "WootzApp",
       logo: {
