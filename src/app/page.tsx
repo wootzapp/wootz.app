@@ -3,7 +3,6 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { CheckCircle, XCircle, AlertCircle } from "lucide-react"
 import Link from "next/link"
 
 function SexyComparisonSection() {
@@ -17,7 +16,7 @@ function SexyComparisonSection() {
     },
     {
       category: "Experience",
-      old: { title: "The Old Way", items: ["Pixel lag & session drops", '"Is the tunnel up yet?" delays'] },
+      old: { title: "The Old Way", items: ["Pixel lag & session drops", "&quot;Is the tunnel up yet?&quot; delays"] },
       new: { title: "Wootzapp Mobile Browser", description: "Native Chromium speed, even on 3G." },
     },
     {
@@ -132,106 +131,7 @@ function SexyComparisonSection() {
   )
 }
 
-function MobileComparisonSection() {
-  const comparisonData = [
-    {
-      category: "Setup burden",
-      vdi: { text: "Server farms, endless tuning", status: "bad" },
-      vpn: { text: "Gateway hardware, split-tunnel gymnastics", status: "bad" },
-      island: { text: "Just install the app; policies live in the cloud", status: "good" },
-    },
-    {
-      category: "User experience",
-      vdi: { text: "Pixel lag, session drops", status: "bad" },
-      vpn: { text: '"Is the tunnel up yet?" delays', status: "bad" },
-      island: { text: "Native Chromium speed, even on 3G", status: "good" },
-    },
-    {
-      category: "Security scope",
-      vdi: { text: "Protects the data center but blind to local copy/paste", status: "warning" },
-      vpn: { text: "Opens the whole network; no in-browser DLP", status: "bad" },
-      island: { text: "Last-mile controls: copy, print, watermark, geo-fence", status: "good" },
-    },
-    {
-      category: "Cost & upkeep",
-      vdi: { text: "High infra + compute per user", status: "bad" },
-      vpn: { text: "Recurring appliance and bandwidth costs", status: "bad" },
-      island: { text: "Simple per-device license", status: "good" },
-    },
-    {
-      category: "Mobility",
-      vdi: { text: "Struggles on spotty cellular", status: "bad" },
-      vpn: { text: "Mobile clients are temperamental", status: "bad" },
-      island: { text: "Built for LTE/5G roaming by design", status: "good" },
-    },
-  ]
-
-  const getStatusIcon = (status: string) => {
-    switch (status) {
-      case "good":
-        return <CheckCircle className="w-5 h-5 text-green-500" />
-      case "bad":
-        return <XCircle className="w-5 h-5 text-red-500" />
-      case "warning":
-        return <AlertCircle className="w-5 h-5 text-yellow-500" />
-      default:
-        return null
-    }
-  }
-
-  return (
-    <div className="space-y-6">
-      {comparisonData.map((item, index) => (
-        <Card key={index} className="border-0 shadow-sm">
-          <CardContent className="p-6">
-            <h3 className="font-semibold text-gray-900 mb-4 text-lg">{item.category}</h3>
-
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3 p-3 bg-red-50 rounded-lg">
-                {getStatusIcon(item.vdi.status)}
-                <div>
-                  <div className="font-medium text-sm text-gray-900 mb-1">VDI</div>
-                  <div className="text-sm text-gray-600">{item.vdi.text}</div>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3 p-3 bg-red-50 rounded-lg">
-                {getStatusIcon(item.vpn.status)}
-                <div>
-                  <div className="font-medium text-sm text-gray-900 mb-1">VPN</div>
-                  <div className="text-sm text-gray-600">{item.vpn.text}</div>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3 p-3 bg-green-50 rounded-lg border-2 border-green-200">
-                {getStatusIcon(item.island.status)}
-                <div>
-                  <div className="font-medium text-sm text-gray-900 mb-1">Wootzapp Mobile Browser</div>
-                  <div className="text-sm text-gray-600">{item.island.text}</div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  )
-}
-
 function MobileTabSection() {
-  const [activeTab, setActiveTab] = useState("vdi-reduction")
-
-  const tabs = [
-    { id: "vdi-reduction", label: "VDI Reduction" },
-    { id: "byod-workforce", label: "BYOD Workforce" },
-    { id: "3rd-party-onboarding", label: "3rd-Party Onboarding" },
-    { id: "saas-web-apps", label: "SaaS & Web Apps" },
-    { id: "privileged-access", label: "Privileged Access" },
-    { id: "zero-trust", label: "Zero Trust" },
-    { id: "safe-browsing", label: "Safe Browsing" },
-    { id: "enable-genai", label: "Enable GenAI at Work" },
-  ]
-
   const tabContent = {
     "vdi-reduction": {
       title: "VDI Reduction",
@@ -275,11 +175,26 @@ function MobileTabSection() {
     },
   }
 
+  type TabId = keyof typeof tabContent
+
+  const [activeTab, setActiveTab] = useState<TabId>("vdi-reduction")
+
+  const tabs: { id: TabId; label: string }[] = [
+    { id: "vdi-reduction", label: "VDI Reduction" },
+    { id: "byod-workforce", label: "BYOD Workforce" },
+    { id: "3rd-party-onboarding", label: "3rd-Party Onboarding" },
+    { id: "saas-web-apps", label: "SaaS & Web Apps" },
+    { id: "privileged-access", label: "Privileged Access" },
+    { id: "zero-trust", label: "Zero Trust" },
+    { id: "safe-browsing", label: "Safe Browsing" },
+    { id: "enable-genai", label: "Enable GenAI at Work" },
+  ]
+
   return (
     <>
       {/* Mobile: Dropdown selector */}
       <div className="block md:hidden mb-8">
-        <Select value={activeTab} onValueChange={setActiveTab}>
+        <Select value={activeTab} onValueChange={(value) => setActiveTab(value as TabId)}>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Select a solution" />
           </SelectTrigger>
@@ -394,8 +309,8 @@ export default function WootzappMobileBrowserPage() {
 
             <div className="bg-black text-white p-6 md:p-8 rounded-lg">
               <p className="text-sm md:text-base leading-relaxed">
-                "Identity-aware policies, device-health checks, and one-click governance live right inside the browser —
-                no MDM backflips, no extra agents."
+                &quot;Identity-aware policies, device-health checks, and one-click governance live right inside the browser —
+                no MDM backflips, no extra agents.&quot;
               </p>
             </div>
           </div>
