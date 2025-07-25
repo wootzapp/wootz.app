@@ -16,7 +16,7 @@ function SexyComparisonSection() {
     },
     {
       category: "Experience",
-      old: { title: "The Old Way", items: ["Pixel lag & session drops", "&quot;Is the tunnel up yet?&quot; delays"] },
+      old: { title: "The Old Way", items: ["Pixel lag & session drops", "Is the tunnel up yet? oh no...delays"] },
       new: { title: "Wootzapp Mobile Browser", description: "Native Chromium speed, even on 3G." },
     },
     {
@@ -304,7 +304,7 @@ export default function WootzappMobileBrowserPage() {
             <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-4 md:mb-6">This is Wootzapp Mobile Browser</h2>
 
             <p className="text-gray-600 mb-8 md:mb-12 leading-relaxed text-sm sm:text-base">
-              The pocket-sized workspace that never forgets the safety checklist.
+              Chrome policies only work when your devices are managed. Enforcing security policies in the browser for contractors using unmanaged devices is a huge win.
             </p>
 
             <div className="bg-black text-white p-6 md:p-8 rounded-lg">
