@@ -22,23 +22,23 @@ export default function Footer() {
             <h4 className="font-medium text-gray-900 mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <Link href="#" className="hover:text-gray-900">
+                <Link href="/#overview" className="hover:text-gray-900">
+                  Overview
+                </Link>
+              </li>
+              <li>
+                <Link href="/#features" className="hover:text-gray-900">
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-gray-900">
+                <Link href="/#security" className="hover:text-gray-900">
                   Security
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-gray-900">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-gray-900">
-                  Enterprise
+                <Link href="/#solutions" className="hover:text-gray-900">
+                  Solutions
                 </Link>
               </li>
             </ul>

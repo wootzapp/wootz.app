@@ -281,7 +281,7 @@ export default function WootzappMobileBrowserPage() {
       </section>
 
       {/* This is Wootzapp Mobile Browser Section */}
-      <section className="py-12 md:py-16 bg-white">
+      <section id="overview" className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-4 md:mb-6">This is Wootzapp Mobile Browser</h2>
@@ -301,7 +301,7 @@ export default function WootzappMobileBrowserPage() {
       </section>
 
       {/* Instant, governed access Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      <section id="features" className="py-12 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-4">Instant, governed access</h2>
@@ -348,7 +348,7 @@ export default function WootzappMobileBrowserPage() {
       </section>
 
       {/* Built-in armor Section */}
-      <section className="py-12 md:py-20 bg-white">
+      <section id="security" className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <p className="text-gray-500 text-sm mb-2">Designed & Armored from</p>
@@ -408,7 +408,7 @@ export default function WootzappMobileBrowserPage() {
       </section>
 
       {/* Pick Your Challenge Section */}
-      <section className="py-12 md:py-20 bg-white">
+      <section id="solutions" className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-6 md:mb-8">
