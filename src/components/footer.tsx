@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200 py-8 md:py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div className="sm:col-span-2 md:col-span-1">
             <h4 className="font-medium text-gray-900 mb-4">Wootzapp Mobile Browser</h4>
             <p className="text-sm text-gray-600 leading-relaxed mb-4">
@@ -67,30 +67,12 @@ export default function Footer() {
                   Terms
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-medium text-gray-900 mb-4">Support</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <Link href="#" className="hover:text-gray-900">
-                  Help Center
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-gray-900">
-                  Documentation
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-gray-900">
-                  Status
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-gray-900">
-                  Privacy
+                <Link
+                  href="/future-of-enterprise-browsers"
+                  className="hover:text-gray-900"
+                >
+                  Future of Enterprise Browsers
                 </Link>
               </li>
             </ul>
