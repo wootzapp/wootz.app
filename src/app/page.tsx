@@ -259,8 +259,17 @@ export default function WootzappMobileBrowserPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button className="bg-black hover:bg-gray-800 text-white px-6 md:px-8 py-3 w-full sm:w-auto">
-                See it on my phone →
+              <Button
+                asChild
+                className="bg-black hover:bg-gray-800 text-white px-6 md:px-8 py-3 w-full sm:w-auto"
+              >
+                <a
+                  href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  See it on my phone →
+                </a>
               </Button>
               <Button
                 variant="outline"
@@ -452,8 +461,17 @@ export default function WootzappMobileBrowserPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-black hover:bg-gray-800 text-white px-6 md:px-8 py-3 w-full sm:w-auto">
-                Start Free Trial
+              <Button
+                asChild
+                className="bg-black hover:bg-gray-800 text-white px-6 md:px-8 py-3 w-full sm:w-auto"
+              >
+                <a
+                  href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Start Free Trial
+                </a>
               </Button>
               <Button
                 variant="outline"
