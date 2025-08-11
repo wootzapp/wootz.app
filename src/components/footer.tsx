@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200 py-8 md:py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
           <div className="sm:col-span-2 md:col-span-1">
             <h4 className="font-medium text-gray-900 mb-4">Wootzapp Mobile Browser</h4>
             <p className="text-sm text-gray-600 leading-relaxed mb-4">
@@ -91,6 +91,37 @@ export default function Footer() {
               <li>
                 <Link href="#" className="hover:text-gray-900">
                   Privacy
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-medium text-gray-900 mb-4">Industries</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>
+                <Link href="/industries#healthcare" className="hover:text-gray-900">
+                  Healthcare
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries#higher-education" className="hover:text-gray-900">
+                  Higher Education
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries#financial-services" className="hover:text-gray-900">
+                  Financial Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries#third-party-contractors" className="hover:text-gray-900">
+                  3rd-Party Contractors
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries#byod-workforce" className="hover:text-gray-900">
+                  BYOD Workforce
                 </Link>
               </li>
             </ul>
