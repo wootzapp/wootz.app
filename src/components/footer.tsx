@@ -106,6 +106,11 @@ export default function Footer() {
                   BYOD Workforce
                 </Link>
               </li>
+              <li>
+                <Link href="/industries#saas-web-apps" className="hover:text-gray-900">
+                  SaaS & Web Apps
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
