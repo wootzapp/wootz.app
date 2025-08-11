@@ -3,7 +3,8 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import Link from "next/link"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 function SexyComparisonSection() {
   const [activeComparison, setActiveComparison] = useState(0)
@@ -240,35 +241,7 @@ export default function WootzappMobileBrowserPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="border-b border-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-4 md:space-x-8">
-              <Link href="/" className="text-lg md:text-xl font-medium text-gray-900">
-                Wootzapp Mobile Browser
-              </Link>
-              <nav className="hidden md:flex items-center space-x-8">
-                <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
-                  Solutions
-                </Link>
-                <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
-                  Security
-                </Link>
-                <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
-                  Company
-                </Link>
-              </nav>
-            </div>
-
-            <div className="flex items-center space-x-2 md:space-x-4">
-              <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm hidden sm:block">
-                Sign In
-              </Link>
-              <Button className="bg-black hover:bg-gray-800 text-white px-3 md:px-4 py-2 text-sm">Get Started</Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="py-12 sm:py-20 md:py-32">
@@ -289,8 +262,18 @@ export default function WootzappMobileBrowserPage() {
               <Button className="bg-black hover:bg-gray-800 text-white px-6 md:px-8 py-3 w-full sm:w-auto">
                 See it on my phone →
               </Button>
-              <Button variant="outline" className="px-6 md:px-8 py-3 border-gray-300 bg-transparent w-full sm:w-auto">
-                Watch Demo
+              <Button
+                variant="outline"
+                className="px-6 md:px-8 py-3 border-gray-300 bg-transparent w-full sm:w-auto"
+                asChild
+              >
+                <a
+                  href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Watch Demo
+                </a>
               </Button>
             </div>
           </div>
@@ -454,8 +437,18 @@ export default function WootzappMobileBrowserPage() {
               <Button className="bg-black hover:bg-gray-800 text-white px-6 md:px-8 py-3 w-full sm:w-auto">
                 Start Free Trial
               </Button>
-              <Button variant="outline" className="px-6 md:px-8 py-3 border-gray-300 bg-transparent w-full sm:w-auto">
-                Schedule Demo
+              <Button
+                variant="outline"
+                className="px-6 md:px-8 py-3 border-gray-300 bg-transparent w-full sm:w-auto"
+                asChild
+              >
+                <a
+                  href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Schedule Demo
+                </a>
               </Button>
             </div>
           </div>
@@ -463,106 +456,7 @@ export default function WootzappMobileBrowserPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 py-8 md:py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="sm:col-span-2 md:col-span-1">
-              <h4 className="font-medium text-gray-900 mb-4">Wootzapp Mobile Browser</h4>
-              <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                The enterprise browser for people on the move. Zero-trust access, built-in DLP, and compliance on
-                Android.
-              </p>
-              <div className="flex space-x-4 text-xs text-gray-500">
-                <span>99.9%</span>
-                <span>SOC 2</span>
-                <span>24/7</span>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-medium text-gray-900 mb-4">Product</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li>
-                  <Link href="#" className="hover:text-gray-900">
-                    Features
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-gray-900">
-                    Security
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-gray-900">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-gray-900">
-                    Enterprise
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-medium text-gray-900 mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li>
-                  <Link href="#" className="hover:text-gray-900">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-gray-900">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-gray-900">
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-gray-900">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-medium text-gray-900 mb-4">Support</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li>
-                  <Link href="#" className="hover:text-gray-900">
-                    Help Center
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-gray-900">
-                    Documentation
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-gray-900">
-                    Status
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-gray-900">
-                    Privacy
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-200 mt-8 pt-8 text-center">
-            <p className="text-xs text-gray-500">© 2024 Wootzapp Mobile Browser. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
