@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Wootzapp Mobile Enterprise Browser",
   description: "Our battery optimised AI Agents, secure deskless & BYOD workforce",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({

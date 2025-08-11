@@ -1,7 +1,11 @@
+import { useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="border-b border-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,7 +28,10 @@ export default function Header() {
           </div>
 
           <div className="flex items-center space-x-2 md:space-x-4">
-            <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm hidden sm:block">
+            <Link
+              href="#"
+              className="text-gray-600 hover:text-gray-900 text-sm hidden sm:block"
+            >
               Sign In
             </Link>
             <Button
@@ -39,9 +46,54 @@ export default function Header() {
                 Get Started
               </a>
             </Button>
+            <button
+              onClick={() => setIsMenuOpen((open) => !open)}
+              className="md:hidden text-gray-600 hover:text-gray-900"
+              aria-label="Toggle navigation menu"
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
       </div>
+      {isMenuOpen && (
+        <nav
+          id="mobile-menu"
+          className="md:hidden border-t border-gray-100 bg-white"
+        >
+          <ul className="flex flex-col space-y-1 px-4 py-3">
+            <li>
+              <Link
+                href="/industries"
+                className="block py-2 text-gray-700 hover:text-gray-900"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Industries
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/future-of-enterprise-browsers"
+                className="block py-2 text-gray-700 hover:text-gray-900"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Enterprise Browser Research
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="block py-2 text-gray-700 hover:text-gray-900"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Sign In
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }
