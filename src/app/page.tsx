@@ -152,7 +152,7 @@ function MobileTabSection() {
     "saas-web-apps": {
       title: "SaaS & Web Apps",
       content:
-        "SaaS gave us everywhere access but stole our last-mile control. Island stitches that control back in: built-in DLP, posture-aware access, and the power to bolt MFA or SSO onto any web app—no code, no proxies.",
+        "SaaS gave us everywhere access but stole our last-mile control. Wootzapp Enterprise Browser stitches that control back in: built-in DLP, posture-aware access, and the power to bolt MFA or SSO onto any web app—no code, no proxies.",
     },
     "privileged-access": {
       title: "Privileged Access",
@@ -167,7 +167,7 @@ function MobileTabSection() {
     "safe-browsing": {
       title: "Safe Browsing",
       content:
-        "Stop phishing, malware, and drive-by exploits before they land. Island's local isolation and smart blocklists protect users on or off the corporate network—without slowing them down.",
+        "Stop phishing, malware, and drive-by exploits before they land. Wootzapp Enterprise Browser's local isolation and smart blocklists protect users on or off the corporate network—without slowing them down.",
     },
     "enable-genai": {
       title: "Enable GenAI at Work",
@@ -308,7 +308,7 @@ export default function WootzappMobileBrowserPage() {
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-lg"
                 src="https://www.youtube.com/embed/2_74O0V2pBM?modestbranding=1&rel=0"
-                title="Island Mobile Demo"
+                title="Wootzapp Enterprise Browser Demo"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
