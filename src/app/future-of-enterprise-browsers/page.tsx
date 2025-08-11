@@ -376,7 +376,18 @@ export default function Page() {
             their security posture and enable the future of work.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-black hover:bg-gray-800 text-white px-8 py-3">Schedule Demo</Button>
+            <Button
+              asChild
+              className="bg-black hover:bg-gray-800 text-white px-8 py-3"
+            >
+              <a
+                href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Schedule Demo
+              </a>
+            </Button>
             <Button variant="outline" className="px-8 py-3 bg-transparent">
               Download Research Report
             </Button>

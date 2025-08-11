@@ -1138,7 +1138,18 @@ export default function IndustriesPage() {
             Discover how Wootzapp Enterprise Browser can address your industry&apos;s specific security and compliance challenges.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3">Schedule Demo</Button>
+            <Button
+              asChild
+              className="bg-black hover:bg-gray-800 text-white px-6 py-3"
+            >
+              <a
+                href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Schedule Demo
+              </a>
+            </Button>
             <Button
               variant="outline"
               className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 bg-transparent"

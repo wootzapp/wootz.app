@@ -11,14 +11,14 @@ export default function Header() {
               Wootzapp Mobile Browser
             </Link>
             <nav className="hidden md:flex items-center space-x-8">
-              <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
-                Solutions
+              <Link href="/industries" className="text-gray-600 hover:text-gray-900 text-sm">
+                Industries
               </Link>
-              <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
-                Security
-              </Link>
-              <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
-                Company
+              <Link
+                href="/future-of-enterprise-browsers"
+                className="text-gray-600 hover:text-gray-900 text-sm"
+              >
+                Enterprise Browser Research
               </Link>
             </nav>
           </div>
@@ -27,7 +27,18 @@ export default function Header() {
             <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm hidden sm:block">
               Sign In
             </Link>
-            <Button className="bg-black hover:bg-gray-800 text-white px-3 md:px-4 py-2 text-sm">Get Started</Button>
+            <Button
+              asChild
+              className="bg-black hover:bg-gray-800 text-white px-3 md:px-4 py-2 text-sm"
+            >
+              <a
+                href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Started
+              </a>
+            </Button>
           </div>
         </div>
       </div>
