@@ -1,45 +1,12 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 export default function IndustriesPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="border-b border-gray-100 sticky top-0 bg-white/95 backdrop-blur-sm z-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-4 md:space-x-8">
-              <Link href="/" className="text-lg md:text-xl font-medium text-gray-900">
-                Island Mobile
-              </Link>
-              <nav className="hidden md:flex items-center space-x-8">
-                <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
-                  Solutions
-                </Link>
-                <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
-                  Security
-                </Link>
-                <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm">
-                  Company
-                </Link>
-                <Link href="/future-of-enterprise-browsers" className="text-gray-600 hover:text-gray-900 text-sm">
-                  Research
-                </Link>
-                <Link href="/industries" className="text-gray-900 font-medium text-sm">
-                  Industries
-                </Link>
-              </nav>
-            </div>
-
-            <div className="flex items-center space-x-2 md:space-x-4">
-              <Link href="#" className="text-gray-600 hover:text-gray-900 text-sm hidden sm:block">
-                Sign In
-              </Link>
-              <Button className="bg-black hover:bg-gray-800 text-white px-3 md:px-4 py-2 text-sm">Get Started</Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
@@ -153,7 +120,7 @@ export default function IndustriesPage() {
               </div>
 
               <div className="bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
-                <h3 className="text-2xl md:text-3xl font-medium text-gray-900 mb-8">Island Mobile Solutions</h3>
+                <h3 className="text-2xl md:text-3xl font-medium text-gray-900 mb-8">Wootzapp Enterprise Browser Solutions</h3>
                 <ul className="space-y-6 text-gray-600">
                   <li className="flex items-start">
                     <span className="text-green-500 mr-4 mt-1 text-xl">✓</span>
@@ -278,7 +245,7 @@ export default function IndustriesPage() {
               </div>
 
               <div className="bg-green-50 p-8 rounded-lg">
-                <h3 className="text-2xl font-medium text-gray-900 mb-6">Island Mobile Benefits</h3>
+                <h3 className="text-2xl font-medium text-gray-900 mb-6">Wootzapp Enterprise Browser Benefits</h3>
                 <ul className="space-y-4 text-gray-600">
                   <li className="flex items-start">
                     <span className="text-green-500 mr-3 mt-1">✓</span>
@@ -539,7 +506,7 @@ export default function IndustriesPage() {
               </div>
 
               <div className="bg-green-50 p-8 rounded-lg">
-                <h3 className="text-2xl font-medium text-gray-900 mb-6">Island Mobile Solution</h3>
+                <h3 className="text-2xl font-medium text-gray-900 mb-6">Wootzapp Enterprise Browser Solution</h3>
                 <ul className="space-y-4 text-gray-600">
                   <li className="flex items-start">
                     <span className="text-green-500 mr-3 mt-1">✓</span>
@@ -749,7 +716,7 @@ export default function IndustriesPage() {
               </div>
 
               <div className="bg-green-50 p-8 rounded-lg">
-                <h3 className="text-2xl font-medium text-gray-900 mb-6">Island Mobile Advantages</h3>
+                <h3 className="text-2xl font-medium text-gray-900 mb-6">Wootzapp Enterprise Browser Advantages</h3>
                 <ul className="space-y-4 text-gray-600">
                   <li className="flex items-start">
                     <span className="text-green-500 mr-3 mt-1">✓</span>
@@ -1168,7 +1135,7 @@ export default function IndustriesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-medium text-gray-900 mb-6">Ready to secure your industry?</h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Discover how Island Mobile can address your industry&apos;s specific security and compliance challenges.
+            Discover how Wootzapp Enterprise Browser can address your industry&apos;s specific security and compliance challenges.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-black hover:bg-gray-800 text-white px-6 py-3">Schedule Demo</Button>
@@ -1181,94 +1148,7 @@ export default function IndustriesPage() {
           </div>
         </div>
       </section>
-
-      <footer className="bg-gray-900 text-white py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
-            <div className="col-span-2 md:col-span-1">
-              <h3 className="text-xl font-medium mb-6">Island Mobile</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                The enterprise browser for people on the move. Zero-trust access, built-in DLP, and compliance on
-                Android devices your users already know how to use.
-              </p>
-              <div className="flex space-x-4">
-                <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
-                  <span className="text-sm">📧</span>
-                </div>
-                <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
-                  <span className="text-sm">🐦</span>
-                </div>
-                <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
-                  <span className="text-sm">💼</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="font-medium text-white mb-6">Solutions</h3>
-              <ul className="space-y-3 text-sm text-gray-400">
-                <li>
-                  <Link href="#byod-workforce" className="hover:text-white transition-colors">
-                    BYOD
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#third-party-contractors" className="hover:text-white transition-colors">
-                    Contractors
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#saas-web-apps" className="hover:text-white transition-colors">
-                    SaaS Apps
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-medium text-white mb-6">Industries</h3>
-              <ul className="space-y-3 text-sm text-gray-400">
-                <li>
-                  <Link href="#healthcare" className="hover:text-white transition-colors">
-                    Healthcare
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#higher-education" className="hover:text-white transition-colors">
-                    Education
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#financial-services" className="hover:text-white transition-colors">
-                    Financial
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-medium text-white mb-6">Company</h3>
-              <ul className="space-y-3 text-sm text-gray-400">
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Support
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center">
-            <p className="text-gray-400 text-sm">&copy; 2025 Island Mobile. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
