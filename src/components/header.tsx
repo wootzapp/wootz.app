@@ -24,6 +24,9 @@ export default function Header() {
               >
                 Enterprise Browser Research
               </Link>
+              <Link href="/genai" className="text-gray-600 hover:text-gray-900 text-sm">
+                GenAI
+              </Link>
             </nav>
           </div>
 
@@ -80,6 +83,15 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Enterprise Browser Research
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/genai"
+                className="block py-2 text-gray-700 hover:text-gray-900"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                GenAI
               </Link>
             </li>
             <li>
