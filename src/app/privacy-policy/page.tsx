@@ -53,6 +53,17 @@ export default function Page() {
                 <li>
                   <strong>Usage Data:</strong> features you use, access times, and pages viewed.
                 </li>
+                <li>
+                  <strong>Tracking Technologies:</strong> When you visit or log in to our website, cookies and similar technologies may be used by our online data partners or vendors to associate these activities with other personal information they may have about you from other websites or applications for the purpose of providing you with targeted advertising based on your preferences and interests. You may opt out of receiving this advertising by visiting{" "}
+                  <a 
+                    href="https://app.retention.com/optout" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-black underline hover:text-gray-700"
+                  >
+                    https://app.retention.com/optout
+                  </a>.
+                </li>
               </ul>
               <h2 className="text-xl font-semibold text-gray-900">How We Use Information</h2>
               <p>
@@ -69,6 +80,17 @@ export default function Page() {
               <p>
                 You may request access to, correction of, or deletion of your personal information
                 by contacting us. You can also object to or restrict certain processing.
+              </p>
+              <p>
+                <strong>GDPR Rights:</strong> If you are located in the European Economic Area, you also have the option to opt out of the collection of your personal data in compliance with GDPR. To exercise this option, please visit{" "}
+                <a 
+                  href="https://www.rb2b.com/rb2b-gdpr-opt-out" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-black underline hover:text-gray-700"
+                >
+                  https://www.rb2b.com/rb2b-gdpr-opt-out
+                </a>.
               </p>
               <h2 className="text-xl font-semibold text-gray-900">Security</h2>
               <p>
