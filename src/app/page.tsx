@@ -316,7 +316,7 @@ export default function WootzappMobileBrowserPage() {
             <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-lg"
-                src="https://www.youtube.com/embed/2_74O0V2pBM?modestbranding=1&rel=0"
+                src="https://www.youtube.com/embed/2_74O0V2pBM?modestbranding=1&rel=0&autoplay=1&mute=1&loop=1&playlist=2_74O0V2pBM"
                 title="Wootzapp Enterprise Browser Demo"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
