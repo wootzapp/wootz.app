@@ -288,7 +288,7 @@ export default function GenAIPage() {
 
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               According to the{" "}
-              <strong>Island Enterprise Browser Security Requirements to Counter AI-Enabled Risks</strong> report,
+              <strong>Wootzapp Enterprise Browser Security Requirements to Counter AI-Enabled Risks</strong> report,
               enterprise browsers provide the essential governance framework for safe AI adoption.
             </p>
           </div>
@@ -505,7 +505,7 @@ export default function GenAIPage() {
             </h2>
 
             <p className="text-xl mb-8 opacity-90">
-              Join forward-thinking organizations using Island Enterprise Browser to safely harness AI's transformative
+              Join forward-thinking organizations using Wootzapp Enterprise Browser to safely harness AI's transformative
               potential while maintaining complete data security and regulatory compliance.
             </p>
 
