@@ -1,14 +1,11 @@
 "use client"
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, XCircle, AlertCircle, TrendingUp, Shield, Zap, DollarSign } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import Link from "next/link"
 
 export default function ComparisonPage() {
-  const [activeSection, setActiveSection] = useState("overview")
 
   const comparisonData = [
     {
@@ -37,7 +34,7 @@ export default function ComparisonPage() {
     {
       category: "User Experience",
       vpn: {
-        text: "Connection delays, 'Is the tunnel up?' frustrations, bandwidth bottlenecks",
+        text: "Connection delays, &apos;Is the tunnel up?&apos; frustrations, bandwidth bottlenecks",
         status: "bad",
         cost: "Productivity loss",
       },
@@ -338,7 +335,7 @@ export default function ComparisonPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-light text-gray-900 mb-4">Why Enterprise Browsers Win</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Built for the modern workplace, enterprise browsers solve problems that legacy solutions can't address
+              Built for the modern workplace, enterprise browsers solve problems that legacy solutions can&apos;t address
             </p>
           </div>
 

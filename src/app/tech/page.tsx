@@ -6,11 +6,8 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Shield, Cpu, Network, Database, Lock, Monitor, Code } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import Link from "next/link"
 
 export default function TechPage() {
-  const [activeSpec, setActiveSpec] = useState("architecture")
-
   const technicalSpecs = {
     architecture: {
       title: "Browser Isolation Architecture",
@@ -82,6 +79,8 @@ export default function TechPage() {
       ],
     },
   }
+
+  const [activeSpec, setActiveSpec] = useState<keyof typeof technicalSpecs>("architecture")
 
   const integrationAPIs = [
     {
@@ -212,7 +211,7 @@ export default function TechPage() {
             {Object.entries(technicalSpecs).map(([key, spec]) => (
               <button
                 key={key}
-                onClick={() => setActiveSpec(key)}
+                onClick={() => setActiveSpec(key as keyof typeof technicalSpecs)}
                 className={`px-4 md:px-6 py-2 md:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${
                   activeSpec === key ? "bg-black text-white shadow-lg" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
