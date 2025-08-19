@@ -212,7 +212,7 @@ export default function ComparisonPage() {
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               A comprehensive comparison of modern remote access solutions
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button className="bg-black hover:bg-gray-800 text-white px-8 py-3">
                 <a
                   href="https://calendar.app.google/3QyXM9d359yN6aCu8"
@@ -221,9 +221,6 @@ export default function ComparisonPage() {
                 >
                   Schedule Demo
                 </a>
-              </Button>
-              <Button variant="outline" className="px-8 py-3 border-gray-300 bg-transparent">
-                Download Report
               </Button>
             </div>
           </div>
@@ -445,7 +442,7 @@ export default function ComparisonPage() {
               Join thousands of organizations that have already modernized their remote access with enterprise browsers.
               See the difference for yourself with a personalized demo.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button className="bg-white text-black hover:bg-gray-100 px-8 py-3">
                 <a
                   href="https://calendar.app.google/3QyXM9d359yN6aCu8"
@@ -454,12 +451,6 @@ export default function ComparisonPage() {
                 >
                   Schedule Demo
                 </a>
-              </Button>
-              <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-black px-8 py-3 bg-transparent"
-              >
-                Download Comparison Guide
               </Button>
             </div>
           </div>

@@ -65,12 +65,6 @@ export default function GenAIPage() {
               transformative potential.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3">Assess Your Risk</Button>
-              <Button variant="outline" className="px-8 py-3 border-gray-300 bg-transparent">
-                See the Solution
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -509,15 +503,15 @@ export default function GenAIPage() {
               potential while maintaining complete data security and regulatory compliance.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg">
-                Schedule AI Risk Assessment
-              </Button>
-              <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg bg-transparent"
-              >
-                Download AI Security Guide
+                <a
+                  href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Schedule AI Risk Assessment
+                </a>
               </Button>
             </div>
 

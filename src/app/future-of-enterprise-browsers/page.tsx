@@ -375,7 +375,7 @@ export default function Page() {
             Join the 25% of forward-thinking organizations that will leverage secure enterprise browsers to transform
             their security posture and enable the future of work.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button
               asChild
               className="bg-black hover:bg-gray-800 text-white px-8 py-3"
@@ -387,9 +387,6 @@ export default function Page() {
               >
                 Schedule Demo
               </a>
-            </Button>
-            <Button variant="outline" className="px-8 py-3 bg-transparent">
-              Download Research Report
             </Button>
           </div>
         </div>

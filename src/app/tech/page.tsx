@@ -1,9 +1,8 @@
 "use client"
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, Shield, Cpu, Network, Database, Lock, Monitor, Code } from "lucide-react"
+import { CheckCircle, Shield, Cpu, Network, Database, Lock } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
@@ -174,23 +173,10 @@ export default function TechPage() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-4 md:mb-6">
               Our Tech
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8 leading-relaxed px-4">
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed px-4">
               Enterprise browser architecture built for security, performance, and scale. Deep technical specifications
               for IT decision makers.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
-              <Button className="bg-black hover:bg-gray-800 text-white px-6 md:px-8 py-2 md:py-3 w-full sm:w-auto">
-                <Code className="w-4 h-4 mr-2" />
-                API Documentation
-              </Button>
-              <Button
-                variant="outline"
-                className="px-6 md:px-8 py-2 md:py-3 border-gray-300 bg-transparent w-full sm:w-auto"
-              >
-                <Monitor className="w-4 h-4 mr-2" />
-                Architecture Diagram
-              </Button>
-            </div>
           </div>
         </div>
       </section>
