@@ -26,8 +26,14 @@ export default function TechPage() {
         {
           component: "Policy Engine",
           version: "3.1",
-          details: "Real-time policy evaluation and enforcement",
-          specs: ["Sub-100ms policy decisions", "Context-aware rules", "Dynamic policy updates"],
+          details: "Real-time policy evaluation with dynamic enforcement per user, group, and device",
+          specs: ["Sub-100ms policy decisions", "Context-aware rules", "Dynamic policy updates", "Per-user enforcement", "Group-based policies", "Device-specific controls"],
+        },
+        {
+          component: "AI-Powered Automation",
+          version: "ML-Enhanced",
+          details: "Fully automated masking and redaction features using intelligent agents",
+          specs: ["Automatic content masking", "Smart redaction", "ML-driven policy decisions", "Contextual AI analysis"],
         },
       ],
     },
@@ -47,6 +53,12 @@ export default function TechPage() {
           specs: ["Phishing detection", "Malware isolation", "Zero-day protection", "Behavioral analytics"],
         },
         {
+          component: "Multi-Layer Security Architecture",
+          version: "Enterprise",
+          details: "End-to-end sandboxed protection across multiple system layers",
+          specs: ["Core/renderer masking", "Browser & Android DLP", "Network-layer blocking", "OS-level synthetic keystrokes", "Secure inter-process communication", "Mojo IPC bridges", "JNI sandboxing"],
+        },
+        {
           component: "Compliance Framework",
           version: "Multi-standard",
           details: "Built-in compliance for major regulatory requirements",
@@ -60,8 +72,8 @@ export default function TechPage() {
         {
           component: "Rendering Engine",
           version: "Optimized",
-          details: "Native performance with enterprise security",
-          specs: ["<50ms latency", "Hardware acceleration", "Offline capability", "Progressive loading"],
+          details: "Native performance with enterprise security and mobile-first design",
+          specs: ["<50ms latency", "Hardware acceleration", "Offline capability", "Progressive loading", "Mobile-First Design"],
         },
         {
           component: "Network Optimization",
