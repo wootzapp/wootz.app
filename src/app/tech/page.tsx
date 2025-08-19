@@ -14,8 +14,8 @@ export default function TechPage() {
         {
           component: "Chromium Engine",
           version: "v120+",
-          details: "Hardened Chromium with custom security patches and enterprise extensions",
-          specs: ["V8 JavaScript isolation", "Site isolation enabled", "Custom CSP enforcement"],
+          details: "Hardened Chromium with navigation layer integration for risky site blocking and enterprise security patches",
+          specs: ["Navigation throttle implementation", "Site isolation enabled", "Custom CSP enforcement", "Domain validation at navigation layer", "Deep Chromium core integration"],
         },
         {
           component: "Zero Trust Gateway",
@@ -26,14 +26,14 @@ export default function TechPage() {
         {
           component: "Policy Engine",
           version: "3.1",
-          details: "Real-time policy evaluation with dynamic enforcement per user, group, and device",
-          specs: ["Sub-100ms policy decisions", "Context-aware rules", "Dynamic policy updates", "Per-user enforcement", "Group-based policies", "Device-specific controls"],
+          details: "Real-time policy evaluation with SAML-driven delivery and Okta integration for secure enterprise authentication",
+          specs: ["Sub-100ms policy decisions", "SAML attribute enforcement", "Okta Verify mTLS handshakes", "Cloudflare Access integration", "Per-user enforcement", "Group-based policies", "Device-specific controls"],
         },
         {
           component: "AI-Powered Automation",
           version: "ML-Enhanced",
-          details: "Fully automated masking and redaction features using intelligent agents",
-          specs: ["Automatic content masking", "Smart redaction", "ML-driven policy decisions", "Contextual AI analysis"],
+          details: "AI agent with real-time DOM monitoring, Mojo IPC communication, and Blink renderer integration for content masking",
+          specs: ["DOM mutation observation", "AI-driven pattern recognition", "Mojo IPC secure communication", "Blink WebSensitiveElementClient integration", "Multi-process architecture", "Renderer-level masking"],
         },
       ],
     },
@@ -43,20 +43,20 @@ export default function TechPage() {
         {
           component: "Data Loss Prevention",
           version: "Enterprise",
-          details: "Granular data handling controls with real-time enforcement",
-          specs: ["Copy/paste controls", "Screenshot prevention", "Print restrictions", "Watermarking"],
+          details: "Browser-level DLP with Android FLAG_SECURE, WebContents/ClipboardHost integration, and system-level input interception",
+          specs: ["Android FLAG_SECURE implementation", "WebContents clipboard control", "System-level input interception", "OS-level screenshot blocking", "Multi-layer copy/paste protection", "Renderer surface masking"],
         },
         {
           component: "Threat Protection",
           version: "Advanced",
-          details: "Multi-layer security with behavioral analysis",
-          specs: ["Phishing detection", "Malware isolation", "Zero-day protection", "Behavioral analytics"],
+          details: "Chromium Download Controller integration with malware detection and domain-based file transfer blocking",
+          specs: ["Download Controller enforcement", "Domain-based blocking policies", "Pre-transfer file validation", "Malicious file detection", "Upload blocking at browser level", "JNI bridge security"],
         },
         {
           component: "Multi-Layer Security Architecture",
           version: "Enterprise",
-          details: "End-to-end sandboxed protection across multiple system layers",
-          specs: ["Core/renderer masking", "Browser & Android DLP", "Network-layer blocking", "OS-level synthetic keystrokes", "Secure inter-process communication", "Mojo IPC bridges", "JNI sandboxing"],
+          details: "Multi-process architecture with Chromium core integration, Android input pipeline interception, and synthetic keystroke injection",
+          specs: ["Android input pipeline interception", "Synthetic keystroke generation", "Browser process isolation", "Renderer & Blink integration", "ContentSensitiveMaskingDriver", "SensitiveElementMaskAgent", "Secure Mojo IPC channels", "JNI bridge isolation"],
         },
         {
           component: "Compliance Framework",
@@ -72,8 +72,8 @@ export default function TechPage() {
         {
           component: "Rendering Engine",
           version: "Optimized",
-          details: "Native performance with enterprise security and mobile-first design",
-          specs: ["<50ms latency", "Hardware acceleration", "Offline capability", "Progressive loading", "Mobile-First Design"],
+          details: "Optimized Chromium rendering with mobile-first architecture and low-latency policy enforcement",
+          specs: ["<50ms policy evaluation", "Hardware-accelerated rendering", "Offline capability", "Progressive loading", "Mobile-First Design", "Efficient multi-process communication"],
         },
         {
           component: "Network Optimization",
@@ -186,8 +186,8 @@ export default function TechPage() {
               Our Tech
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed px-4">
-              Enterprise browser architecture built for security, performance, and scale. Deep technical specifications
-              for IT decision makers.
+              Enterprise browser with navigation layer integration, Mojo IPC communication, Blink renderer masking,
+              and Android input pipeline interception. Deep technical specifications for IT decision makers.
             </p>
           </div>
         </div>
@@ -201,7 +201,7 @@ export default function TechPage() {
               Technical Architecture
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto px-4">
-              Comprehensive technical specifications and implementation details for enterprise deployment
+              Deep Chromium integration with navigation layer controls, multi-process security architecture, and Android system-level enforcement
             </p>
           </div>
 
@@ -341,15 +341,15 @@ export default function TechPage() {
         </div>
       </section>
 
-      {/* Security Capabilities Matrix */}
+      {/* Security Implementation Details */}
       <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-3 md:mb-4">
-              Security Capabilities Matrix
+              Security Implementation Matrix
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto px-4">
-              Comprehensive security controls and threat protection capabilities
+              Deep technical implementations showing browser-level, Android system-level, and multi-process architecture integration
             </p>
           </div>
 
@@ -364,7 +364,7 @@ export default function TechPage() {
                         <th className="text-center py-3 px-2 font-medium text-gray-900">Wootzapp Browser</th>
                         <th className="text-center py-3 px-2 font-medium text-gray-900">Traditional VPN</th>
                         <th className="text-center py-3 px-2 font-medium text-gray-900">VDI/DaaS</th>
-                        <th className="text-left py-3 px-2 font-medium text-gray-900">Technical Implementation</th>
+                        <th className="text-left py-3 px-2 font-medium text-gray-900">Deep Technical Implementation</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
@@ -374,42 +374,42 @@ export default function TechPage() {
                           island: "✅ Native",
                           vpn: "❌ Network-based",
                           vdi: "⚠️ Perimeter-based",
-                          implementation: "Identity-aware proxy with continuous authentication",
+                          implementation: "Okta SAML integration with CA certificate issuance for mTLS handshakes",
                         },
                         {
                           control: "Data Loss Prevention",
                           island: "✅ Granular",
                           vpn: "❌ None",
                           vdi: "⚠️ Basic",
-                          implementation: "Real-time content inspection, copy/paste controls, watermarking",
+                          implementation: "Android FLAG_SECURE, WebContents clipboard control, system-level input interception",
                         },
                         {
                           control: "Malware Protection",
                           island: "✅ Isolation",
                           vpn: "❌ Endpoint-dependent",
                           vdi: "⚠️ VM-based",
-                          implementation: "Browser isolation with sandboxed execution environment",
+                          implementation: "Navigation layer throttle with Chromium Download Controller integration",
                         },
                         {
-                          control: "Session Recording",
+                          control: "Keylogger Protection",
                           island: "✅ Full",
                           vpn: "❌ None",
-                          vdi: "⚠️ Screen-only",
-                          implementation: "Complete user activity logging with keystroke and click capture",
+                          vdi: "❌ None",
+                          implementation: "Android input pipeline synthetic keystroke injection with internal filtering",
                         },
                         {
                           control: "Device Trust",
                           island: "✅ Certificate-based",
                           vpn: "⚠️ Basic",
                           vdi: "⚠️ Basic",
-                          implementation: "mTLS device certificates with hardware attestation",
+                          implementation: "Okta Verify app integration with CA certificate issuance for Cloudflare Access mTLS",
                         },
                         {
-                          control: "Threat Intelligence",
-                          island: "✅ Real-time",
+                          control: "Content Masking",
+                          island: "✅ AI-Powered",
                           vpn: "❌ None",
                           vdi: "❌ None",
-                          implementation: "Live threat feeds with behavioral analysis and ML detection",
+                          implementation: "AI agent with DOM monitoring, Mojo IPC, and Blink renderer integration for real-time masking",
                         },
                       ].map((row, index) => (
                         <tr key={index} className="hover:bg-gray-50">
