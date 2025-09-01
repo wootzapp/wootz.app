@@ -111,6 +111,11 @@ export default function Footer() {
                   SaaS & Web Apps
                 </Link>
               </li>
+              <li>
+                <Link href="/transport-eld" className="hover:text-gray-900">
+                  Transport ELD
+                </Link>
+              </li>
             </ul>
           </div>
 
