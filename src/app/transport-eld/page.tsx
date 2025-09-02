@@ -20,44 +20,6 @@ export default function TransportEldPage() {
               SASE, VDI/RDS/AVD, and MDM/UEM—complete with real deployments and measurable outcomes.
             </p>
 
-            {/* Quick anchors */}
-            <nav
-              aria-label="Section navigation"
-              className="-mx-4 sm:mx-0 mt-8 sticky top-0 z-20 border-y bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60"
-            >
-              <div className="px-4 py-3 flex items-center gap-2 overflow-x-auto">
-                <a
-                  href="#why"
-                  className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 text-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-black transition-colors"
-                >
-                  Why this matters
-                </a>
-                <a
-                  href="#driver-mdm-sase"
-                  className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 text-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-black transition-colors"
-                >
-                  Driver MDM + SASE
-                </a>
-                <a
-                  href="#office-vdi"
-                  className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 text-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-black transition-colors"
-                >
-                  Office/Warehouse VDI
-                </a>
-                <a
-                  href="#roi"
-                  className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 text-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-black transition-colors"
-                >
-                  Technical ROI
-                </a>
-                <a
-                  href="#faq"
-                  className="whitespace-nowrap rounded-full border border-gray-200 px-3 py-1.5 text-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-black transition-colors"
-                >
-                  FAQ
-                </a>
-              </div>
-            </nav>
           </div>
         </section>
 
