@@ -44,7 +44,7 @@ export default function Header() {
               className="bg-black hover:bg-gray-800 text-white px-3 md:px-4 py-2 text-sm"
             >
               <a
-                href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
                 target="_blank"
                 rel="noopener noreferrer"
               >

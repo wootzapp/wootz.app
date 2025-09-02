@@ -230,7 +230,7 @@ export default function TransportEldPage() {
 
             <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <Link
-                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1xmArE5DxvpXDFfkHLo2aYJPLfmZONmYKDEHfSBMcTEkzK6SIvLCvU9nECvpJNUfCEuv7P"
+                href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
                 className="inline-flex items-center rounded-md bg-black text-white px-6 py-3 text-sm font-medium hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
               >
                 Talk to a trucking security specialist

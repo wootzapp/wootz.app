@@ -264,7 +264,7 @@ export default function WootzappMobileBrowserPage() {
                 className="bg-black hover:bg-gray-800 text-white px-6 md:px-8 py-3 w-full sm:w-auto"
               >
                 <a
-                  href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                  href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -277,7 +277,7 @@ export default function WootzappMobileBrowserPage() {
                 asChild
               >
                 <a
-                  href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                  href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -466,7 +466,7 @@ export default function WootzappMobileBrowserPage() {
                 className="bg-black hover:bg-gray-800 text-white px-6 md:px-8 py-3 w-full sm:w-auto"
               >
                 <a
-                  href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                  href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -479,7 +479,7 @@ export default function WootzappMobileBrowserPage() {
                 asChild
               >
                 <a
-                  href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                  href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

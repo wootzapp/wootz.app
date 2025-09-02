@@ -506,7 +506,7 @@ export default function GenAIPage() {
             <div className="flex justify-center">
               <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg">
                 <a
-                  href="https://calendar.app.google/3QyXM9d359yN6aCu8"
+                  href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
