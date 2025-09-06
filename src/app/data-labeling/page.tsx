@@ -5,12 +5,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, XCircle, AlertCircle, Shield, Smartphone, Users, Lock } from "lucide-react"
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { Metadata } from "next";
-
-const metadata: Metadata = {
-  title: "Data Labeling Security | Wootzapp Mobile Browser",
-  description: "Secure data labeling workflows with Wootzapp Mobile Browser. Protect sensitive training data and maintain compliance in AI/ML development.",
-};
 
 export default function DataLabelingPage() {
   const [activeSection, setActiveSection] = useState("overview")
@@ -157,7 +151,7 @@ export default function DataLabelingPage() {
                     <Lock className="w-5 h-5 md:w-6 md:h-6 text-red-500 mr-2 md:mr-3 mt-0.5 md:mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">
-                        Sama's Extreme Measures
+                        Sama&apos;s Extreme Measures
                       </h3>
                       <p className="text-xs md:text-sm text-gray-700">
                         Locks annotators in biometric-secured rooms just to keep data safe—an expensive, non-scalable
@@ -199,7 +193,7 @@ export default function DataLabelingPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-              VDI vs. Enterprise Browser: What's the Difference?
+              VDI vs. Enterprise Browser: What&apos;s the Difference?
             </h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
@@ -247,7 +241,7 @@ export default function DataLabelingPage() {
                   <div className="space-y-4">
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <p className="text-sm text-gray-700">Installs directly on the worker's device</p>
+                      <p className="text-sm text-gray-700">Installs directly on the worker&apos;s device</p>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
@@ -293,7 +287,7 @@ export default function DataLabelingPage() {
 
             <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-6 md:mb-8">
               <p className="text-gray-800 leading-relaxed text-sm md:text-base">
-                Your workforce isn't sitting in offices with fiber internet. They're global, distributed, and
+                Your workforce isn&apos;t sitting in offices with fiber internet. They&apos;re global, distributed, and
                 increasingly mobile.
               </p>
             </div>
@@ -311,7 +305,7 @@ export default function DataLabelingPage() {
                 <CardContent className="p-4 md:p-6">
                   <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1 md:mb-2">0%</div>
                   <p className="text-xs md:text-sm text-gray-600">
-                    Standard desktop enterprise browsers don't solve mobile security
+                    Standard desktop enterprise browsers don&apos;t solve mobile security
                   </p>
                 </CardContent>
               </Card>
@@ -332,7 +326,7 @@ export default function DataLabelingPage() {
                 <strong>switch apps, take screenshots, or upload client data elsewhere</strong>, outside your
                 visibility.
               </p>
-              <p className="text-gray-700 font-medium text-sm md:text-base">That's the gap we close.</p>
+              <p className="text-gray-700 font-medium text-sm md:text-base">That&apos;s the gap we close.</p>
             </div>
           </div>
         </div>
@@ -425,7 +419,7 @@ export default function DataLabelingPage() {
                   <AlertCircle className="w-8 h-8 text-red-500 mx-auto mb-3" />
                   <h3 className="font-semibold text-gray-900 mb-2">Security Incidents</h3>
                   <p className="text-sm text-gray-700">
-                    Like Scale AI's leaked docs are already public—and regulators are watching.
+                    Like Scale AI&apos;s leaked docs are already public—and regulators are watching.
                   </p>
                 </CardContent>
               </Card>
@@ -434,7 +428,7 @@ export default function DataLabelingPage() {
                   <Users className="w-8 h-8 text-red-500 mx-auto mb-3" />
                   <h3 className="font-semibold text-gray-900 mb-2">Client Demands</h3>
                   <p className="text-sm text-gray-700">
-                    Clients will demand proof of zero-leak environments. "Trust us" won't cut it anymore.
+                    Clients will demand proof of zero-leak environments. &ldquo;Trust us&rdquo; won&apos;t cut it anymore.
                   </p>
                 </CardContent>
               </Card>
@@ -443,7 +437,7 @@ export default function DataLabelingPage() {
                   <XCircle className="w-8 h-8 text-red-500 mx-auto mb-3" />
                   <h3 className="font-semibold text-gray-900 mb-2">Margins Collapse</h3>
                   <p className="text-sm text-gray-700">
-                    When you're forced into Sama-style biometric facilities or costly VDI.
+                    When you&apos;re forced into Sama-style biometric facilities or costly VDI.
                   </p>
                 </CardContent>
               </Card>
@@ -451,7 +445,7 @@ export default function DataLabelingPage() {
 
             <div className="bg-red-100 border border-red-300 rounded-lg p-6">
               <p className="text-red-800 font-semibold text-lg">
-                If your labeling platform isn't locked down at the browser layer, you are one contractor mistake away
+                If your labeling platform isn&apos;t locked down at the browser layer, you are one contractor mistake away
                 from front-page headlines.
               </p>
             </div>
