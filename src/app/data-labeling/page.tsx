@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, XCircle, AlertCircle, Shield, Smartphone, Users, Lock } from "lucide-react"
@@ -8,6 +8,7 @@ import Footer from "@/components/footer";
 
 export default function DataLabelingPage() {
   const [activeSection, setActiveSection] = useState("overview")
+  const [isSticky, setIsSticky] = useState(false)
 
   const sections = [
     { id: "overview", label: "Overview" },
@@ -17,38 +18,66 @@ export default function DataLabelingPage() {
     { id: "capabilities", label: "Our Solution" },
   ]
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const navElement = document.getElementById("navigation-pills")
+      if (navElement) {
+        const navPosition = navElement.getBoundingClientRect().top
+        setIsSticky(navPosition <= 80) // 80px is roughly header height
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId)
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" })
+      // Check if we're on mobile (md breakpoint is 768px)
+      const isMobile = window.innerWidth < 768;
+      const headerOffset = isMobile ? 80 : (isSticky ? 160 : 80); // Mobile: 80px, Desktop: 80px or 160px with sticky nav
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   }
 
   return (
     <div className="min-h-screen bg-white">
       <Header />
-
-      {/* Navigation Pills */}
-      <div className="sticky top-16 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-40">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide">
-            {sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => scrollToSection(section.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${
-                  activeSection === section.id
-                    ? "bg-black text-white shadow-lg"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-              >
-                {section.label}
-              </button>
-            ))}
+      
+      {/* Sticky Navigation Pills - Hidden on mobile */}
+      {isSticky && (
+        <div className="hidden md:block fixed top-16 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-40 py-4">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-center">
+              <div className="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-full p-2 shadow-lg">
+                <div className="flex gap-2">
+                  {sections.map((section) => (
+                    <button
+                      key={section.id}
+                      onClick={() => scrollToSection(section.id)}
+                      className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${
+                        activeSection === section.id
+                          ? "bg-black text-white shadow-lg"
+                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                      }`}
+                    >
+                      {section.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Hero Section */}
       <section id="overview" className="py-12 md:py-16 lg:py-24 bg-gradient-to-br from-red-50 to-orange-50">
@@ -82,6 +111,27 @@ export default function DataLabelingPage() {
               >
                 See the Risks
               </Button>
+            </div>
+
+            {/* Navigation Pills - Hidden on mobile */}
+            <div id="navigation-pills" className="hidden md:flex justify-center mb-8 md:mb-12">
+              <div className="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-full p-2 shadow-lg">
+                <div className="flex gap-2">
+                  {sections.map((section) => (
+                    <button
+                      key={section.id}
+                      onClick={() => scrollToSection(section.id)}
+                      className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${
+                        activeSection === section.id
+                          ? "bg-black text-white shadow-lg"
+                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                      }`}
+                    >
+                      {section.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
