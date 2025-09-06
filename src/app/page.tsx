@@ -124,7 +124,7 @@ function SexyComparisonSection() {
       <div className="mt-12 text-center">
         <div className="inline-flex items-center bg-gray-50 rounded-full px-6 py-3">
           <span className="text-sm text-gray-600">
-            <span className="font-semibold text-gray-900">90% faster</span> deployment vs traditional solutions
+            <span className="font-semibold text-gray-900">Rapid</span> deployment vs traditional solutions
           </span>
         </div>
       </div>

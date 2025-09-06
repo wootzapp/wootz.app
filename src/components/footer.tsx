@@ -12,7 +12,7 @@ export default function Footer() {
               Android.
             </p>
             <div className="flex space-x-4 text-xs text-gray-500">
-              <span>99.9%</span>
+              <span>Enterprise-grade</span>
               <span>SOC 2</span>
               <span>24/7</span>
             </div>

@@ -282,7 +282,7 @@ export default function GenAIPage() {
 
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               According to the{" "}
-              <strong>Wootzapp Enterprise Browser Security Requirements to Counter AI-Enabled Risks</strong> report,
+              <strong>TagCyber Enterprise Browser Security Requirements to Counter AI-Enabled Risks</strong> report,
               enterprise browsers provide the essential governance framework for safe AI adoption.
             </p>
           </div>
@@ -465,9 +465,9 @@ export default function GenAIPage() {
 
             <Card className="text-center bg-white border-green-200">
               <CardContent className="p-6">
-                <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">90%</div>
-                <div className="text-sm text-gray-600 mb-3">Reduction in AI-related security incidents</div>
-                <div className="text-xs text-gray-500">Enterprise browser deployments</div>
+                <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">85%</div>
+                <div className="text-sm text-gray-600 mb-3">Fewer AI-related security risks</div>
+                <div className="text-xs text-gray-500">With proper browser controls</div>
               </CardContent>
             </Card>
 
@@ -516,11 +516,11 @@ export default function GenAIPage() {
             </div>
 
             <div className="mt-12 text-center">
-              <div className="text-sm opacity-75 mb-2">Trusted by enterprises worldwide</div>
+              <div className="text-sm opacity-75 mb-2">Built for enterprise security</div>
               <div className="flex justify-center items-center space-x-8 opacity-60">
-                <div className="text-sm">Fortune 500</div>
+                <div className="text-sm">Enterprise-grade</div>
                 <div className="w-1 h-1 bg-white rounded-full"></div>
-                <div className="text-sm">Federal Agencies</div>
+                <div className="text-sm">Zero-trust ready</div>
                 <div className="w-1 h-1 bg-white rounded-full"></div>
                 <div className="text-sm">Healthcare Systems</div>
                 <div className="w-1 h-1 bg-white rounded-full"></div>

@@ -28,7 +28,7 @@ export default function ComparisonPage() {
       enterprise_browser: {
         text: "Simple app installation, cloud-managed policies, zero infrastructure",
         status: "good",
-        cost: "90% less than VDI",
+        cost: "Significantly less than VDI",
       },
     },
     {
@@ -370,7 +370,7 @@ export default function ComparisonPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Dramatic Cost Savings</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Eliminate infrastructure costs, reduce IT overhead, and achieve 90% cost savings compared to
+                  Eliminate infrastructure costs, reduce IT overhead, and achieve significant cost savings compared to
                   traditional VDI deployments.
                 </p>
               </CardContent>
