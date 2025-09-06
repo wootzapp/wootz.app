@@ -70,17 +70,17 @@ export default function IndustriesPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
-              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center border border-gray-100">
-                <div className="text-4xl md:text-5xl font-bold text-red-600 mb-3">$1.5M</div>
-                <p className="text-gray-600 font-medium">Maximum HIPAA fine per violation</p>
+              <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center border border-gray-100">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-600 mb-3">$1.5M</div>
+                <p className="text-gray-600 font-medium text-sm md:text-base">Maximum HIPAA fine per violation</p>
               </div>
-              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center border border-gray-100">
-                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-3">$10.93M</div>
-                <p className="text-gray-600 font-medium">Average cost of a healthcare breach</p>
+              <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center border border-gray-100">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 mb-3">$10.93M</div>
+                <p className="text-gray-600 font-medium text-sm md:text-base">Average cost of a healthcare breach</p>
               </div>
-              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center border border-gray-100">
-                <div className="text-4xl md:text-5xl font-bold text-green-600 mb-3">78%</div>
-                <p className="text-gray-600 font-medium">Providers expanding telehealth programs</p>
+              <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center border border-gray-100">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-600 mb-3">78%</div>
+                <p className="text-gray-600 font-medium text-sm md:text-base">Providers expanding telehealth programs</p>
               </div>
             </div>
 

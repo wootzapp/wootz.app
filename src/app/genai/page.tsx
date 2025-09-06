@@ -113,7 +113,7 @@ export default function GenAIPage() {
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-6xl font-bold text-red-600 mb-2">{risks[activeRisk].stat}</div>
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-red-600 mb-2">{risks[activeRisk].stat}</div>
                     <div className="text-gray-600">of organizations affected</div>
                   </div>
                 </div>
@@ -126,7 +126,7 @@ export default function GenAIPage() {
             <Card className="text-center border-red-200">
               <CardContent className="p-6">
                 <TrendingUp className="w-8 h-8 text-red-600 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-gray-900 mb-1">300%</div>
+                <div className="text-xl md:text-2xl font-bold text-gray-900 mb-1">300%</div>
                 <div className="text-sm text-gray-600">Increase in AI-related data breaches since 2023</div>
               </CardContent>
             </Card>
@@ -134,7 +134,7 @@ export default function GenAIPage() {
             <Card className="text-center border-red-200">
               <CardContent className="p-6">
                 <Users className="w-8 h-8 text-red-600 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-gray-900 mb-1">92%</div>
+                <div className="text-xl md:text-2xl font-bold text-gray-900 mb-1">92%</div>
                 <div className="text-sm text-gray-600">Of Fortune 500 companies use unsanctioned AI tools</div>
               </CardContent>
             </Card>
@@ -142,7 +142,7 @@ export default function GenAIPage() {
             <Card className="text-center border-red-200">
               <CardContent className="p-6">
                 <DollarSign className="w-8 h-8 text-red-600 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-gray-900 mb-1">$5.9M</div>
+                <div className="text-xl md:text-2xl font-bold text-gray-900 mb-1">$5.9M</div>
                 <div className="text-sm text-gray-600">Average cost of AI-enabled data breach</div>
               </CardContent>
             </Card>
@@ -150,7 +150,7 @@ export default function GenAIPage() {
             <Card className="text-center border-red-200">
               <CardContent className="p-6">
                 <Eye className="w-8 h-8 text-red-600 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-gray-900 mb-1">0%</div>
+                <div className="text-xl md:text-2xl font-bold text-gray-900 mb-1">0%</div>
                 <div className="text-sm text-gray-600">Visibility into employee AI usage without controls</div>
               </CardContent>
             </Card>
@@ -457,7 +457,7 @@ export default function GenAIPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             <Card className="text-center bg-white border-green-200">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-green-600 mb-2">14%</div>
+                <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">14%</div>
                 <div className="text-sm text-gray-600 mb-3">Productivity increase with governed AI usage</div>
                 <div className="text-xs text-gray-500">Source: NBER Research Paper</div>
               </CardContent>
@@ -465,7 +465,7 @@ export default function GenAIPage() {
 
             <Card className="text-center bg-white border-green-200">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-green-600 mb-2">90%</div>
+                <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">90%</div>
                 <div className="text-sm text-gray-600 mb-3">Reduction in AI-related security incidents</div>
                 <div className="text-xs text-gray-500">Enterprise browser deployments</div>
               </CardContent>
@@ -473,7 +473,7 @@ export default function GenAIPage() {
 
             <Card className="text-center bg-white border-green-200">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-green-600 mb-2">$350</div>
+                <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">$350</div>
                 <div className="text-sm text-gray-600 mb-3">Annual savings per employee with safe AI adoption</div>
                 <div className="text-xs text-gray-500">Productivity gains minus risk costs</div>
               </CardContent>
@@ -481,7 +481,7 @@ export default function GenAIPage() {
 
             <Card className="text-center bg-white border-green-200">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-green-600 mb-2">100%</div>
+                <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">100%</div>
                 <div className="text-sm text-gray-600 mb-3">Visibility into AI tool usage and data flows</div>
                 <div className="text-xs text-gray-500">Complete audit trail and governance</div>
               </CardContent>
