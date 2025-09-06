@@ -116,6 +116,11 @@ export default function Footer() {
                   Transport ELD
                 </Link>
               </li>
+              <li>
+                <Link href="/data-labeling" className="hover:text-gray-900">
+                  Data Labeling
+                </Link>
+              </li>
             </ul>
           </div>
 
