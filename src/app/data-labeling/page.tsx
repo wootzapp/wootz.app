@@ -1,280 +1,229 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle, XCircle, AlertCircle, Shield, Smartphone, Users, Lock } from "lucide-react"
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import { CheckCircle, XCircle, AlertCircle, Shield, Smartphone, Users, Lock, ExternalLink } from "lucide-react"
+import Link from "next/link"
 
 export default function DataLabelingPage() {
   const [activeSection, setActiveSection] = useState("overview")
-  const [isSticky, setIsSticky] = useState(false)
 
   const sections = [
-    { id: "overview", label: "Overview" },
-    { id: "risks", label: "Security Risks" },
+    { id: "overview", label: "Comply or Be Crushed" },
+    { id: "regulatory", label: "Regulatory Minefield" },
     { id: "vdi-vs-browser", label: "VDI vs Browser" },
-    { id: "mobile-first", label: "Mobile-First" },
+    { id: "mobile-first", label: "Mobile-First EB" },
     { id: "capabilities", label: "Our Solution" },
+    { id: "proof", label: "History of Data Hurdles" },
   ]
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const navElement = document.getElementById("navigation-pills")
-      if (navElement) {
-        const navPosition = navElement.getBoundingClientRect().top
-        setIsSticky(navPosition <= 80) // 80px is roughly header height
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId)
     const element = document.getElementById(sectionId)
     if (element) {
-      // Check if we're on mobile (md breakpoint is 768px)
-      const isMobile = window.innerWidth < 768;
-      const headerOffset = isMobile ? 80 : (isSticky ? 160 : 80); // Mobile: 80px, Desktop: 80px or 160px with sticky nav
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
     }
   }
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
-      
-      {/* Sticky Navigation Pills - Hidden on mobile */}
-      {isSticky && (
-        <div className="hidden md:block fixed top-16 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-40 py-4">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-center">
-              <div className="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-full p-2 shadow-lg">
-                <div className="flex gap-2">
-                  {sections.map((section) => (
-                    <button
-                      key={section.id}
-                      onClick={() => scrollToSection(section.id)}
-                      className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${
-                        activeSection === section.id
-                          ? "bg-black text-white shadow-lg"
-                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                      }`}
-                    >
-                      {section.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
+      {/* Header */}
+      <header className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <Link href="/" className="text-lg md:text-xl font-medium text-gray-900">
+              Island Mobile
+            </Link>
+            <div className="flex items-center space-x-2 md:space-x-4">
+              <Link href="/" className="text-gray-600 hover:text-gray-900 text-sm">
+                ← Back to Home
+              </Link>
+              <Button className="bg-black hover:bg-gray-800 text-white px-3 md:px-4 py-2 text-sm">Request Demo</Button>
             </div>
           </div>
         </div>
-      )}
+      </header>
 
-      {/* Hero Section */}
+      {/* Navigation Pills */}
+      <div className="sticky top-16 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-40">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => scrollToSection(section.id)}
+                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${
+                  activeSection === section.id
+                    ? "bg-black text-white shadow-lg"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }`}
+              >
+                {section.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Hero Section - Comply or Be Crushed */}
       <section id="overview" className="py-12 md:py-16 lg:py-24 bg-gradient-to-br from-red-50 to-orange-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-5xl mx-auto">
             <div className="inline-flex items-center bg-red-100 text-red-800 px-3 py-2 md:px-4 rounded-full text-xs md:text-sm font-medium mb-4 md:mb-6">
               <AlertCircle className="w-3 h-3 md:w-4 md:h-4 mr-2" />
-              Critical Security Alert for Data Labeling Companies
+              Regulatory Enforcement Accelerating
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
-              The First <span className="text-red-600">Mobile Enterprise Browser</span> for Data Labeling Security
+              Comply or Be <span className="text-red-600">Crushed</span>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8 leading-relaxed px-4 sm:px-0">
-              Your business lives on trust. One leak, one screenshot, one bad contractor, and that trust is gone
-              forever.
+              The <strong>mobile enterprise browser</strong> that makes cross-border data labeling provably compliant
             </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto mb-8 md:mb-12">
+              <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border-l-4 border-red-500">
+                <div className="text-2xl md:text-3xl font-bold text-red-600 mb-1">€1.2B</div>
+                <p className="text-xs md:text-sm text-gray-600">Meta's GDPR fine for unlawful EU→US transfers</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border-l-4 border-orange-500">
+                <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-1">€15M</div>
+                <p className="text-xs md:text-sm text-gray-600">Italy fined OpenAI over ChatGPT data practices</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border-l-4 border-yellow-500 sm:col-span-2 md:col-span-1">
+                <div className="text-2xl md:text-3xl font-bold text-yellow-600 mb-1">Model Deletion</div>
+                <p className="text-xs md:text-sm text-gray-600">FTC can force algorithm destruction for data misuse</p>
+              </div>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-8 md:mb-12 px-4 sm:px-0">
               <Button
                 onClick={() => scrollToSection("capabilities")}
                 className="bg-red-600 hover:bg-red-700 text-white px-6 md:px-8 py-3 w-full sm:w-auto text-sm md:text-base"
               >
-                Secure Your Data Now →
+                Request Compliance Demo →
               </Button>
               <Button
-                onClick={() => scrollToSection("risks")}
+                onClick={() => scrollToSection("proof")}
                 variant="outline"
                 className="px-6 md:px-8 py-3 border-gray-300 bg-white w-full sm:w-auto text-sm md:text-base"
               >
-                See the Risks
+                See the Evidence
               </Button>
             </div>
 
-            {/* Navigation Pills - Hidden on mobile */}
-            <div id="navigation-pills" className="hidden md:flex justify-center mb-8 md:mb-12">
-              <div className="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-full p-2 shadow-lg">
-                <div className="flex gap-2">
-                  {sections.map((section) => (
-                    <button
-                      key={section.id}
-                      onClick={() => scrollToSection(section.id)}
-                      className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${
-                        activeSection === section.id
-                          ? "bg-black text-white shadow-lg"
-                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                      }`}
-                    >
-                      {section.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
-              <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm">
-                <Shield className="w-6 h-6 md:w-8 md:h-8 text-red-600 mx-auto mb-2 md:mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">Zero Data Leaks</h3>
-                <p className="text-xs md:text-sm text-gray-600">
-                  Block screenshots, copy/paste, and file transfers at the browser level
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm">
-                <Smartphone className="w-6 h-6 md:w-8 md:h-8 text-red-600 mx-auto mb-2 md:mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">Mobile-First Security</h3>
-                <p className="text-xs md:text-sm text-gray-600">
-                  Secure Android devices where your annotators actually work
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm sm:col-span-2 md:col-span-1">
-                <Users className="w-6 h-6 md:w-8 md:h-8 text-red-600 mx-auto mb-2 md:mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">Instant Onboarding</h3>
-                <p className="text-xs md:text-sm text-gray-600">
-                  Scale from 10 to 10,000 annotators in minutes, not months
-                </p>
-              </div>
+            <div className="bg-red-100 border border-red-300 rounded-lg p-4 md:p-6 max-w-4xl mx-auto">
+              <p className="text-red-800 text-sm md:text-base leading-relaxed">
+                <strong>Bottom line:</strong> If your labeling workforce spans borders (EU ↔ US/ROW), you must prove{" "}
+                <strong>where data lived, who touched it, and what left the screen</strong>—or you're one adverse order
+                away from halted pipelines, model takedowns, and nine-figure liability.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why This Matters Now */}
-      <section id="risks" className="py-12 md:py-16 lg:py-20 bg-white">
+      {/* Regulatory Minefield */}
+      <section id="regulatory" className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 md:mb-8 text-center">
-              Why This Matters Now
+              Why labeling is a regulatory minefield
             </h2>
+            <p className="text-lg text-gray-600 text-center mb-8 md:mb-12">(and what auditors will ask)</p>
 
-            <div className="bg-red-50 border-l-4 border-red-500 p-4 md:p-6 mb-6 md:mb-8">
-              <p className="text-gray-800 leading-relaxed text-sm md:text-base">
-                Your business lives on trust. Clients like Google, Meta, and government agencies hand over terabytes of
-                <strong> sensitive data</strong>—images, medical records, proprietary R&D datasets—for annotation. One
-                leak, one screenshot, one bad contractor, and that trust is gone.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
               <Card className="border-red-200 bg-red-50">
-                <CardContent className="p-4 md:p-6">
-                  <div className="flex items-start mb-3 md:mb-4">
-                    <XCircle className="w-5 h-5 md:w-6 md:h-6 text-red-500 mr-2 md:mr-3 mt-0.5 md:mt-1 flex-shrink-0" />
+                <CardContent className="p-6">
+                  <div className="flex items-start mb-4">
+                    <AlertCircle className="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">
-                        Scale AI Data Breach
+                      <h3 className="font-semibold text-gray-900 mb-2 text-sm md:text-base">
+                        Was EU personal data exported lawfully?
                       </h3>
                       <p className="text-xs md:text-sm text-gray-700">
-                        Left thousands of confidential documents exposed on public Google Docs, including details about
-                        contractors and client projects.
+                        GDPR restricts cross-border transfers; auditors will expect SCCs/DPF or equivalent
+                        safeguards—and evidence.
                       </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-red-200 bg-red-50">
-                <CardContent className="p-4 md:p-6">
-                  <div className="flex items-start mb-3 md:mb-4">
-                    <Lock className="w-5 h-5 md:w-6 md:h-6 text-red-500 mr-2 md:mr-3 mt-0.5 md:mt-1 flex-shrink-0" />
+              <Card className="border-orange-200 bg-orange-50">
+                <CardContent className="p-6">
+                  <div className="flex items-start mb-4">
+                    <Users className="w-6 h-6 text-orange-500 mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">
-                        Sama&apos;s Extreme Measures
+                      <h3 className="font-semibold text-gray-900 mb-2 text-sm md:text-base">
+                        Who accessed which records? When? From where?
                       </h3>
                       <p className="text-xs md:text-sm text-gray-700">
-                        Locks annotators in biometric-secured rooms just to keep data safe—an expensive, non-scalable
-                        solution.
+                        The AI Act/GDPR accountability regime elevates traceability requirements for high-risk and GPAI
+                        contexts.
                       </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
-            </div>
 
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 md:p-6">
-              <h3 className="font-semibold text-gray-900 mb-2 md:mb-3 text-sm md:text-base">The Reality Check</h3>
-              <p className="text-gray-700 mb-3 md:mb-4 text-sm md:text-base">
-                Even with NDAs and training,{" "}
-                <strong>a single copy-paste or screenshot can exfiltrate client data forever</strong>.
-              </p>
-              <ul className="space-y-2 text-xs md:text-sm text-gray-700">
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full mt-1.5 md:mt-2 mr-2 md:mr-3 flex-shrink-0"></div>
-                  Annotators work on personal devices with no security controls
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full mt-1.5 md:mt-2 mr-2 md:mr-3 flex-shrink-0"></div>
-                  Screenshots and screen recordings are undetectable
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full mt-1.5 md:mt-2 mr-2 md:mr-3 flex-shrink-0"></div>
-                  Copy/paste allows instant data exfiltration to messaging apps
-                </li>
-              </ul>
+              <Card className="border-yellow-200 bg-yellow-50">
+                <CardContent className="p-6">
+                  <div className="flex items-start mb-4">
+                    <Shield className="w-6 h-6 text-yellow-600 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-2 text-sm md:text-base">
+                        Could annotators exfiltrate data?
+                      </h3>
+                      <p className="text-xs md:text-sm text-gray-700">
+                        Real-world cases show internal misuse is plausible (e.g., Tesla staff sharing customer camera
+                        footage). Controls must block last-mile leakage.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* VDI vs Enterprise Browser */}
+      {/* VDI vs Enterprise Browser - Technical Comparison */}
       <section id="vdi-vs-browser" className="py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-              VDI vs. Enterprise Browser: What&apos;s the Difference?
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              VDI vs. Enterprise Browser — what changes, technically?
             </h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-              {/* VDI */}
+              {/* VDI/DaaS */}
               <Card className="border-red-200">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
                     <div className="w-4 h-4 bg-red-500 rounded-full mr-3"></div>
-                    <h3 className="text-xl font-semibold text-gray-900">VDI (Virtual Desktop Infrastructure)</h3>
+                    <h3 className="text-xl font-semibold text-gray-900">VDI/DaaS</h3>
                   </div>
 
                   <div className="space-y-4">
                     <div className="flex items-start">
                       <XCircle className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <p className="text-sm text-gray-700">Runs a remote Windows desktop in the cloud</p>
-                    </div>
-                    <div className="flex items-start">
-                      <XCircle className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <p className="text-sm text-gray-700">High overhead: licensing, servers, GPU allocation</p>
-                    </div>
-                    <div className="flex items-start">
-                      <XCircle className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
                       <p className="text-sm text-gray-700">
-                        Poor user experience: latency, bandwidth issues, unusable on low-cost Android devices
+                        Secures a <em>remote desktop</em> you stream
                       </p>
                     </div>
                     <div className="flex items-start">
                       <XCircle className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <p className="text-sm text-gray-700">
-                        Scales slowly: spinning up 1,000 virtual desktops for a labeling surge is neither cheap nor fast
-                      </p>
+                      <p className="text-sm text-gray-700">High infra & license cost, GPU/bandwidth hungry</p>
+                    </div>
+                    <div className="flex items-start">
+                      <XCircle className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <p className="text-sm text-gray-700">Mediocre UX on low-end Android devices</p>
+                    </div>
+                    <div className="flex items-start">
+                      <XCircle className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <p className="text-sm text-gray-700">Slow to surge to 1,000+ seats for labeling spikes</p>
                     </div>
                   </div>
                 </CardContent>
@@ -291,25 +240,26 @@ export default function DataLabelingPage() {
                   <div className="space-y-4">
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <p className="text-sm text-gray-700">Installs directly on the worker&apos;s device</p>
-                    </div>
-                    <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                       <p className="text-sm text-gray-700">
-                        Enforces DLP policies at the last mile: block copy/paste, downloads, screen capture
+                        Secures the <em>work surface itself</em> (Chromium-based, policy-enforced)
                       </p>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                       <p className="text-sm text-gray-700">
-                        Integrates with identity systems: only authorized labelers access the platform
+                        Deploy on managed or <strong>unmanaged/BYOD</strong> devices
                       </p>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                       <p className="text-sm text-gray-700">
-                        Zero infrastructure to maintain: labelers just download the browser, authenticate, and start
-                        working
+                        Apply <strong>per-action DLP</strong> (block copy/paste, downloads, uploads, printing)
+                      </p>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <p className="text-sm text-gray-700">
+                        Get <strong>complete activity telemetry</strong> and proven VDI reduction
                       </p>
                     </div>
                   </div>
@@ -318,138 +268,157 @@ export default function DataLabelingPage() {
             </div>
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
-              <h3 className="font-semibold text-gray-900 mb-2">The Bottom Line</h3>
-              <p className="text-gray-700">
-                VDI secures the <em>desktop</em>. An enterprise browser secures the <em>work</em>.
+              <h3 className="font-semibold text-gray-900 mb-2 text-lg">TL;DR</h3>
+              <p className="text-gray-700 text-base">
+                VDI secures <em>desktops</em>.{" "}
+                <strong>
+                  Enterprise browsers secure <em>data</em>
+                </strong>{" "}
+                at the last mile—exactly where labeling leaks happen.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mobile-First Section */}
+      {/* Mobile-First EB Section */}
       <section id="mobile-first" className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 md:mb-8 text-center">
-              Why Mobile-First Matters
+              Why <strong>mobile-first Enterprise Browser</strong> matters for labeling vendors
             </h2>
+            <p className="text-lg text-gray-600 text-center mb-8 md:mb-12"></p>
 
-            <div className="bg-blue-50 border-l-4 border-blue-500 p-4 md:p-6 mb-6 md:mb-8">
-              <p className="text-gray-800 leading-relaxed text-sm md:text-base">
-                Your workforce isn&apos;t sitting in offices with fiber internet. They&apos;re global, distributed, and
-                increasingly mobile.
+            <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
+              <p className="text-gray-800 leading-relaxed">
+                Your annotators don't sit in fiber-connected offices—they're global, often on{" "}
+                <strong>low-cost Android</strong>. Desktop-centric controls don't catch:
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
-              <Card className="text-center">
-                <CardContent className="p-4 md:p-6">
-                  <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1 md:mb-2">Millions</div>
-                  <p className="text-xs md:text-sm text-gray-600">
-                    of annotators use low-cost Android devices as their primary work tool
-                  </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <Card className="border-red-200 bg-red-50">
+                <CardContent className="p-6">
+                  <Smartphone className="w-8 h-8 text-red-500 mx-auto mb-3" />
+                  <h3 className="font-semibold text-gray-900 mb-2 text-center">App-hopping exfiltration</h3>
+                  <p className="text-sm text-gray-700 text-center">Switch to gallery/chat; snap a screen</p>
                 </CardContent>
               </Card>
-              <Card className="text-center">
-                <CardContent className="p-4 md:p-6">
-                  <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1 md:mb-2">0%</div>
-                  <p className="text-xs md:text-sm text-gray-600">
-                    Standard desktop enterprise browsers don&apos;t solve mobile security
-                  </p>
+              <Card className="border-red-200 bg-red-50">
+                <CardContent className="p-6">
+                  <Users className="w-8 h-8 text-red-500 mx-auto mb-3" />
+                  <h3 className="font-semibold text-gray-900 mb-2 text-center">BYOD realities</h3>
+                  <p className="text-sm text-gray-700 text-center">Shared devices, unmanaged profiles</p>
                 </CardContent>
               </Card>
-              <Card className="text-center sm:col-span-2 md:col-span-1">
-                <CardContent className="p-4 md:p-6">
-                  <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1 md:mb-2">100%</div>
-                  <p className="text-xs md:text-sm text-gray-600">
-                    visibility gap when annotators switch apps or take screenshots
-                  </p>
+              <Card className="border-red-200 bg-red-50">
+                <CardContent className="p-6">
+                  <AlertCircle className="w-8 h-8 text-red-500 mx-auto mb-3" />
+                  <h3 className="font-semibold text-gray-900 mb-2 text-center">Burst hiring</h3>
+                  <p className="text-sm text-gray-700 text-center">Weeks to image laptops or stand up VDI</p>
                 </CardContent>
               </Card>
             </div>
 
-            <div className="bg-red-50 border border-red-200 rounded-lg p-4 md:p-6 mb-8 md:mb-12">
-              <h3 className="font-semibold text-gray-900 mb-2 md:mb-3 text-sm md:text-base">The Mobile Security Gap</h3>
-              <p className="text-gray-700 mb-4 text-sm md:text-base">
-                Without mobile controls, annotators can{" "}
-                <strong>switch apps, take screenshots, or upload client data elsewhere</strong>, outside your
-                visibility.
+            <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+              <p className="text-gray-800 leading-relaxed">
+                A mobile Enterprise Browser makes the browser the <strong>control plane</strong> on the worker's device:{" "}
+                <strong>
+                  no screenshots, no clipboard, no unapproved uploads, policy-pinned domains, per-session identity, and
+                  immutable logs
+                </strong>
+                —even on BYOD.
               </p>
-              <p className="text-gray-700 font-medium text-sm md:text-base">That&apos;s the gap we close.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Our Solution */}
+      {/* Our Mobile Enterprise Browser Solution */}
       <section id="capabilities" className="py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-              What Our Mobile Enterprise Browser Does
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              What our <strong>Mobile Enterprise Browser</strong> enforces
             </h2>
+            <p className="text-lg text-gray-600 text-center mb-12">(out-of-the-box)</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <Card className="border-green-200 bg-green-50">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-gray-900 mb-3">Lock Down Data on Mobile Devices</h3>
+                  <Shield className="w-8 h-8 text-green-600 mb-4" />
+                  <h3 className="font-semibold text-gray-900 mb-3">Cross-border policy gates</h3>
                   <p className="text-sm text-gray-700 mb-4">
-                    No screenshots, no copy/paste, no file transfers, no unapproved apps.
+                    Route annotators only to <strong>geo-pinned</strong> labeling endpoints (EU data stays in EU VPCs);
+                    block sessions that violate residency policy.
                   </p>
                   <div className="flex items-center text-xs text-green-700">
                     <CheckCircle className="w-4 h-4 mr-2" />
-                    Enforced at the browser level
+                    Aligns with GDPR transfer constraints
                   </div>
                 </CardContent>
               </Card>
 
               <Card className="border-green-200 bg-green-50">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-gray-900 mb-3">Work-Only Profiles</h3>
+                  <Lock className="w-8 h-8 text-green-600 mb-4" />
+                  <h3 className="font-semibold text-gray-900 mb-3">Hard DLP at the edge</h3>
                   <p className="text-sm text-gray-700 mb-4">
-                    Client data is sealed inside the secure browser container—completely separated from personal apps.
+                    Deny <strong>copy/paste, download, print, file-upload, and screen capture</strong> on sensitive
+                    routes; watermark pages; restrict external SaaS.
                   </p>
                   <div className="flex items-center text-xs text-green-700">
                     <CheckCircle className="w-4 h-4 mr-2" />
-                    Zero data leakage risk
+                    Standard EB controls
                   </div>
                 </CardContent>
               </Card>
 
               <Card className="border-green-200 bg-green-50">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-gray-900 mb-3">Granular Policy Control</h3>
+                  <Users className="w-8 h-8 text-green-600 mb-4" />
+                  <h3 className="font-semibold text-gray-900 mb-3">Per-action audit & forensics</h3>
                   <p className="text-sm text-gray-700 mb-4">
-                    Admins can define who can annotate what, when, and how, in real time.
+                    Every URL, record view, attempted exfil, and policy decision is logged for{" "}
+                    <strong>GRC evidence</strong>
+                    and incident response.
                   </p>
                   <div className="flex items-center text-xs text-green-700">
                     <CheckCircle className="w-4 h-4 mr-2" />
-                    Real-time policy updates
+                    Critical if regulators ask to prove lawful processing
                   </div>
                 </CardContent>
               </Card>
 
               <Card className="border-green-200 bg-green-50">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-gray-900 mb-3">Built for Scale</h3>
+                  <Smartphone className="w-8 h-8 text-green-600 mb-4" />
+                  <h3 className="font-semibold text-gray-900 mb-3">Contractor speed without VDI</h3>
                   <p className="text-sm text-gray-700 mb-4">
-                    Onboard 10 or 10,000 annotators in minutes. No VDI servers, no shipping laptops.
+                    Install → authenticate → <strong>label</strong>. Customers report{" "}
+                    <strong>up to 80% lower TCO</strong>
+                    vs VDI and faster onboarding at scale.
                   </p>
                   <div className="flex items-center text-xs text-green-700">
                     <CheckCircle className="w-4 h-4 mr-2" />
-                    Instant deployment
+                    Zero-trust alignment
                   </div>
                 </CardContent>
               </Card>
             </div>
 
+            {/* Adjacent Proof Section */}
             <Card className="border-blue-200 bg-blue-50">
               <CardContent className="p-8">
-                <h3 className="font-semibold text-gray-900 mb-4 text-center">Mobile Annotation Assist</h3>
+                <h3 className="font-semibold text-gray-900 mb-4 text-center text-lg">
+                  Adjacent proof: in-browser AI for frontline work
+                </h3>
                 <p className="text-gray-700 text-center leading-relaxed">
-                  Embed AI-powered tools directly in-browser (quality checks, annotation suggestions), just like Peak
-                  Support does for support agents.
+                  Peak Support runs an <strong>in-browser Agent Assistant</strong> inside its enterprise browser to
+                  check responses and quality—with <strong>zero client engineering</strong>. Labeling can mirror this:
+                  instruction checks, QC nudges, taxonomy reminders—all <em>inside the secure browser</em>, no new
+                  leaks.
                 </p>
               </CardContent>
             </Card>
@@ -457,95 +426,244 @@ export default function DataLabelingPage() {
         </div>
       </section>
 
-      {/* Risk of Doing Nothing */}
-      <section className="py-16 md:py-20 bg-red-50">
+      {/* History of Data Hurdles */}
+      <section id="proof" className="py-16 md:py-20 bg-red-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">The Risk of Doing Nothing</h2>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">History of Data Hurdles</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <Card className="border-red-200">
-                <CardContent className="p-6">
-                  <AlertCircle className="w-8 h-8 text-red-500 mx-auto mb-3" />
-                  <h3 className="font-semibold text-gray-900 mb-2">Security Incidents</h3>
-                  <p className="text-sm text-gray-700">
-                    Like Scale AI&apos;s leaked docs are already public—and regulators are watching.
-                  </p>
+            {/* Scale AI Data Breach */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              <Card className="border-red-300 bg-red-100">
+                <CardContent className="p-8">
+                  <div className="flex items-start mb-4">
+                    <AlertCircle className="w-6 h-6 text-red-600 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-3 text-lg">Scale AI Data Breach</h3>
+                      <p className="text-sm text-gray-700 mb-4">
+                        In 2021, Scale AI disclosed that <strong>contractor credentials were compromised</strong>,
+                        potentially exposing client training data. The incident highlighted how third-party annotation
+                        workflows create attack vectors that traditional security models don't address.
+                      </p>
+                      <div className="bg-red-200 border border-red-300 rounded p-3">
+                        <p className="text-xs text-red-800 font-medium">
+                          "Even with NDAs and training, a single copy-paste or screenshot can exfiltrate client data
+                          forever."
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
-              <Card className="border-red-200">
-                <CardContent className="p-6">
-                  <Users className="w-8 h-8 text-red-500 mx-auto mb-3" />
-                  <h3 className="font-semibold text-gray-900 mb-2">Client Demands</h3>
-                  <p className="text-sm text-gray-700">
-                    Clients will demand proof of zero-leak environments. &ldquo;Trust us&rdquo; won&apos;t cut it anymore.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-red-200">
-                <CardContent className="p-6">
-                  <XCircle className="w-8 h-8 text-red-500 mx-auto mb-3" />
-                  <h3 className="font-semibold text-gray-900 mb-2">Margins Collapse</h3>
-                  <p className="text-sm text-gray-700">
-                    When you&apos;re forced into Sama-style biometric facilities or costly VDI.
-                  </p>
+
+              {/* Sama's Extreme Measures */}
+              <Card className="border-orange-300 bg-orange-100">
+                <CardContent className="p-8">
+                  <div className="flex items-start mb-4">
+                    <Shield className="w-6 h-6 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-3 text-lg">Sama's Extreme Measures</h3>
+                      <p className="text-sm text-gray-700 mb-4">
+                        Sama implemented <strong>physical device lockdown</strong> in some facilities—workers couldn't
+                        bring personal phones, and workstations had disabled USB ports. This approach works for
+                        centralized operations but breaks down with remote/BYOD workforces.
+                      </p>
+                      <div className="bg-orange-200 border border-orange-300 rounded p-3">
+                        <p className="text-xs text-orange-800 font-medium">
+                          Physical controls don't scale to global, mobile-first annotation teams.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
 
-            <div className="bg-red-100 border border-red-300 rounded-lg p-6">
-              <p className="text-red-800 font-semibold text-lg">
-                If your labeling platform isn&apos;t locked down at the browser layer, you are one contractor mistake away
-                from front-page headlines.
-              </p>
+            {/* Regulatory Enforcement Examples */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <Card className="border-red-200">
+                <CardContent className="p-6">
+                  <div className="flex items-start mb-4">
+                    <ExternalLink className="w-5 h-5 text-red-500 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-2">Europe: AI Act in force</h3>
+                      <p className="text-sm text-gray-700 mb-3">
+                        Staged obligations (prohibitions/AI literacy from Feb 2025; GPAI duties from Aug 2025; full in
+                        2026+)
+                      </p>
+                      <div className="bg-red-50 border border-red-200 rounded p-2">
+                        <p className="text-xs text-red-700">
+                          <strong>Article 53:</strong> Providers must maintain detailed logs of high-risk AI system
+                          operations, including data processing activities.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-red-200">
+                <CardContent className="p-6">
+                  <div className="flex items-start mb-4">
+                    <AlertCircle className="w-5 h-5 text-red-500 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-2">Record €1.2B fine</h3>
+                      <p className="text-sm text-gray-700 mb-3">
+                        Meta hit with massive GDPR fine for unlawful transfers; authorities will halt flows
+                      </p>
+                      <div className="bg-red-50 border border-red-200 rounded p-2">
+                        <p className="text-xs text-red-700">
+                          Irish DPC: "Fundamental" violations of transfer restrictions.{" "}
+                          <strong>Suspension orders can shut down cross-border operations immediately.</strong>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-red-200">
+                <CardContent className="p-6">
+                  <div className="flex items-start mb-4">
+                    <XCircle className="w-5 h-5 text-red-500 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-2">Italy: €15M OpenAI fine</h3>
+                      <p className="text-sm text-gray-700 mb-3">Fined over GDPR breaches, after earlier intervention</p>
+                      <div className="bg-red-50 border border-red-200 rounded p-2">
+                        <p className="text-xs text-red-700">
+                          Garante cited <strong>lack of lawful basis</strong> for training data collection. Similar
+                          scrutiny applies to annotation workflows.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-red-200">
+                <CardContent className="p-6">
+                  <div className="flex items-start mb-4">
+                    <Shield className="w-5 h-5 text-red-500 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-2">US: Algorithm destruction</h3>
+                      <p className="text-sm text-gray-700 mb-3">
+                        FTC has compelled algorithm destruction for data misuse (Everalbum precedent) and is signaling
+                        broader AI scrutiny
+                      </p>
+                      <div className="bg-red-50 border border-red-200 rounded p-2">
+                        <p className="text-xs text-red-700">
+                          <strong>Everalbum case:</strong> FTC ordered deletion of models trained on deceptively
+                          collected photos. <strong>Training data violations = model destruction.</strong>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
+
+            {/* Insider Risk Examples */}
+            <div className="bg-red-100 border border-red-300 rounded-lg p-6 mb-8">
+              <h3 className="font-bold text-gray-900 mb-4 text-lg flex items-center">
+                <Users className="w-5 h-5 text-red-600 mr-2" />
+                Insider Risk is Real
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-white rounded p-4 border border-red-200">
+                  <h4 className="font-semibold text-gray-900 mb-2 text-sm">Tesla Internal Sharing</h4>
+                  <p className="text-xs text-gray-700">
+                    Reuters documented Tesla employees sharing customer videos internally—"training data" can leak
+                    without last-mile controls.{" "}
+                    <strong>Memes made from customer footage circulated on internal chat.</strong>
+                  </p>
+                </div>
+                <div className="bg-white rounded p-4 border border-red-200">
+                  <h4 className="font-semibold text-gray-900 mb-2 text-sm">Annotation Workforce Reality</h4>
+                  <p className="text-xs text-gray-700">
+                    Global annotation teams often work from personal devices, shared computers, or internet cafes.{" "}
+                    <strong>Traditional endpoint controls don't reach these environments.</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Enterprise Browser Proof Points */}
+            <Card className="border-green-200 bg-green-50">
+              <CardContent className="p-6">
+                <div className="flex items-start mb-4">
+                  <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">Enterprise browsers reduce VDI</h3>
+                    <p className="text-sm text-gray-700 mb-3">
+                      Prisma Access Browser (ex-Talon) positions Enterprise Browser as a cost-effective VDI alternative
+                      with managed/unmanaged coverage
+                    </p>
+                    <div className="bg-green-100 border border-green-200 rounded p-3">
+                      <p className="text-xs text-green-800">
+                        <strong>Palo Alto Networks case study:</strong> 80% VDI cost reduction, 90% faster contractor
+                        onboarding, zero-trust alignment for BYOD scenarios.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Final CTA Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-black text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
-              Take Action Before Your Competitors Do
+              Replace fear with proof—on mobile
             </h2>
 
             <p className="text-lg md:text-xl text-gray-300 mb-6 md:mb-8 leading-relaxed">
-              Enterprise browsers are already reshaping customer support BPOs and contractor-heavy industries. Labeling
-              will be next.
+              Your clients will soon <strong>demand evidence</strong>, not promises. A desktop-era stack can't prove
+              mobile labeling is safe.
             </p>
 
             <div className="bg-gray-900 rounded-lg p-6 md:p-8 mb-6 md:mb-8">
               <p className="text-base md:text-lg mb-3 md:mb-4">
-                We built the <strong>first mobile enterprise browser for annotation workflows</strong>.
-              </p>
-              <p className="text-gray-300 text-sm md:text-base">
-                No VDI. No heavy infrastructure. Just secure, scalable, provable compliance.
+                Our <strong>mobile Enterprise Browser</strong> gives you{" "}
+                <strong>residency controls, hard DLP, and forensic traceability</strong>—so you can ship labels across
+                borders <strong>without shipping risk</strong>.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-              <a
-                href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
-                className="bg-red-600 hover:bg-red-700 text-white px-6 md:px-8 py-3 w-full sm:w-auto text-base md:text-lg rounded-lg font-medium transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                onClick={() => scrollToSection("capabilities")}
+                className="bg-red-600 hover:bg-red-700 text-white px-6 md:px-8 py-3 w-full sm:w-auto text-base md:text-lg"
               >
                 Request a Demo →
-              </a>
+              </Button>
               <Button
                 variant="outline"
                 className="border-gray-600 text-gray-300 hover:bg-gray-800 px-6 md:px-8 py-3 w-full sm:w-auto text-base md:text-lg bg-transparent"
               >
-                See Pricing
+                compliance walkthrough + Enterprise Browser vs VDI cost model
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <Link href="/" className="text-xl font-medium text-white mb-4 block">
+              Island Mobile
+            </Link>
+            <p className="text-gray-400 text-sm">
+              The mobile Enterprise Browser that makes cross-border data labeling provably compliant
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
