@@ -85,7 +85,7 @@ export default function DataLabelingPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto mb-8 md:mb-12">
               <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border-l-4 border-red-500">
                 <div className="text-2xl md:text-3xl font-bold text-red-600 mb-1">€1.2B</div>
-                <p className="text-xs md:text-sm text-gray-600">Meta's GDPR fine for unlawful EU→US transfers</p>
+                <p className="text-xs md:text-sm text-gray-600">Meta&apos;s GDPR fine for unlawful EU→US transfers</p>
               </div>
               <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border-l-4 border-orange-500">
                 <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-1">€15M</div>
@@ -116,7 +116,7 @@ export default function DataLabelingPage() {
             <div className="bg-red-100 border border-red-300 rounded-lg p-4 md:p-6 max-w-4xl mx-auto">
               <p className="text-red-800 text-sm md:text-base leading-relaxed">
                 <strong>Bottom line:</strong> If your labeling workforce spans borders (EU ↔ US/ROW), you must prove{" "}
-                <strong>where data lived, who touched it, and what left the screen</strong>—or you're one adverse order
+                <strong>where data lived, who touched it, and what left the screen</strong>—or you&apos;re one adverse order
                 away from halted pipelines, model takedowns, and nine-figure liability.
               </p>
             </div>
@@ -292,8 +292,8 @@ export default function DataLabelingPage() {
 
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
               <p className="text-gray-800 leading-relaxed">
-                Your annotators don't sit in fiber-connected offices—they're global, often on{" "}
-                <strong>low-cost Android</strong>. Desktop-centric controls don't catch:
+                Your annotators don&apos;t sit in fiber-connected offices—they&apos;re global, often on{" "}
+                <strong>low-cost Android</strong>. Desktop-centric controls don&apos;t catch:
               </p>
             </div>
 
@@ -323,7 +323,7 @@ export default function DataLabelingPage() {
 
             <div className="bg-green-50 border border-green-200 rounded-lg p-6">
               <p className="text-gray-800 leading-relaxed">
-                A mobile Enterprise Browser makes the browser the <strong>control plane</strong> on the worker's device:{" "}
+                A mobile Enterprise Browser makes the browser the <strong>control plane</strong> on the worker&apos;s device:{" "}
                 <strong>
                   no screenshots, no clipboard, no unapproved uploads, policy-pinned domains, per-session identity, and
                   immutable logs
@@ -443,12 +443,12 @@ export default function DataLabelingPage() {
                       <p className="text-sm text-gray-700 mb-4">
                         In 2021, Scale AI disclosed that <strong>contractor credentials were compromised</strong>,
                         potentially exposing client training data. The incident highlighted how third-party annotation
-                        workflows create attack vectors that traditional security models don't address.
+                        workflows create attack vectors that traditional security models don&apos;t address.
                       </p>
                       <div className="bg-red-200 border border-red-300 rounded p-3">
                         <p className="text-xs text-red-800 font-medium">
-                          "Even with NDAs and training, a single copy-paste or screenshot can exfiltrate client data
-                          forever."
+                          &ldquo;Even with NDAs and training, a single copy-paste or screenshot can exfiltrate client data
+                          forever.&rdquo;
                         </p>
                       </div>
                     </div>
@@ -462,15 +462,15 @@ export default function DataLabelingPage() {
                   <div className="flex items-start mb-4">
                     <Shield className="w-6 h-6 text-orange-600 mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-bold text-gray-900 mb-3 text-lg">Sama's Extreme Measures</h3>
+                      <h3 className="font-bold text-gray-900 mb-3 text-lg">Sama&apos;s Extreme Measures</h3>
                       <p className="text-sm text-gray-700 mb-4">
-                        Sama implemented <strong>physical device lockdown</strong> in some facilities—workers couldn't
+                        Sama implemented <strong>physical device lockdown</strong> in some facilities—workers couldn&apos;t
                         bring personal phones, and workstations had disabled USB ports. This approach works for
                         centralized operations but breaks down with remote/BYOD workforces.
                       </p>
                       <div className="bg-orange-200 border border-orange-300 rounded p-3">
                         <p className="text-xs text-orange-800 font-medium">
-                          Physical controls don't scale to global, mobile-first annotation teams.
+                          Physical controls don&apos;t scale to global, mobile-first annotation teams.
                         </p>
                       </div>
                     </div>
@@ -513,7 +513,7 @@ export default function DataLabelingPage() {
                       </p>
                       <div className="bg-red-50 border border-red-200 rounded p-2">
                         <p className="text-xs text-red-700">
-                          Irish DPC: "Fundamental" violations of transfer restrictions.{" "}
+                          Irish DPC: &ldquo;Fundamental&rdquo; violations of transfer restrictions.{" "}
                           <strong>Suspension orders can shut down cross-border operations immediately.</strong>
                         </p>
                       </div>
@@ -572,7 +572,7 @@ export default function DataLabelingPage() {
                 <div className="bg-white rounded p-4 border border-red-200">
                   <h4 className="font-semibold text-gray-900 mb-2 text-sm">Tesla Internal Sharing</h4>
                   <p className="text-xs text-gray-700">
-                    Reuters documented Tesla employees sharing customer videos internally—"training data" can leak
+                    Reuters documented Tesla employees sharing customer videos internally—&ldquo;training data&rdquo; can leak
                     without last-mile controls.{" "}
                     <strong>Memes made from customer footage circulated on internal chat.</strong>
                   </p>
@@ -581,7 +581,7 @@ export default function DataLabelingPage() {
                   <h4 className="font-semibold text-gray-900 mb-2 text-sm">Annotation Workforce Reality</h4>
                   <p className="text-xs text-gray-700">
                     Global annotation teams often work from personal devices, shared computers, or internet cafes.{" "}
-                    <strong>Traditional endpoint controls don't reach these environments.</strong>
+                    <strong>Traditional endpoint controls don&apos;t reach these environments.</strong>
                   </p>
                 </div>
               </div>
@@ -621,7 +621,7 @@ export default function DataLabelingPage() {
             </h2>
 
             <p className="text-lg md:text-xl text-gray-300 mb-6 md:mb-8 leading-relaxed">
-              Your clients will soon <strong>demand evidence</strong>, not promises. A desktop-era stack can't prove
+              Your clients will soon <strong>demand evidence</strong>, not promises. A desktop-era stack can&apos;t prove
               mobile labeling is safe.
             </p>
 
