@@ -633,19 +633,15 @@ export default function DataLabelingPage() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-              <Button
-                onClick={() => scrollToSection("capabilities")}
-                className="bg-red-600 hover:bg-red-700 text-white px-6 md:px-8 py-3 w-full sm:w-auto text-base md:text-lg"
+            <div className="flex justify-center">
+              <a
+                href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
+                className="bg-red-600 hover:bg-red-700 text-white px-6 md:px-8 py-3 text-base md:text-lg rounded-lg font-medium transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Request a Demo →
-              </Button>
-              <Button
-                variant="outline"
-                className="border-gray-600 text-gray-300 hover:bg-gray-800 px-6 md:px-8 py-3 w-full sm:w-auto text-base md:text-lg bg-transparent"
-              >
-                compliance walkthrough + Enterprise Browser vs VDI cost model
-              </Button>
+              </a>
             </div>
           </div>
         </div>
