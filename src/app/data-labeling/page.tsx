@@ -1,70 +1,16 @@
 "use client"
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, XCircle, AlertCircle, Shield, Smartphone, Users, Lock, ExternalLink } from "lucide-react"
-import Link from "next/link"
 import { OpenSourceShowcase } from "@/components/open-source-showcase"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 export default function DataLabelingPage() {
-  const [activeSection, setActiveSection] = useState("overview")
-
-  const sections = [
-    { id: "overview", label: "Comply or Be Crushed" },
-    { id: "regulatory", label: "Regulatory Minefield" },
-    { id: "vdi-vs-browser", label: "VDI vs Browser" },
-    { id: "mobile-first", label: "Mobile-First EB" },
-    { id: "capabilities", label: "Our Solution" },
-    { id: "proof", label: "History of Data Hurdles" },
-  ]
-
-  const scrollToSection = (sectionId: string) => {
-    setActiveSection(sectionId)
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" })
-    }
-  }
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="text-lg md:text-xl font-medium text-gray-900">
-              Island Mobile
-            </Link>
-            <div className="flex items-center space-x-2 md:space-x-4">
-              <Link href="/" className="text-gray-600 hover:text-gray-900 text-sm">
-                ← Back to Home
-              </Link>
-              <Button className="bg-black hover:bg-gray-800 text-white px-3 md:px-4 py-2 text-sm">Request Demo</Button>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Navigation Pills - Hidden on mobile */}
-      <div className="hidden md:block sticky top-16 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-40">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide">
-            {sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => scrollToSection(section.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${
-                  activeSection === section.id
-                    ? "bg-black text-white shadow-lg"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-              >
-                {section.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+      <Header />
 
       {/* Hero Section - Comply or Be Crushed */}
       <section id="overview" className="py-12 md:py-16 lg:py-24 bg-gradient-to-br from-red-50 to-orange-50">
@@ -99,19 +45,18 @@ export default function DataLabelingPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-8 md:mb-12 px-4 sm:px-0">
-              <Button
-                onClick={() => scrollToSection("capabilities")}
-                className="bg-red-600 hover:bg-red-700 text-white px-6 md:px-8 py-3 w-full sm:w-auto text-sm md:text-base"
+              <a
+                href="#capabilities"
+                className="bg-red-600 hover:bg-red-700 text-white px-6 md:px-8 py-3 w-full sm:w-auto text-sm md:text-base rounded-lg font-medium transition-colors text-center"
               >
                 Request Compliance Demo →
-              </Button>
-              <Button
-                onClick={() => scrollToSection("proof")}
-                variant="outline"
-                className="px-6 md:px-8 py-3 border-gray-300 bg-white w-full sm:w-auto text-sm md:text-base"
+              </a>
+              <a
+                href="#proof"
+                className="px-6 md:px-8 py-3 border border-gray-300 bg-white w-full sm:w-auto text-sm md:text-base rounded-lg font-medium transition-colors text-center hover:bg-gray-50"
               >
                 See the Evidence
-              </Button>
+              </a>
             </div>
 
             <div className="bg-red-100 border border-red-300 rounded-lg p-4 md:p-6 max-w-4xl mx-auto">
@@ -124,8 +69,6 @@ export default function DataLabelingPage() {
           </div>
         </div>
       </section>
-
-      <OpenSourceShowcase />
 
       {/* Regulatory Minefield */}
       <section id="regulatory" className="py-12 md:py-16 lg:py-20 bg-white">
@@ -429,6 +372,8 @@ export default function DataLabelingPage() {
         </div>
       </section>
 
+      <OpenSourceShowcase />
+
       {/* History of Data Hurdles */}
       <section id="proof" className="py-16 md:py-20 bg-red-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -650,19 +595,7 @@ export default function DataLabelingPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Link href="/" className="text-xl font-medium text-white mb-4 block">
-              Island Mobile
-            </Link>
-            <p className="text-gray-400 text-sm">
-              The mobile Enterprise Browser that makes cross-border data labeling provably compliant
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
