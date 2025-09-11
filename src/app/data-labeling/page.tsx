@@ -1,5 +1,4 @@
 "use client"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, XCircle, AlertCircle, Shield, Smartphone, Users, Lock, ExternalLink } from "lucide-react"
 import { OpenSourceShowcase } from "@/components/open-source-showcase"
