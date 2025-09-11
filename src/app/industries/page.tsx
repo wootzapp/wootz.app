@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { OpenSourceShowcase } from "@/components/open-source-showcase"
 
 export default function IndustriesPage() {
   return (
@@ -57,6 +58,8 @@ export default function IndustriesPage() {
           </div>
         </div>
       </section>
+
+      <OpenSourceShowcase />
 
       <section id="healthcare" className="py-20 md:py-32 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

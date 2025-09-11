@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Shield, Cpu, Network, Database, Lock } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { OpenSourceShowcase } from "@/components/open-source-showcase"
 
 export default function TechPage() {
   const technicalSpecs = {
@@ -192,6 +193,8 @@ export default function TechPage() {
           </div>
         </div>
       </section>
+
+      <OpenSourceShowcase />
 
       {/* Technical Architecture */}
       <section className="py-12 md:py-16 lg:py-20">

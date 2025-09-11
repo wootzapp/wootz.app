@@ -3,6 +3,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { OpenSourceShowcase } from "@/components/open-source-showcase";
 
 export default function Page() {
   return (
@@ -57,6 +58,8 @@ export default function Page() {
           </Card>
         </div>
       </section>
+
+      <OpenSourceShowcase />
 
       {/* Market Drivers */}
       <section className="py-16">

@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { AlertTriangle, Shield, CheckCircle, TrendingUp, Users, DollarSign, Lock, Eye } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { OpenSourceShowcase } from "@/components/open-source-showcase"
 
 export default function GenAIPage() {
   const [activeRisk, setActiveRisk] = useState(0)
@@ -68,6 +69,8 @@ export default function GenAIPage() {
           </div>
         </div>
       </section>
+
+      <OpenSourceShowcase />
 
       {/* The GenAI Danger Zone */}
       <section className="py-16 md:py-24 bg-white">

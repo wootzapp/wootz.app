@@ -1,11 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { OpenSourceShowcase } from "@/components/open-source-showcase";
 
 export default function Page() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      <OpenSourceShowcase />
       <section className="py-12 sm:py-20 md:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">

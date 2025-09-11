@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { OpenSourceShowcase } from "@/components/open-source-showcase"
 
 function SexyComparisonSection() {
   const [activeComparison, setActiveComparison] = useState(0)
@@ -288,6 +289,8 @@ export default function WootzappMobileBrowserPage() {
           </div>
         </div>
       </section>
+
+      <OpenSourceShowcase />
 
       {/* This is Wootzapp Mobile Browser Section */}
       <section id="overview" className="py-12 md:py-16 bg-white">

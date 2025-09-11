@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, XCircle, AlertCircle, TrendingUp, Shield, Zap, DollarSign } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { OpenSourceShowcase } from "@/components/open-source-showcase"
 
 export default function ComparisonPage() {
 
@@ -226,6 +227,8 @@ export default function ComparisonPage() {
           </div>
         </div>
       </section>
+
+      <OpenSourceShowcase />
 
       {/* Market Statistics */}
       <section className="py-16 bg-white">

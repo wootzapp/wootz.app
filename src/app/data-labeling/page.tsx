@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, XCircle, AlertCircle, Shield, Smartphone, Users, Lock, ExternalLink } from "lucide-react"
 import Link from "next/link"
+import { OpenSourceShowcase } from "@/components/open-source-showcase"
 
 export default function DataLabelingPage() {
   const [activeSection, setActiveSection] = useState("overview")
@@ -123,6 +124,8 @@ export default function DataLabelingPage() {
           </div>
         </div>
       </section>
+
+      <OpenSourceShowcase />
 
       {/* Regulatory Minefield */}
       <section id="regulatory" className="py-12 md:py-16 lg:py-20 bg-white">

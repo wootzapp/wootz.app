@@ -1,11 +1,13 @@
 import Link from "next/link"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { OpenSourceShowcase } from "@/components/open-source-showcase"
 
 export default function TransportEldPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      <OpenSourceShowcase />
       
       <main>
         {/* Hero */}
