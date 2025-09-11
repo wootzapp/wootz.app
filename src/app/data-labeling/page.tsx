@@ -44,8 +44,8 @@ export default function DataLabelingPage() {
         </div>
       </header>
 
-      {/* Navigation Pills */}
-      <div className="sticky top-16 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-40">
+      {/* Navigation Pills - Hidden on mobile */}
+      <div className="hidden md:block sticky top-16 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-40">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex gap-2 overflow-x-auto scrollbar-hide">
             {sections.map((section) => (
