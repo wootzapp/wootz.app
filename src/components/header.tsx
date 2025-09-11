@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -13,8 +14,17 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-4 md:space-x-8">
-            <Link href="/" className="text-lg md:text-xl font-medium text-gray-900">
-              Wootzapp Mobile Browser
+            <Link href="/" className="flex items-center space-x-2">
+              <Image
+                src="/logo.png"
+                alt="Wootzapp Logo"
+                width={32}
+                height={20}
+                className="h-5"
+              />
+              <span className="text-lg md:text-xl font-medium text-gray-900">
+                Wootzapp Mobile Browser
+              </span>
             </Link>
             <nav className="hidden md:flex items-center space-x-8">
               <Link href="/industries" className="text-gray-600 hover:text-gray-900 text-sm">
