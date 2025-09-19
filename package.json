@@ -2,6 +2,9 @@
   "name": "test",
   "version": "0.1.0",
   "private": true,
+  "config": {
+    "gtmId": "GTM-PDD4GX8M"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
