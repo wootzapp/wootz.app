@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AnalyticsProvider from "@/components/analytics-provider";
 import { GoogleTagManager, GoogleTagManagerNoscript } from "@/components/google-tag-manager";
-import { GoogleAnalytics } from "@/components/google-analytics";
+// import { GoogleAnalytics } from "@/components/google-analytics"; // Disabled - using GTM instead
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <GoogleTagManagerNoscript />
         <GoogleTagManager />
-        <GoogleAnalytics />
+        {/* <GoogleAnalytics /> */} {/* Disabled - using GTM instead to avoid duplicate tracking */}
         <AnalyticsProvider>
           {children}
         </AnalyticsProvider>
