@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "config": {
-    "gtmId": "GTM-PDD4GX8M"
+    "gtmId": "GTM-PDD4GX8M",
+    "gaId": "G-WZ7S5T4HCX"
   },
   "scripts": {
     "dev": "next dev",
