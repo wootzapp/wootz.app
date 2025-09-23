@@ -102,10 +102,17 @@ export function GoogleTagManager() {
               destination_url: finalUrl
             })
             
-            // Open calendar in new tab and redirect to thank-you page
+            // Open calendar in new tab and redirect to thank-you page with preserved parameters
             setTimeout(() => {
               window.open(finalUrl, '_blank')
-              window.location.href = '/thank-you/'
+              
+              // Preserve GCLID and other tracking parameters for thank-you page
+              const thankYouUrl = new URL('/thank-you/', window.location.origin)
+              if (gclid) thankYouUrl.searchParams.set('gclid', gclid)
+              if (fbclid) thankYouUrl.searchParams.set('fbclid', fbclid)
+              if (msclkid) thankYouUrl.searchParams.set('msclkid', msclkid)
+              
+              window.location.href = thankYouUrl.toString()
             }, 100)
           }
         }

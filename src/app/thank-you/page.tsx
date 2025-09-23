@@ -1,9 +1,38 @@
+"use client"
+
+import { useEffect } from 'react';
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { CheckCircle, Calendar, MessageSquare, Shield } from "lucide-react";
 import { OpenSourceShowcase } from "@/components/open-source-showcase";
 
 export default function ThankYouPage() {
+  useEffect(() => {
+    // Fire conversion event for thank-you page with GCLID tracking
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search)
+      const gclid = urlParams.get('gclid')
+      const fbclid = urlParams.get('fbclid')
+      const msclkid = urlParams.get('msclkid')
+      
+      // Send conversion event to GTM
+      interface WindowWithDataLayer extends Window {
+        dataLayer?: Record<string, unknown>[]
+      }
+      const windowWithDataLayer = window as unknown as WindowWithDataLayer
+      windowWithDataLayer.dataLayer = windowWithDataLayer.dataLayer || []
+      windowWithDataLayer.dataLayer.push({
+        event: 'demo_conversion',
+        event_category: 'conversion',
+        event_label: 'thank_you_page',
+        gclid: gclid,
+        fbclid: fbclid,
+        msclkid: msclkid,
+        conversion_value: 1
+      })
+    }
+  }, [])
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
