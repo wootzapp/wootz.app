@@ -102,9 +102,10 @@ export function GoogleTagManager() {
               destination_url: finalUrl
             })
             
-            // Navigate after a short delay to ensure event is sent
+            // Open calendar in new tab and redirect to thank-you page
             setTimeout(() => {
               window.open(finalUrl, '_blank')
+              window.location.href = '/thank-you/'
             }, 100)
           }
         }
