@@ -91,7 +91,21 @@ export function GoogleTagManager() {
           e.preventDefault()
           const url = link.getAttribute('href')
           if (url) {
-            windowWithDataLayer.gtagSendEvent?.(url)
+            const finalUrl = preserveUrlParams(url)
+            
+            // Send GTM event immediately
+            windowWithDataLayer.dataLayer?.push({
+              event: 'book_demo_click',
+              gclid: gclid,
+              fbclid: fbclid,
+              msclkid: msclkid,
+              destination_url: finalUrl
+            })
+            
+            // Navigate after a short delay to ensure event is sent
+            setTimeout(() => {
+              window.open(finalUrl, '_blank')
+            }, 100)
           }
         }
       }
