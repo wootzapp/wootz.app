@@ -296,7 +296,7 @@ function SolutionsTabSection() {
                 ))}
               </ul>
             )}
-            {tabContent[activeTab].content.conclusion && (
+            {'conclusion' in tabContent[activeTab].content && tabContent[activeTab].content.conclusion && (
               <p className="text-gray-700 italic font-medium bg-red-50 px-3 py-2 rounded">{tabContent[activeTab].content.conclusion}</p>
             )}
           </div>
