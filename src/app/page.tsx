@@ -220,7 +220,7 @@ function SolutionsTabSection() {
     "enable-genai": {
       title: "Enable GenAI at Work",
       content: {
-        main: "Say &ldquo;yes&rdquo; to AI tools — safely.",
+        main: "Say \"yes\" to AI tools — safely.",
         points: [
           "Enterprise DLP for GenAI guards prompts and outputs",
           "Teams can innovate without accidental leaks",
