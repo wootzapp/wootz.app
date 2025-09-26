@@ -231,15 +231,6 @@ function SolutionsTabSection() {
   }
 
   type TabId = keyof typeof tabContent
-  
-  type TabContent = {
-    title: string
-    content: {
-      main: string
-      points?: string[]
-      conclusion?: string
-    }
-  }
 
   const [activeTab, setActiveTab] = useState<TabId>("vdi-reduction")
 
@@ -438,7 +429,7 @@ export default function HomePage() {
                       Understands <span className="bg-red-50 px-1 rounded">language and context</span> — not just patterns
                     </p>
                     <ul className="space-y-1 text-sm text-gray-600">
-                      <li>• Catches data as it's typed, pasted, uploaded</li>
+                      <li>• Catches data as it&apos;s typed, pasted, uploaded</li>
                       <li>• Works with AI tools (even when paraphrased)</li>
                       <li>• <span className="font-medium">You set guardrails; it enforces inline</span></li>
                     </ul>
