@@ -374,42 +374,42 @@ export default function TechPage() {
                       {[
                         {
                           control: "Zero Trust Network Access",
-                          island: "✅ Native",
+                          wootzapp: "✅ Native",
                           vpn: "❌ Network-based",
                           vdi: "⚠️ Perimeter-based",
                           implementation: "Okta SAML integration with CA certificate issuance for mTLS handshakes",
                         },
                         {
                           control: "Data Loss Prevention",
-                          island: "✅ Granular",
+                          wootzapp: "✅ Granular",
                           vpn: "❌ None",
                           vdi: "⚠️ Basic",
                           implementation: "Android FLAG_SECURE, WebContents clipboard control, system-level input interception",
                         },
                         {
                           control: "Malware Protection",
-                          island: "✅ Isolation",
+                          wootzapp: "✅ Isolation",
                           vpn: "❌ Endpoint-dependent",
                           vdi: "⚠️ VM-based",
                           implementation: "Navigation layer throttle with Chromium Download Controller integration",
                         },
                         {
                           control: "Keylogger Protection",
-                          island: "✅ Full",
+                          wootzapp: "✅ Full",
                           vpn: "❌ None",
                           vdi: "❌ None",
                           implementation: "Android input pipeline synthetic keystroke injection with internal filtering",
                         },
                         {
                           control: "Device Trust",
-                          island: "✅ Certificate-based",
+                          wootzapp: "✅ Certificate-based",
                           vpn: "⚠️ Basic",
                           vdi: "⚠️ Basic",
                           implementation: "Okta Verify app integration with CA certificate issuance for Cloudflare Access mTLS",
                         },
                         {
                           control: "Content Masking",
-                          island: "✅ AI-Powered",
+                          wootzapp: "✅ AI-Powered",
                           vpn: "❌ None",
                           vdi: "❌ None",
                           implementation: "AI agent with DOM monitoring, Mojo IPC, and Blink renderer integration for real-time masking",
@@ -417,7 +417,7 @@ export default function TechPage() {
                       ].map((row, index) => (
                         <tr key={index} className="hover:bg-gray-50">
                           <td className="py-3 px-2 font-medium text-gray-900">{row.control}</td>
-                          <td className="py-3 px-2 text-center">{row.island}</td>
+                          <td className="py-3 px-2 text-center">{row.wootzapp}</td>
                           <td className="py-3 px-2 text-center">{row.vpn}</td>
                           <td className="py-3 px-2 text-center">{row.vdi}</td>
                           <td className="py-3 px-2 text-gray-600 text-xs">{row.implementation}</td>
