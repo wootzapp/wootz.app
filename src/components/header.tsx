@@ -28,7 +28,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
   return (
     <header
       className={cn(
-        "border-b backdrop-blur",
+        "relative border-b backdrop-blur",
         isLight ? "border-black/10 bg-white/90" : "border-white/10 bg-[#080208]/95"
       )}
     >
@@ -69,18 +69,9 @@ export default function Header({ variant = "dark" }: HeaderProps) {
           </div>
 
           <div className="flex items-center space-x-2 md:space-x-4">
-            <Link
-              href="#"
-              className={cn(
-                "hidden text-sm transition-colors sm:block",
-                isLight ? "text-slate-600 hover:text-slate-900" : "text-white/80 hover:text-white"
-              )}
-            >
-              Sign In
-            </Link>
             <Button
               asChild
-              className="bg-black hover:bg-gray-800 text-white px-3 md:px-4 py-2 text-sm"
+              className="bg-black px-3 py-2 text-sm text-white hover:bg-gray-800 md:px-4 sm:hidden"
             >
               <a
                 href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
@@ -93,7 +84,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
             <button
               onClick={() => setIsMenuOpen((open) => !open)}
               className={cn(
-                "md:hidden transition-colors",
+                "transition-colors",
                 isLight ? "text-slate-700 hover:text-slate-900" : "text-white/80 hover:text-white"
               )}
               aria-label="Toggle navigation menu"
@@ -103,6 +94,31 @@ export default function Header({ variant = "dark" }: HeaderProps) {
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
+        </div>
+      </div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden sm:flex items-center pr-4 sm:pr-6 lg:pr-8">
+        <div className="pointer-events-auto flex items-center space-x-2 md:space-x-4">
+          <Link
+            href="#"
+            className={cn(
+              "text-sm transition-colors",
+              isLight ? "text-slate-600 hover:text-slate-900" : "text-white/80 hover:text-white"
+            )}
+          >
+            Sign In
+          </Link>
+          <Button
+            asChild
+            className="bg-black px-4 py-2 text-sm text-white hover:bg-gray-800"
+          >
+            <a
+              href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get Started
+            </a>
+          </Button>
         </div>
       </div>
       {isMenuOpen && (

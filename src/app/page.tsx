@@ -320,7 +320,7 @@ export default function HomePage() {
       type="button"
       onClick={() => setIsLightMode((prev) => !prev)}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.35em] transition-colors sm:px-4 sm:py-2 sm:text-xs",
+        "inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.35em] transition-colors sm:px-3.5 sm:py-1.5 sm:text-[0.7rem] lg:px-4 lg:py-2 lg:text-xs",
         theme.toggleButton
       )}
     >
@@ -340,10 +340,10 @@ export default function HomePage() {
         <Header variant={isLightMode ? "light" : "dark"} />
         <div
           className={cn(
-            "absolute right-3 top-full flex justify-end sm:right-6 lg:right-8",
+            "absolute right-0 top-full flex justify-end",
             isLightMode ? "drop-shadow-sm" : "drop-shadow-[0_6px_16px_rgba(0,0,0,0.35)]"
           )}
-          style={{ transform: "translateY(-1px)" }}
+          style={{ transform: "translateY(-2px)" }}
         >
           {themeToggle}
         </div>
