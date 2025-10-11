@@ -79,7 +79,14 @@ const armorHighlights = [
   },
 ]
 
-const solutions = {
+type SolutionConfig = {
+  title: string
+  main: string
+  points: string[]
+  conclusion?: string
+}
+
+const solutions: Record<string, SolutionConfig> = {
   "vdi-reduction": {
     title: "VDI Reduction",
     main: "Centralize control without shipping pixels.",
