@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AnalyticsProvider from "@/components/analytics-provider";
 import { GoogleTagManager, GoogleTagManagerNoscript } from "@/components/google-tag-manager";
 // import { GoogleAnalytics } from "@/components/google-analytics"; // Disabled - using GTM instead
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  display: "swap",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
@@ -29,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${playfair.variable} ${geistMono.variable} antialiased`}
       >
         <GoogleTagManagerNoscript />
         <GoogleTagManager />

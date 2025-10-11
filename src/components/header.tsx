@@ -10,7 +10,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="border-b border-gray-100">
+    <header className="border-b border-white/10 bg-[#080208]/95 backdrop-blur">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-4 md:space-x-8">
@@ -22,21 +22,21 @@ export default function Header() {
                 height={20}
                 className="h-5"
               />
-              <span className="text-lg md:text-xl font-medium text-gray-900">
+              <span className="text-lg md:text-xl font-medium text-white">
                 Wootzapp Mobile Browser
               </span>
             </Link>
             <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/industries" className="text-gray-600 hover:text-gray-900 text-sm">
+              <Link href="/industries" className="text-white/80 hover:text-white text-sm">
                 Industries
               </Link>
               <Link
                 href="/future-of-enterprise-browsers"
-                className="text-gray-600 hover:text-gray-900 text-sm"
+                className="text-white/80 hover:text-white text-sm"
               >
                 Enterprise Browser Research
               </Link>
-              <Link href="/genai" className="text-gray-600 hover:text-gray-900 text-sm">
+              <Link href="/genai" className="text-white/80 hover:text-white text-sm">
                 GenAI
               </Link>
             </nav>
@@ -45,7 +45,7 @@ export default function Header() {
           <div className="flex items-center space-x-2 md:space-x-4">
             <Link
               href="#"
-              className="text-gray-600 hover:text-gray-900 text-sm hidden sm:block"
+              className="hidden text-sm text-white/80 hover:text-white sm:block"
             >
               Sign In
             </Link>
@@ -63,7 +63,7 @@ export default function Header() {
             </Button>
             <button
               onClick={() => setIsMenuOpen((open) => !open)}
-              className="md:hidden text-gray-600 hover:text-gray-900"
+              className="text-white/80 hover:text-white md:hidden"
               aria-label="Toggle navigation menu"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
@@ -76,13 +76,13 @@ export default function Header() {
       {isMenuOpen && (
         <nav
           id="mobile-menu"
-          className="md:hidden border-t border-gray-100 bg-white"
+          className="md:hidden border-t border-white/10 bg-[#09010a]"
         >
           <ul className="flex flex-col space-y-1 px-4 py-3">
             <li>
               <Link
                 href="/industries"
-                className="block py-2 text-gray-700 hover:text-gray-900"
+                className="block py-2 text-white/85 hover:text-white"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Industries
@@ -91,7 +91,7 @@ export default function Header() {
             <li>
               <Link
                 href="/future-of-enterprise-browsers"
-                className="block py-2 text-gray-700 hover:text-gray-900"
+                className="block py-2 text-white/85 hover:text-white"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Enterprise Browser Research
@@ -100,7 +100,7 @@ export default function Header() {
             <li>
               <Link
                 href="/genai"
-                className="block py-2 text-gray-700 hover:text-gray-900"
+                className="block py-2 text-white/85 hover:text-white"
                 onClick={() => setIsMenuOpen(false)}
               >
                 GenAI
@@ -109,7 +109,7 @@ export default function Header() {
             <li>
               <Link
                 href="#"
-                className="block py-2 text-gray-700 hover:text-gray-900"
+                className="block py-2 text-white/85 hover:text-white"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sign In
