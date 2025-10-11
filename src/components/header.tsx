@@ -5,16 +5,37 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-export default function Header() {
+type HeaderProps = {
+  variant?: "light" | "dark";
+};
+
+export default function Header({ variant = "dark" }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isLight = variant === "light";
+
+  const navLinkClass = cn(
+    "text-sm transition-colors whitespace-nowrap",
+    isLight ? "text-slate-600 hover:text-slate-900" : "text-white/80 hover:text-white"
+  );
+
+  const mobileLinkClass = cn(
+    "block py-2 transition-colors",
+    isLight ? "text-slate-700 hover:text-slate-900" : "text-white/85 hover:text-white"
+  );
 
   return (
-    <header className="border-b border-white/10 bg-[#080208]/95 backdrop-blur">
+    <header
+      className={cn(
+        "border-b backdrop-blur",
+        isLight ? "border-black/10 bg-white/90" : "border-white/10 bg-[#080208]/95"
+      )}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-4 md:space-x-8">
-            <Link href="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex min-w-0 items-center gap-2">
               <Image
                 src="/logo.png"
                 alt="Wootzapp Logo"
@@ -22,21 +43,26 @@ export default function Header() {
                 height={20}
                 className="h-5"
               />
-              <span className="text-lg md:text-xl font-medium text-white">
-                Wootzapp Mobile Browser
+              <span
+                className={cn(
+                  "min-w-0 break-keep text-sm font-semibold leading-tight sm:text-base md:text-xl",
+                  isLight ? "text-slate-900" : "text-white"
+                )}
+              >
+                Wootzapp GenAI Enterprise Browser
               </span>
             </Link>
             <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/industries" className="text-white/80 hover:text-white text-sm">
+              <Link href="/industries" className={navLinkClass}>
                 Industries
               </Link>
               <Link
                 href="/future-of-enterprise-browsers"
-                className="text-white/80 hover:text-white text-sm"
+                className={navLinkClass}
               >
                 Enterprise Browser Research
               </Link>
-              <Link href="/genai" className="text-white/80 hover:text-white text-sm">
+              <Link href="/genai" className={navLinkClass}>
                 GenAI
               </Link>
             </nav>
@@ -45,7 +71,10 @@ export default function Header() {
           <div className="flex items-center space-x-2 md:space-x-4">
             <Link
               href="#"
-              className="hidden text-sm text-white/80 hover:text-white sm:block"
+              className={cn(
+                "hidden text-sm transition-colors sm:block",
+                isLight ? "text-slate-600 hover:text-slate-900" : "text-white/80 hover:text-white"
+              )}
             >
               Sign In
             </Link>
@@ -63,7 +92,10 @@ export default function Header() {
             </Button>
             <button
               onClick={() => setIsMenuOpen((open) => !open)}
-              className="text-white/80 hover:text-white md:hidden"
+              className={cn(
+                "md:hidden transition-colors",
+                isLight ? "text-slate-700 hover:text-slate-900" : "text-white/80 hover:text-white"
+              )}
               aria-label="Toggle navigation menu"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
@@ -76,13 +108,16 @@ export default function Header() {
       {isMenuOpen && (
         <nav
           id="mobile-menu"
-          className="md:hidden border-t border-white/10 bg-[#09010a]"
+          className={cn(
+            "md:hidden border-t",
+            isLight ? "border-black/10 bg-white/95" : "border-white/10 bg-[#09010a]"
+          )}
         >
           <ul className="flex flex-col space-y-1 px-4 py-3">
             <li>
               <Link
                 href="/industries"
-                className="block py-2 text-white/85 hover:text-white"
+                className={mobileLinkClass}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Industries
@@ -91,7 +126,7 @@ export default function Header() {
             <li>
               <Link
                 href="/future-of-enterprise-browsers"
-                className="block py-2 text-white/85 hover:text-white"
+                className={mobileLinkClass}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Enterprise Browser Research
@@ -100,7 +135,7 @@ export default function Header() {
             <li>
               <Link
                 href="/genai"
-                className="block py-2 text-white/85 hover:text-white"
+                className={mobileLinkClass}
                 onClick={() => setIsMenuOpen(false)}
               >
                 GenAI
@@ -109,7 +144,7 @@ export default function Header() {
             <li>
               <Link
                 href="#"
-                className="block py-2 text-white/85 hover:text-white"
+                className={mobileLinkClass}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sign In
