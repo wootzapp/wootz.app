@@ -8,6 +8,9 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { OpenSourceShowcase } from "@/components/open-source-showcase"
 
+const sectionSpacing = "py-20 border-t border-gray-100"
+const containerClasses = "mx-auto max-w-5xl px-4 sm:px-6 lg:px-8"
+
 function SexyComparisonSection() {
   const [activeComparison, setActiveComparison] = useState(0)
 
@@ -40,17 +43,16 @@ function SexyComparisonSection() {
   ]
 
   return (
-    <div className="max-w-4xl mx-auto">
-      {/* Category Pills */}
-      <div className="flex flex-wrap justify-center gap-2 mb-12">
+    <div className="space-y-10">
+      <div className="flex flex-wrap justify-center gap-3">
         {comparisons.map((comp, index) => (
           <button
             key={index}
             onClick={() => setActiveComparison(index)}
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+            className={`rounded-full border px-4 py-2 text-sm transition-colors ${
               activeComparison === index
-                ? "bg-black text-white shadow-lg"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                ? "border-red-500 bg-red-50 text-red-700"
+                : "border-gray-200 text-gray-600 hover:border-gray-300"
             }`}
           >
             {comp.category}
@@ -58,78 +60,33 @@ function SexyComparisonSection() {
         ))}
       </div>
 
-      {/* Comparison Display */}
-      <div className="relative overflow-hidden">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-16 relative">
-          {/* Old Way */}
-          <div className="relative">
-            <div className="absolute -top-2 -left-2 w-16 h-16 bg-red-100 rounded-full opacity-20"></div>
-            <div className="relative bg-white border border-gray-200 rounded-2xl p-8 h-full">
-              <div className="flex items-center mb-6">
-                <div className="w-3 h-3 bg-red-400 rounded-full mr-3"></div>
-                <h3 className="text-lg font-medium text-gray-900">The Old Way</h3>
-              </div>
-              <div className="space-y-3">
+      <Card className="border border-gray-200 shadow-none">
+        <CardContent className="p-8">
+          <div className="grid gap-10 md:grid-cols-2">
+            <div className="space-y-4">
+              <p className="text-sm font-medium uppercase tracking-wide text-gray-500">The Old Way</p>
+              <ul className="space-y-3 text-sm text-gray-600">
                 {comparisons[activeComparison].old.items.map((item, idx) => (
-                  <div key={idx} className="flex items-start">
-                    <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item}</p>
-                  </div>
+                  <li key={idx} className="leading-relaxed">
+                    {item}
+                  </li>
                 ))}
-              </div>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <p className="text-sm font-medium uppercase tracking-wide text-red-600">Wootzapp Agentic Browser</p>
+              <p className="text-sm leading-relaxed text-gray-700">
+                {comparisons[activeComparison].new.description}
+              </p>
+              <p className="text-xs font-medium text-red-600">Better by design</p>
             </div>
           </div>
+        </CardContent>
+      </Card>
 
-          {/* Wootzapp Agentic Browser */}
-          <div className="relative">
-            <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-red-100 to-red-200 rounded-full opacity-30"></div>
-            <div className="relative bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-200 rounded-2xl p-8 h-full">
-              <div className="flex items-center mb-6">
-                <div className="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
-                <h3 className="text-lg font-medium text-gray-900">Wootzapp Agentic Browser</h3>
-              </div>
-              <p className="text-gray-700 leading-relaxed">{comparisons[activeComparison].new.description}</p>
-              <div className="mt-6 inline-flex items-center text-sm text-red-700 font-medium">
-                <div className="w-1 h-1 bg-red-500 rounded-full mr-2"></div>
-                Better by design
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Connecting Arrow - Mobile: Vertical, Desktop: Horizontal */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 md:block">
-          <div className="bg-white border border-gray-200 rounded-full p-3 shadow-lg">
-            {/* Mobile: Down arrow */}
-            <svg
-              className="w-6 h-6 text-gray-400 block md:hidden"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-            {/* Desktop: Right arrow */}
-            <svg
-              className="w-6 h-6 text-gray-400 hidden md:block"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Stats */}
-      <div className="mt-12 text-center">
-        <div className="inline-flex items-center bg-gray-50 rounded-full px-6 py-3">
-          <span className="text-sm text-gray-600">
-            <span className="font-semibold text-gray-900">Rapid</span> deployment vs traditional solutions
-          </span>
-        </div>
-      </div>
+      <p className="text-center text-sm text-gray-600">
+        <span className="font-semibold text-gray-900">Rapid</span> deployment vs traditional solutions
+      </p>
     </div>
   )
 }
@@ -246,11 +203,10 @@ function SolutionsTabSection() {
   ]
 
   return (
-    <>
-      {/* Mobile: Dropdown selector */}
-      <div className="block md:hidden mb-8">
+    <div className="space-y-8">
+      <div className="block md:hidden">
         <Select value={activeTab} onValueChange={(value) => setActiveTab(value as TabId)}>
-          <SelectTrigger className="w-full">
+          <SelectTrigger className="w-full border-gray-200 bg-white/80 text-left">
             <SelectValue placeholder="Select a solution" />
           </SelectTrigger>
           <SelectContent>
@@ -263,46 +219,106 @@ function SolutionsTabSection() {
         </Select>
       </div>
 
-      {/* Desktop: Tab buttons */}
-      <div className="hidden md:flex flex-wrap justify-center gap-2 mb-12 max-w-4xl mx-auto">
-        {tabs.map((tab) => (
-          <Button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`px-4 py-2 text-sm transition-colors ${
-              activeTab === tab.id
-                ? "bg-black text-white"
-                : "bg-transparent border border-gray-300 text-gray-700 hover:bg-gray-50"
-            }`}
-          >
-            {tab.label}
-          </Button>
-        ))}
-      </div>
-
-      {/* Content */}
-      <Card className="border-0 shadow-sm">
-        <CardContent className="p-6 md:p-8 max-w-4xl mx-auto">
-          <h3 className="text-xl font-medium text-gray-900 mb-4">{tabContent[activeTab].title}</h3>
-          <div className="space-y-4">
-            <p className="text-gray-700 font-medium leading-relaxed">{tabContent[activeTab].content.main}</p>
-            {tabContent[activeTab].content.points && (
-              <ul className="space-y-2">
-                {tabContent[activeTab].content.points.map((point, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-gray-600 leading-relaxed">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-            {'conclusion' in tabContent[activeTab].content && tabContent[activeTab].content.conclusion && (
-              <p className="text-gray-700 italic font-medium bg-red-50 px-3 py-2 rounded">{tabContent[activeTab].content.conclusion}</p>
-            )}
+      <Card className="border border-gray-200 shadow-sm md:hidden">
+        <CardContent className="space-y-4 p-6">
+          <div className="flex items-center justify-between">
+            <span className="rounded-full border border-red-200 bg-red-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-red-600">
+              {tabContent[activeTab].title}
+            </span>
+            <span className="text-xs text-gray-400">{tabs.findIndex((tab) => tab.id === activeTab) + 1} / {tabs.length}</span>
           </div>
+          <p className="text-base font-medium leading-relaxed text-gray-800">
+            {tabContent[activeTab].content.main}
+          </p>
+          {tabContent[activeTab].content.points && (
+            <ul className="space-y-3 text-sm text-gray-600">
+              {tabContent[activeTab].content.points.map((point, index) => (
+                <li
+                  key={index}
+                  className="relative pl-6 text-left before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-red-400"
+                >
+                  {point}
+                </li>
+              ))}
+            </ul>
+          )}
+          {'conclusion' in tabContent[activeTab].content && tabContent[activeTab].content.conclusion && (
+            <div className="rounded-xl border border-red-100 bg-red-50/70 p-4 text-sm font-medium text-red-700">
+              {tabContent[activeTab].content.conclusion}
+            </div>
+          )}
         </CardContent>
       </Card>
-    </>
+
+      <div className="hidden gap-6 rounded-3xl border border-gray-100 bg-white/80 p-6 shadow-sm md:grid md:grid-cols-[260px_1fr] lg:gap-10 lg:p-10">
+        <div className="flex flex-col gap-2">
+          {tabs.map((tab, index) => {
+            const isActive = activeTab === tab.id
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`group flex items-start gap-3 rounded-2xl border px-4 py-4 text-left transition-all ${
+                  isActive
+                    ? "border-red-300 bg-red-50/70 shadow-sm"
+                    : "border-transparent hover:border-gray-200 hover:bg-gray-50"
+                }`}
+              >
+                <span
+                  className={`flex h-8 w-8 items-center justify-center rounded-full border text-xs font-semibold transition ${
+                    isActive
+                      ? "border-red-400 bg-red-500 text-white"
+                      : "border-gray-300 bg-white text-gray-500 group-hover:border-gray-400"
+                  }`}
+                >
+                  {index + 1}
+                </span>
+                <div className="flex-1 space-y-1">
+                  <p
+                    className={`text-sm font-semibold transition ${
+                      isActive ? "text-gray-900" : "text-gray-600 group-hover:text-gray-800"
+                    }`}
+                  >
+                    {tab.label}
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    {tabContent[tab.id].content.main}
+                  </p>
+                </div>
+              </button>
+            )
+          })}
+        </div>
+
+        <div className="space-y-6 rounded-2xl border border-gray-100 bg-white/90 p-6 shadow-[0_30px_60px_-35px_rgba(244,63,94,0.35)] lg:p-8">
+          <div className="flex items-center gap-3">
+            <span className="rounded-full border border-red-200 bg-red-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-red-600">
+              {tabContent[activeTab].title}
+            </span>
+          </div>
+          <p className="text-base font-medium leading-relaxed text-gray-800">
+            {tabContent[activeTab].content.main}
+          </p>
+          {tabContent[activeTab].content.points && (
+            <ul className="space-y-3 text-sm text-gray-600">
+              {tabContent[activeTab].content.points.map((point, index) => (
+                <li
+                  key={index}
+                  className="relative pl-6 text-left before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-red-400"
+                >
+                  {point}
+                </li>
+              ))}
+            </ul>
+          )}
+          {'conclusion' in tabContent[activeTab].content && tabContent[activeTab].content.conclusion && (
+            <div className="rounded-2xl border border-red-100 bg-red-50/70 p-4 text-sm font-medium text-red-700">
+              {tabContent[activeTab].content.conclusion}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -319,40 +335,37 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-12 sm:py-20 md:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="mb-8 md:mb-12">
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-light text-gray-900 mb-4 leading-tight">
-                <span className="block">Wootzapp</span>
-                <span className="block bg-red-100 px-3 py-1 rounded-lg inline-block mt-2">Agentic Browser</span>
+      <section className="relative overflow-hidden bg-gray-50 py-28">
+        <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-gradient-to-bl from-red-100 via-white to-transparent lg:block" />
+        <div className={`${containerClasses} relative grid gap-12 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]`}>
+          <div className="flex flex-col items-start gap-8 sm:gap-10">
+            <div className="space-y-3">
+              <span className="inline-flex items-center rounded-full border border-red-200 bg-white px-4 py-1 text-xs font-medium uppercase tracking-wide text-red-600">
+                Wootzapp
+              </span>
+              <h1 className="text-left text-4xl font-light leading-[1.1] text-gray-900 sm:text-5xl md:text-6xl">
+                Agentic Browser
               </h1>
-              
-              <div className="space-y-4 max-w-4xl mx-auto">
-                <p className="text-xl sm:text-2xl md:text-3xl font-light text-gray-700">
-                  The <span className="bg-red-100 px-2 py-1 rounded">GenAI Browser</span> for the Enterprise
-                </p>
-                
-                <div className="text-base sm:text-lg md:text-xl text-gray-600 space-y-3 leading-relaxed">
-                  <p>
-                    A simpler, complete way to secure modern work:
-                  </p>
-                  <p>
-                    <span className="bg-red-50 px-2 py-1 rounded font-medium text-gray-800">GenAI-native DLP</span>, 
-                    <span className="underline decoration-red-200 decoration-2">agentic security controls</span>, 
-                    and <span className="bg-red-50 px-2 py-1 rounded font-medium text-gray-800">zero-trust access</span>
-                  </p>
-                  <p className="text-gray-500">
-                    — all inside one Android browser.
-                  </p>
-                </div>
-              </div>
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="space-y-4 text-left text-lg text-gray-700 sm:text-xl">
+              <p>
+                The <span className="rounded bg-red-100 px-2 py-1 font-semibold text-gray-900">GenAI Browser</span> for the
+                <span className="ml-2 inline-block rounded px-2 py-0.5 text-sm font-medium uppercase tracking-[0.2em] text-gray-500">Enterprise</span>
+              </p>
+              <p className="text-base font-semibold uppercase tracking-[0.22em] text-gray-500">
+                A simpler, complete way to secure modern work
+              </p>
+              <p className="text-base text-gray-600 sm:text-lg">
+                <span className="rounded bg-red-50 px-2 py-1 font-semibold underline decoration-red-300 underline-offset-4 text-gray-900">GenAI-native DLP</span>,
+                <span className="px-2 font-semibold text-gray-900 underline decoration-red-200 underline-offset-4">agentic security controls</span>,
+                and <span className="rounded bg-red-50 px-2 py-1 font-semibold text-gray-900 italic">zero-trust access</span>
+              </p>
+              <p className="text-base italic text-gray-500 sm:text-lg">— all inside one Android browser.</p>
+            </div>
+            <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center">
               <Button
                 asChild
-                className="bg-black hover:bg-gray-800 text-white px-6 md:px-8 py-3 w-full sm:w-auto"
+                className="w-full justify-center bg-black px-7 py-3 text-sm text-white transition hover:bg-gray-900 sm:w-auto"
               >
                 <a
                   href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
@@ -362,249 +375,259 @@ export default function HomePage() {
                   See it on my phone →
                 </a>
               </Button>
+              <div className="flex items-center gap-4 text-left text-xs text-gray-500 sm:text-sm">
+                <div className="h-px flex-1 bg-gray-200" />
+                Replace VDI & VPN — keep the speed, lose the headaches
+                <div className="h-px flex-1 bg-gray-200" />
+              </div>
             </div>
           </div>
+
+          <Card className="border border-gray-200 bg-white/80 shadow-lg backdrop-blur sm:mx-auto sm:max-w-xl lg:mx-0">
+            <CardContent className="space-y-5 p-6 sm:p-8">
+              <div className="space-y-3">
+                <p className="rounded-lg border border-red-100 bg-red-50/60 p-4 text-sm text-gray-700">
+                  Install one app; cloud policies do the rest
+                </p>
+                <p className="rounded-lg border border-red-100 bg-white p-4 text-sm text-gray-700">
+                  Native Chromium speed on spotty cellular
+                </p>
+                <p className="rounded-lg border border-red-100 bg-white p-4 text-sm text-gray-700">
+                  GenAI-native DLP + last-mile controls (copy/print/uploads/geo-fence)
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
       <OpenSourceShowcase />
 
       {/* YouTube Video Section */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-lg"
-                src="https://www.youtube.com/embed/2_74O0V2pBM?modestbranding=1&rel=0&controls=0&autoplay=1&mute=1&loop=1&playlist=2_74O0V2pBM"
-                title="Wootzapp Enterprise Browser Demo"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
+      <section className={sectionSpacing}>
+        <div className={`${containerClasses} max-w-4xl`}> 
+          <div className="relative w-full overflow-hidden rounded-2xl border border-gray-200 shadow-sm" style={{ paddingBottom: "56.25%" }}>
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src="https://www.youtube.com/embed/2_74O0V2pBM?modestbranding=1&rel=0&controls=0&autoplay=1&mute=1&loop=1&playlist=2_74O0V2pBM"
+              title="Wootzapp Enterprise Browser Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>
 
       {/* Why a GenAI Browser Section */}
-      <section id="overview" className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-8 md:mb-12">Why a GenAI Browser?</h2>
-            
-            <p className="text-gray-600 mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed text-sm sm:text-base">
-              Most work — including your AI tools — lives in the browser. So we put DLP, access, and analytics <strong>into</strong> the 
-              browser and taught it to speak &ldquo;LLM.&rdquo; It can <em>detect, explain, and stop</em> risky data flows in real time, 
+      <section id="overview" className={`${sectionSpacing} bg-white`}>
+        <div className={`${containerClasses} relative overflow-hidden rounded-3xl border border-gray-100 bg-white/70 px-6 py-16 text-center shadow-sm sm:px-12`}>
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(244,63,94,0.12),_transparent_60%)]" />
+          <div className="relative space-y-8">
+            <h2 className="text-3xl font-light text-gray-900">Why a GenAI Browser?</h2>
+            <p className="mx-auto max-w-3xl text-sm leading-relaxed text-gray-600 sm:text-base">
+              Most work — including your AI tools — lives in the browser. So we put
+              <span className="ml-1 mr-1 inline-block rounded bg-red-50 px-2 py-0.5 font-semibold uppercase tracking-wide text-gray-900">DLP</span>,
+              <span className="mr-1 inline-block rounded bg-red-50 px-2 py-0.5 font-semibold uppercase tracking-wide text-gray-900">Access</span>, and
+              <span className="mr-1 inline-block rounded bg-red-50 px-2 py-0.5 font-semibold uppercase tracking-wide text-gray-900">Analytics</span>
+              <strong className="mx-1 font-semibold">into</strong> the browser and taught it to speak
+              <span className="ml-1 inline-block rounded border border-red-200 px-2 py-0.5 font-semibold italic text-gray-900">“LLM.”</span>
+              It can <em className="font-semibold text-gray-800">detect, explain, and stop</em> risky data flows in real time,
               without juggling heavy VDI or sprawling ZTNA stacks.
             </p>
-
-            <div className="bg-black text-white p-6 md:p-8 rounded-lg">
-              <p className="text-sm md:text-base leading-relaxed">
-                &quot;GenAI-native DLP, agentic security controls, and zero-trust access live right inside the browser — 
-                no VDI pixel-pushing, no sprawling ZTNA complexity.&quot;
-              </p>
-            </div>
+            <blockquote className="mx-auto max-w-2xl rounded-md border border-gray-200 bg-gray-50 p-6 text-sm text-gray-800">
+              &quot;GenAI-native DLP, agentic security controls, and zero-trust access live right inside the browser — no VDI pixel-pushing,
+              no sprawling ZTNA complexity.&quot;
+            </blockquote>
           </div>
         </div>
       </section>
 
       {/* How it works Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-8 md:mb-12">How it works (at a glance)</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-              <Card className="border-0 shadow-sm">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                    <Search className="w-6 h-6 text-red-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    <span className="underline decoration-red-200 decoration-2">GenAI-native</span> DLP engine
-                  </h3>
-                  <div className="space-y-3">
-                    <p className="text-gray-700 font-medium text-sm">
-                      Understands <span className="bg-red-50 px-1 rounded">language and context</span> — not just patterns
-                    </p>
-                    <ul className="space-y-1 text-sm text-gray-600">
-                      <li>• Catches data as it&apos;s typed, pasted, uploaded</li>
-                      <li>• Works with AI tools (even when paraphrased)</li>
-                      <li>• <span className="font-medium">You set guardrails; it enforces inline</span></li>
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-sm">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                    <Lightbulb className="w-6 h-6 text-red-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    <span className="underline decoration-red-200 decoration-2">Policy before</span> pixels
-                  </h3>
-                  <div className="space-y-3">
-                    <p className="text-gray-700 font-medium text-sm">
-                      Before a page paints, the browser evaluates:
-                    </p>
-                    <ul className="space-y-1 text-sm text-gray-600">
-                      <li>• Identity, device posture, network, location</li>
-                      <li>• Then applies controls (mask, block, watermark)</li>
-                      <li>• <span className="font-medium">No proxies or code changes</span></li>
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-sm">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                    <Shield className="w-6 h-6 text-red-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    <span className="underline decoration-red-200 decoration-2">Last-mile</span> visibility
-                    <span className="block text-sm font-normal text-gray-500">(without creepiness)</span>
-                  </h3>
-                  <div className="space-y-3">
-                    <p className="text-gray-700 font-medium text-sm">
-                      <span className="bg-red-50 px-1 rounded">High-fidelity, click-level events</span> flow to your SIEM
-                    </p>
-                    <p className="text-sm text-gray-600 italic border-l-2 border-red-100 pl-3">
-                      Personal browsing stays private
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+      <section className={`${sectionSpacing} bg-gradient-to-br from-white via-red-50/20 to-white`}>
+        <div className={`${containerClasses} space-y-12`}>
+          <h2 className="text-center text-2xl font-light text-gray-900 md:text-3xl">How it works (at a glance)</h2>
+          <div className="relative grid gap-8 md:grid-cols-3">
+            <Card className="border border-gray-200 shadow-none">
+              <CardContent className="space-y-4 p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-md border border-red-200 bg-red-50 text-red-600">
+                  <Search className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  <span className="mr-1 rounded bg-red-100 px-1.5 py-0.5 text-sm font-semibold uppercase tracking-[0.25em] text-red-600">GenAI-native</span>
+                  <span className="underline decoration-red-200 decoration-4 underline-offset-4">DLP engine</span>
+                </h3>
+                <p className="text-sm font-medium text-gray-700">
+                  Understands <span className="bg-red-50 px-1 font-semibold text-gray-900">language and context</span> — not just patterns
+                </p>
+                <ul className="space-y-1 text-sm text-gray-600">
+                  <li><span className="font-semibold text-gray-900">•</span> Catches data as it&apos;s typed, pasted, uploaded</li>
+                  <li><span className="font-semibold text-gray-900">•</span> Works with AI tools (even when paraphrased)</li>
+                  <li><span className="font-semibold text-red-600">•</span> <span className="font-medium">You set guardrails; it enforces inline</span></li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="border border-gray-200 shadow-none">
+              <CardContent className="space-y-4 p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-md border border-red-200 bg-red-50 text-red-600">
+                  <Lightbulb className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  <span className="mr-1 rounded bg-red-100 px-1.5 py-0.5 text-sm font-semibold uppercase tracking-[0.25em] text-red-600">Policy</span>
+                  <span className="underline decoration-red-200 decoration-4 underline-offset-4">before pixels</span>
+                </h3>
+                <p className="text-sm font-medium text-gray-700">Before a page paints, the browser evaluates:</p>
+                <ul className="space-y-1 text-sm text-gray-600">
+                  <li><span className="font-semibold text-gray-900">•</span> Identity, device posture, network, location</li>
+                  <li><span className="font-semibold text-gray-900">•</span> Then applies controls (mask, block, watermark)</li>
+                  <li><span className="font-semibold text-red-600">•</span> <span className="font-medium">No proxies or code changes</span></li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="border border-gray-200 shadow-none">
+              <CardContent className="space-y-4 p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-md border border-red-200 bg-red-50 text-red-600">
+                  <Shield className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  <span className="mr-1 rounded bg-red-100 px-1.5 py-0.5 text-sm font-semibold uppercase tracking-[0.25em] text-red-600">Last-mile</span>
+                  <span className="underline decoration-red-200 decoration-4 underline-offset-4">visibility</span>
+                  <span className="block text-sm font-normal italic text-gray-500">(without creepiness)</span>
+                </h3>
+                <p className="text-sm font-medium text-gray-700">
+                  <span className="rounded bg-red-50 px-1 font-semibold text-gray-900">High-fidelity, click-level events</span> flow to your SIEM
+                </p>
+                <p className="text-sm italic text-gray-600">Personal browsing stays private</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Agentic Security Section */}
-      <section id="features" className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-6">Agentic security — built into the browser</h2>
+      <section id="features" className={`${sectionSpacing} bg-white`}>
+        <div className={`${containerClasses} space-y-12`}>
+          <div className="text-center">
+            <h2 className="text-2xl font-light text-gray-900 md:text-3xl">Agentic security — built into the browser</h2>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-            <Card className="border-0 shadow-sm">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-medium text-gray-900 mb-3">Agentic Security Control</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Treat the browser as the <strong>agent runtime</strong>. Real-time monitors watch prompts, tool invocations, file uploads, 
-                  form fills, clipboard, and extension behavior. Policies let agents <strong>intervene</strong>: redact, quarantine, 
-                  require step-up auth, or ask for human approval. Security acts <em>at the moment of action</em>.
+          <div className="grid gap-8 md:grid-cols-3">
+            <Card className="border border-gray-200 shadow-none">
+              <CardContent className="space-y-4 p-6">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  <span className="rounded bg-red-100 px-2 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-red-600">Agentic</span>
+                  <span className="ml-2 underline decoration-red-200 decoration-4 underline-offset-4">Security Control</span>
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-600">
+                  Treat the browser as the
+                  <strong className="ml-1 uppercase tracking-wide text-gray-900">agent runtime</strong>. Real-time monitors watch prompts, tool invocations, file uploads,
+                  form fills, clipboard, and extension behavior. Policies let agents
+                  <strong className="ml-1 text-red-600">intervene</strong>: redact, quarantine,
+                  require step-up auth, or ask for human approval. Security acts <em className="font-semibold text-gray-800">at the moment of action</em>.
                 </p>
               </CardContent>
             </Card>
-
-            <Card className="border-0 shadow-sm">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-medium text-gray-900 mb-3">LLM-aware Data Guard</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Modern DLP needs classification, policy enforcement, monitoring/alerts, granular controls (copy/paste/uploads), 
-                  and explicit support for GenAI workflows like paraphrasing, translation, and summarization. We do it all at the last mile — the browser.
+            <Card className="border border-gray-200 shadow-none">
+              <CardContent className="space-y-4 p-6">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  <span className="rounded bg-red-100 px-2 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-red-600">LLM-aware</span>
+                  <span className="ml-2 underline decoration-red-200 decoration-4 underline-offset-4">Data Guard</span>
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-600">
+                  Modern DLP needs classification, policy enforcement, monitoring/alerts, granular controls (copy/paste/uploads),
+                  and explicit support for GenAI workflows like paraphrasing, translation, and summarization. We do it all at the last mile —
+                  <span className="ml-1 rounded bg-red-50 px-1.5 py-0.5 font-semibold text-gray-900">the browser</span>.
                 </p>
               </CardContent>
             </Card>
-
-            <Card className="border-0 shadow-sm">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-medium text-gray-900 mb-3">Zero-trust, minus the machinery</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Use short-lived, mTLS connections for private apps while extending least-privilege policy into the <strong>render process</strong> itself. 
+            <Card className="border border-gray-200 shadow-none">
+              <CardContent className="space-y-4 p-6">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  <span className="rounded bg-red-100 px-2 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-red-600">Zero-trust</span>
+                  <span className="ml-2 underline decoration-red-200 decoration-4 underline-offset-4">minus the machinery</span>
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-600">
+                  Use short-lived, mTLS connections for private apps while extending least-privilege policy into the
+                  <strong className="ml-1 rounded bg-red-50 px-1.5 py-0.5 text-gray-900">render process</strong> itself.
                   Simpler rollout than legacy ZTNA; stronger control where it counts.
                 </p>
               </CardContent>
             </Card>
           </div>
-
-          <div className="text-center mt-12 max-w-4xl mx-auto">
-            <div className="bg-gray-50 rounded-lg p-6 md:p-8 space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                <span className="bg-red-100 px-2 py-1 rounded">Why the browser</span> is the best agentic security platform:
-              </h3>
-              
-              <p className="text-gray-700 leading-relaxed">
-                The enterprise browser has unique visibility into:
+          <div className="space-y-6 rounded-xl border border-gray-200 bg-gray-50 p-8">
+            <h3 className="text-center text-lg font-semibold text-gray-900">
+              <span className="rounded bg-red-100 px-2 py-1 text-sm text-red-700">Why the browser</span> is the best agentic security platform:
+            </h3>
+            <p className="text-center text-sm text-gray-600 md:text-base">
+              The enterprise browser has unique visibility into:
+            </p>
+            <div className="grid grid-cols-2 gap-4 text-center text-sm text-gray-700 md:grid-cols-4">
+              <div>
+                <div className="font-semibold text-gray-900">WHO</div>
+                <div className="mt-1 text-gray-600">the user is</div>
+              </div>
+              <div>
+                <div className="font-semibold text-gray-900">HOW</div>
+                <div className="mt-1 text-gray-600">healthy the device is</div>
+              </div>
+              <div>
+                <div className="font-semibold text-gray-900">WHERE</div>
+                <div className="mt-1 text-gray-600">it operates</div>
+              </div>
+              <div>
+                <div className="font-semibold text-gray-900">WHICH</div>
+                <div className="mt-1 text-gray-600">app is in view</div>
+              </div>
+            </div>
+            <div className="space-y-2 rounded-md border border-red-100 bg-white p-4 text-sm text-gray-700">
+              <p>
+                This lets you enforce <span className="bg-red-50 px-1">zero-trust and DLP decisions</span>
+                <em className="ml-1 text-gray-600">exactly when they matter</em>.
               </p>
-              
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                <div className="text-center">
-                  <div className="font-semibold text-gray-800 underline decoration-red-200 decoration-2">WHO</div>
-                  <div className="text-gray-600 mt-1">the user is</div>
-                </div>
-                <div className="text-center">
-                  <div className="font-semibold text-gray-800 underline decoration-red-200 decoration-2">HOW</div>
-                  <div className="text-gray-600 mt-1">healthy the device is</div>
-                </div>
-                <div className="text-center">
-                  <div className="font-semibold text-gray-800 underline decoration-red-200 decoration-2">WHERE</div>
-                  <div className="text-gray-600 mt-1">it operates</div>
-                </div>
-                <div className="text-center">
-                  <div className="font-semibold text-gray-800 underline decoration-red-200 decoration-2">WHICH</div>
-                  <div className="text-gray-600 mt-1">app is in view</div>
-                </div>
-              </div>
-              
-              <div className="bg-red-50 rounded-lg p-4 space-y-2">
-                <p className="text-gray-700 font-medium">
-                  This lets you enforce <span className="bg-red-50 px-1 rounded">zero-trust and DLP decisions</span> 
-                  <em className="text-gray-600">exactly when they matter</em>.
-                </p>
-                <p className="text-gray-600 italic">
-                  That vantage makes the browser the natural control plane for <strong className="bg-red-100 px-1 rounded">agentic defenses</strong>.
-                </p>
-              </div>
+              <p className="italic text-gray-600">
+                That vantage makes the browser the natural control plane for <strong className="bg-red-100 px-1">agentic defenses</strong>.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Built-in armor Section */}
-      <section id="security" className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">Built-in armor</h2>
-            <p className="text-lg text-gray-600">(no bolt-ons, no drama)</p>
+      <section id="security" className={`${sectionSpacing} bg-gray-50`}>
+        <div className={`${containerClasses} space-y-12`}>
+          <div className="text-center space-y-2">
+            <h2 className="text-3xl font-light text-gray-900">Built-in armor</h2>
+            <p className="text-sm text-gray-600">(no bolt-ons, no drama)</p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-red-600" />
+          <div className="grid gap-8 md:grid-cols-3">
+            <Card className="border border-gray-200 shadow-none">
+              <CardContent className="space-y-3 p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-md bg-red-50 text-red-600">
+                  <Shield className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">Hardened Chromium</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <h3 className="text-lg font-medium text-gray-900">Hardened Chromium</h3>
+                <p className="text-sm leading-relaxed text-gray-600">
                   Shrugs off phishing, malware, session hijacks, and man-in-the-browser tricks — on or off VPN.
                 </p>
               </CardContent>
             </Card>
-
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                  <Target className="w-6 h-6 text-red-600" />
+            <Card className="border border-gray-200 shadow-none">
+              <CardContent className="space-y-3 p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-md bg-red-50 text-red-600">
+                  <Target className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">Agent-driven Contextual Data Controls</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <h3 className="text-lg font-medium text-gray-900">Agent-driven Contextual Data Controls</h3>
+                <p className="text-sm leading-relaxed text-gray-600">
                   Copy, paste, screenshots, printing, and downloads obey role, network, app, and geo-fence.
                 </p>
               </CardContent>
             </Card>
-
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-red-600" />
+            <Card className="border border-gray-200 shadow-none">
+              <CardContent className="space-y-3 p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-md bg-red-50 text-red-600">
+                  <Zap className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">Watermark & Kill-Switch</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <h3 className="text-lg font-medium text-gray-900">Watermark & Kill-Switch</h3>
+                <p className="text-sm leading-relaxed text-gray-600">
                   Every sensitive page is trace-stamped; admins can end a session mid-click if something goes sideways.
                 </p>
               </CardContent>
@@ -614,153 +637,138 @@ export default function HomePage() {
       </section>
 
       {/* Replace VDI & VPN Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-8">Replace VDI & VPN — keep the speed, lose the headaches</h2>
+      <section className={`${sectionSpacing} bg-white`}>
+        <div className={`${containerClasses} space-y-10`}>
+          <div className="text-center">
+            <h2 className="text-2xl font-light text-gray-900 md:text-3xl">
+              Replace VDI & VPN — keep the speed, lose the headaches
+            </h2>
           </div>
-
           <ComparisonTable />
         </div>
       </section>
 
       {/* Browser-native ZTNA Section */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">Browser-native ZTNA</h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-2">reverse-proxy friendly, last-mile enforced</p>
-              <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-                <strong className="bg-red-100 px-2 py-1 rounded">Yes, we do &ldquo;Access-style&rdquo; ZTNA — with a twist:</strong> the <em>browser</em> is your enforcement point, not just the network box.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-6 md:p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-4">
-                      <Building className="w-6 h-6 text-red-600" />
-                    </div>
-                    <h3 className="text-xl font-medium text-gray-900">How private-app access works</h3>
+      <section className={`${sectionSpacing} bg-gray-50`}>
+        <div className={`${containerClasses} space-y-12`}>
+          <div className="space-y-4 text-center">
+            <h2 className="text-3xl font-light text-gray-900">Browser-native ZTNA</h2>
+            <p className="text-sm text-gray-600">reverse-proxy friendly, last-mile enforced</p>
+            <p className="mx-auto max-w-3xl text-base leading-relaxed text-gray-700">
+              <strong className="rounded bg-red-100 px-2 py-1 text-red-700">Yes, we do &ldquo;Access-style&rdquo; ZTNA — with a twist:</strong> the <em>browser</em> is your enforcement point, not just the network box.
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            <Card className="border border-gray-200 shadow-none">
+              <CardContent className="space-y-5 p-8">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-md bg-red-50 text-red-600">
+                    <Building className="h-5 w-5" />
                   </div>
-                  <div className="space-y-4 text-gray-600 leading-relaxed">
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-xs font-medium text-red-700">1</span>
-                      </div>
-                      <p>Browser connects to Wootzapp Cloud with <strong>user identity</strong>, <strong>device posture</strong>, and <strong>policy intent</strong></p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-xs font-medium text-red-700">2</span>
-                      </div>
-                      <p><strong>Reverse, outbound-only secure tunnel</strong> via Private Access Connector — no inbound firewall openings</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-xs font-medium text-red-700">3</span>
-                      </div>
-                      <p>Traffic <strong>tunneled</strong> over short-lived mTLS with browser-enforced controls</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-xs font-medium text-red-700">4</span>
-                      </div>
-                      <p>Every click <strong>logged for audit</strong> — no packet archaeology needed</p>
-                    </div>
+                  <h3 className="text-xl font-medium text-gray-900">How private-app access works</h3>
+                </div>
+                <div className="space-y-4 text-sm leading-relaxed text-gray-600">
+                  <div className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-red-50 text-xs font-medium text-red-700">1</span>
+                    <p>
+                      Browser connects to Wootzapp Cloud with <strong>user identity</strong>, <strong>device posture</strong>, and <strong>policy intent</strong>
+                    </p>
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-6 md:p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-4">
-                      <Cloud className="w-6 h-6 text-red-600" />
-                    </div>
-                    <h3 className="text-xl font-medium text-gray-900">And for SaaS</h3>
+                  <div className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-red-50 text-xs font-medium text-red-700">2</span>
+                    <p><strong>Reverse, outbound-only secure tunnel</strong> via Private Access Connector — no inbound firewall openings</p>
                   </div>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    Keep using your favorite cloud apps — now with <strong className="bg-red-100 px-1 rounded">browser-level guardrails</strong>:
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-gray-600 text-sm">Restrict uploads to approved tenants</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-gray-600 text-sm">Watermark sensitive views</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-gray-600 text-sm">Block risky extensions</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-gray-600 text-sm">Apply <strong>GenAI-aware DLP</strong> to prompts and outputs</p>
-                    </div>
+                  <div className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-red-50 text-xs font-medium text-red-700">3</span>
+                    <p>Traffic <strong>tunneled</strong> over short-lived mTLS with browser-enforced controls</p>
                   </div>
-                  <p className="text-gray-600 leading-relaxed mt-6 italic">
-                    Users get the full, zippy SaaS experience. Security gets deterministic, last-mile control.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+                  <div className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-red-50 text-xs font-medium text-red-700">4</span>
+                    <p>Every click <strong>logged for audit</strong> — no packet archaeology needed</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border border-gray-200 shadow-none">
+              <CardContent className="space-y-5 p-8">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-md bg-red-50 text-red-600">
+                    <Cloud className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-xl font-medium text-gray-900">And for SaaS</h3>
+                </div>
+                <p className="text-sm leading-relaxed text-gray-600">
+                  Keep using your favorite cloud apps — now with <strong className="bg-red-100 px-1">browser-level guardrails</strong>:
+                </p>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500" />
+                    <p>Restrict uploads to approved tenants</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500" />
+                    <p>Watermark sensitive views</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500" />
+                    <p>Block risky extensions</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-red-500" />
+                    <p>Apply <strong>GenAI-aware DLP</strong> to prompts and outputs</p>
+                  </div>
+                </div>
+                <p className="text-sm italic text-gray-600">
+                  Users get the full, zippy SaaS experience. Security gets deterministic, last-mile control.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Common Solutions Section */}
-      <section id="solutions" className="py-12 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-6 md:mb-8">
-              Common Solutions — Pick Your Challenge
-            </h2>
-
-            <SolutionsTabSection />
+      <section id="solutions" className={`${sectionSpacing} bg-gradient-to-br from-white via-red-50/25 to-white`}>
+        <div className={`${containerClasses} space-y-10 text-center md:text-left`}>
+          <div className="flex flex-col gap-4 text-center md:flex-row md:items-center md:justify-between md:text-left">
+            <h2 className="text-2xl font-light text-gray-900 md:text-3xl">Common Solutions — Pick Your Challenge</h2>
+            <p className="text-sm text-gray-500 md:max-w-sm">
+              Choose the scenario that mirrors your security goals and see how the same browser adapts with precise controls.
+            </p>
           </div>
+          <SolutionsTabSection />
         </div>
       </section>
 
       {/* Final Statement Section */}
-      <section className="py-12 md:py-20 bg-gray-900 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-light mb-6 md:mb-8">
-              Enterprise Security Ready
-            </h2>
-
-            <p className="text-gray-300 mb-6 md:mb-8 leading-relaxed text-sm sm:text-base">
-              Wootzapp Agentic Browser is the <strong>Enterprise GenAI Browser</strong>: a warmer, simpler way to do Zero Trust and DLP. 
-              Fewer moving parts, faster users, and guardrails that actually understand language — not just patterns.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                className="bg-white text-gray-900 hover:bg-gray-100 px-6 md:px-8 py-3 w-full sm:w-auto"
-              >
-                <a
-                  href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Start Free Trial
-                </a>
-              </Button>
+      <section className="bg-gray-900 py-20 text-white">
+        <div className={`${containerClasses} space-y-8 text-center`}>
+          <h2 className="text-2xl font-light md:text-3xl">Enterprise Security Ready</h2>
+          <p className="mx-auto max-w-3xl text-sm leading-relaxed text-gray-200 sm:text-base">
+            Wootzapp Agentic Browser is the <strong>Enterprise GenAI Browser</strong>: a warmer, simpler way to do Zero Trust and DLP.
+            Fewer moving parts, faster users, and guardrails that actually understand language — not just patterns.
+          </p>
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button
+              asChild
+              className="w-full bg-white px-6 py-3 text-sm text-gray-900 hover:bg-gray-200 sm:w-auto"
+            >
               <a
                 href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-white text-white hover:bg-white hover:text-gray-900 px-6 md:px-8 py-3 w-full sm:w-auto rounded-md transition-colors bg-transparent inline-flex items-center justify-center"
               >
-                Schedule Demo
+                Start Free Trial
               </a>
-            </div>
+            </Button>
+            <a
+              href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center rounded-md border border-white px-6 py-3 text-sm text-white transition-colors hover:bg-white hover:text-gray-900 sm:w-auto"
+            >
+              Schedule Demo
+            </a>
           </div>
         </div>
       </section>
