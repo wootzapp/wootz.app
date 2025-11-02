@@ -183,129 +183,129 @@ const saasBullets = [
 ]
 
 const sectionBackgroundsDark = {
-  hero: "bg-gradient-to-b from-[#451337] via-[#1b061b] to-[#260c28]",
-  why: "bg-gradient-to-b from-[#371033] via-[#1a081f] to-[#250d2c]",
-  how: "bg-gradient-to-br from-[#3f1331] via-[#1d091f] to-[#2c1128]",
-  security: "bg-gradient-to-br from-[#34132e] via-[#170a1f] to-[#26102b]",
-  armor: "bg-gradient-to-r from-[#4b173d] via-[#210c26] to-[#311534]",
-  ztna: "bg-gradient-to-r from-[#31153d] via-[#160a28] to-[#3a1337]",
-  solutions: "bg-gradient-to-br from-[#3f1536] via-[#1e1334] to-[#301430]",
-  finalCta: "bg-gradient-to-b from-[#2a1235] via-[#180b24] to-[#321434]",
+  hero: "bg-gradient-to-b from-slate-900 via-slate-800 to-black",
+  why: "bg-gradient-to-b from-slate-900 via-black to-slate-800",
+  how: "bg-gradient-to-br from-slate-900 via-black to-slate-800",
+  security: "bg-gradient-to-br from-slate-900 via-black to-slate-800",
+  armor: "bg-gradient-to-r from-slate-900 via-black to-slate-800",
+  ztna: "bg-gradient-to-r from-slate-900 via-black to-slate-800",
+  solutions: "bg-gradient-to-br from-slate-900 via-black to-slate-800",
+  finalCta: "bg-gradient-to-b from-slate-900 via-black to-slate-800",
 } as const
 
 const sectionBackgroundsLight = {
-  hero: "bg-gradient-to-b from-[#fff5f8] via-[#fff9fc] to-[#ffeef8]",
-  why: "bg-gradient-to-b from-[#fff7fb] via-[#fffdfd] to-[#ffeef6]",
-  how: "bg-gradient-to-br from-[#fff4f7] via-[#fff9fd] to-[#ffe9f5]",
-  security: "bg-gradient-to-br from-[#fff2f8] via-[#fef6fb] to-[#ffe8f4]",
-  armor: "bg-gradient-to-r from-[#ffe8f2] via-[#fff5f9] to-[#ffeef7]",
-  ztna: "bg-gradient-to-r from-[#fff3fa] via-[#fff8fb] to-[#ffe9f4]",
-  solutions: "bg-gradient-to-br from-[#fff6fb] via-[#fffdfd] to-[#ffeef6]",
-  finalCta: "bg-gradient-to-b from-[#fff3f9] via-[#fff8fb] to-[#ffedf6]",
+  hero: "bg-gradient-to-b from-slate-100 via-slate-50 to-white",
+  why: "bg-gradient-to-b from-slate-100 via-white to-slate-50",
+  how: "bg-gradient-to-br from-slate-100 via-white to-slate-50",
+  security: "bg-gradient-to-br from-slate-100 via-white to-slate-50",
+  armor: "bg-gradient-to-r from-slate-100 via-white to-slate-50",
+  ztna: "bg-gradient-to-r from-slate-100 via-white to-slate-50",
+  solutions: "bg-gradient-to-br from-slate-100 via-white to-slate-50",
+  finalCta: "bg-gradient-to-b from-slate-100 via-white to-slate-50",
 } as const
 
 const darkTheme = {
-  page: "bg-[#12021a] text-white",
-  sectionDivider: "border-t border-rose-500/10",
-  heroBadge: "border border-rose-500/60 bg-rose-500/10 text-rose-200",
+  page: "bg-slate-900 text-white",
+  sectionDivider: "border-t border-blue-500/10",
+  heroBadge: "border border-blue-500/60 bg-blue-500/10 text-blue-200",
   heroHeading: "text-white",
   heroLead: "text-white/90",
-  heroAccent: "text-rose-100",
+  heroAccent: "text-blue-100",
   heroStatsText: "text-white/85",
-  heroStatsCard: "border border-rose-500/40 bg-gradient-to-br from-rose-500/20 to-transparent",
-  heroPanel: "border border-rose-500/40 bg-rose-500/10 text-white/90",
-  heroPanelAccent: "text-rose-100",
+  heroStatsCard: "border border-blue-500/40 bg-gradient-to-br from-blue-500/20 to-transparent",
+  heroPanel: "border border-blue-500/40 bg-blue-500/10 text-white/90",
+  heroPanelAccent: "text-blue-100",
   heroPanelList: "text-white/90",
-  heroQuote: "border border-rose-500/60 bg-black/30 text-white/75",
+  heroQuote: "border border-blue-500/60 bg-black/30 text-white/75",
   sectionTitle: "text-white",
   sectionBody: "text-white/85",
-  inlineBadgeSolid: "bg-rose-500/20 text-rose-100",
-  inlineBadgeOutline: "border border-rose-400/70 text-rose-100",
+  inlineBadgeSolid: "bg-blue-500/20 text-blue-100",
+  inlineBadgeOutline: "border border-blue-400/70 text-blue-100",
   inlineStrong: "text-white",
-  sectionCard: "border border-rose-500/40 bg-black/40 text-white/85",
-  stepCard: "border border-rose-500/20 bg-black/40",
-  stepShadow: "shadow-lg shadow-rose-900/30",
-  stepBadge: "border border-rose-400/50 bg-rose-500/15 text-rose-100",
-  stepIcon: "text-rose-300",
+  sectionCard: "border border-blue-500/40 bg-black/40 text-white/85",
+  stepCard: "border border-blue-500/20 bg-black/40",
+  stepShadow: "shadow-lg shadow-blue-900/30",
+  stepBadge: "border border-blue-400/50 bg-blue-500/15 text-blue-100",
+  stepIcon: "text-blue-300",
   stepHighlight: "text-white/90",
   stepList: "text-white/80",
   cardHeading: "text-white",
   cardBody: "text-white/85",
-  pillarCard: "border border-rose-500/20 bg-neutral-900 text-white/85 shadow-lg shadow-rose-900/20",
-  armorContainer: "bg-white/5 shadow-[0_60px_120px_-80px_rgba(244,63,94,0.6)]",
+  pillarCard: "border border-blue-500/20 bg-neutral-900 text-white/85 shadow-lg shadow-blue-900/20",
+  armorContainer: "bg-white/5 shadow-[0_60px_120px_-80px_rgba(63,94,244,0.6)]",
   armorIntro: "text-white/80",
-  armorCard: "border border-rose-500/30 bg-neutral-900/80 hover:border-rose-400/50",
-  armorIcon: "bg-rose-500/20 text-rose-200",
+  armorCard: "border border-blue-500/30 bg-neutral-900/80 hover:border-blue-400/50",
+  armorIcon: "bg-blue-500/20 text-blue-200",
   ztnaList: "text-white/80",
-  ztnaBadge: "border border-rose-500/50 bg-rose-500/15 text-rose-100",
-  ztnaCard: "border border-rose-500/20 bg-neutral-900 shadow-lg shadow-rose-900/20",
+  ztnaBadge: "border border-blue-500/50 bg-blue-500/15 text-blue-100",
+  ztnaCard: "border border-blue-500/20 bg-neutral-900 shadow-lg shadow-blue-900/20",
   ztnaCardText: "text-white/85",
   ztnaCardList: "text-white/80",
   ztnaNote: "text-white/80",
   solutionsTitle: "text-white",
   solutionsBody: "text-white/85",
-  solutionsCard: "border border-rose-500/20 bg-neutral-900/80 shadow-lg shadow-rose-900/20 hover:border-rose-400/40",
+  solutionsCard: "border border-blue-500/20 bg-neutral-900/80 shadow-lg shadow-blue-900/20 hover:border-blue-400/40",
   solutionsMeta: "text-white/80",
-  solutionsPill: "border border-rose-500/50 text-rose-100",
+  solutionsPill: "border border-blue-500/50 text-blue-100",
   solutionsMain: "text-white",
   solutionsList: "text-white/80",
-  solutionsConclusion: "border border-rose-500/50 bg-rose-500/20 text-white",
+  solutionsConclusion: "border border-blue-500/50 bg-blue-500/20 text-white",
   finalTitle: "text-white",
   finalBody: "text-white/85",
-  outlineButton: "border border-rose-500/50 text-white hover:bg-rose-500/10",
-  toggleButton: "border border-rose-500/50 text-rose-100 hover:bg-rose-500/10",
+  outlineButton: "border border-blue-500/50 text-white hover:bg-blue-500/10",
+  toggleButton: "border border-blue-500/50 text-blue-100 hover:bg-blue-500/10",
 } as const
 
 const lightTheme = {
-  page: "bg-[#fef7fb] text-slate-900",
-  sectionDivider: "border-t border-rose-100",
-  heroBadge: "border border-rose-300 bg-rose-100 text-rose-700",
+  page: "bg-slate-50 text-slate-900",
+  sectionDivider: "border-t border-slate-200",
+  heroBadge: "border border-blue-300 bg-blue-100 text-blue-800",
   heroHeading: "text-slate-900",
   heroLead: "text-slate-700",
-  heroAccent: "text-rose-600",
+  heroAccent: "text-blue-600",
   heroStatsText: "text-slate-700",
-  heroStatsCard: "border border-rose-200 bg-gradient-to-br from-rose-100 to-white",
-  heroPanel: "border border-rose-200 bg-white/90 text-slate-700 shadow-[0_30px_60px_-45px_rgba(244,63,94,0.35)]",
-  heroPanelAccent: "text-rose-600",
+  heroStatsCard: "border border-slate-200 bg-gradient-to-br from-slate-100 to-white",
+  heroPanel: "border border-slate-200 bg-white/90 text-slate-700 shadow-[0_30px_60px_-45px_rgba(63,94,244,0.35)]",
+  heroPanelAccent: "text-blue-600",
   heroPanelList: "text-slate-700",
-  heroQuote: "border border-rose-200 bg-rose-50 text-slate-600",
+  heroQuote: "border border-slate-200 bg-slate-50 text-slate-600",
   sectionTitle: "text-slate-900",
   sectionBody: "text-slate-700",
-  inlineBadgeSolid: "bg-rose-100 text-rose-600",
-  inlineBadgeOutline: "border border-rose-200 text-rose-600",
+  inlineBadgeSolid: "bg-blue-100 text-blue-800",
+  inlineBadgeOutline: "border border-blue-200 text-blue-800",
   inlineStrong: "text-slate-900",
-  sectionCard: "border border-rose-200 bg-white/90 text-slate-700",
-  stepCard: "border border-rose-200 bg-white/90",
-  stepShadow: "shadow-lg shadow-rose-100/60",
-  stepBadge: "border border-rose-300 bg-rose-100 text-rose-700",
-  stepIcon: "text-rose-500",
+  sectionCard: "border border-slate-200 bg-white/90 text-slate-700",
+  stepCard: "border border-slate-200 bg-white/90",
+  stepShadow: "shadow-lg shadow-slate-100/60",
+  stepBadge: "border border-blue-300 bg-blue-100 text-blue-800",
+  stepIcon: "text-blue-500",
   stepHighlight: "text-slate-800",
   stepList: "text-slate-600",
   cardHeading: "text-slate-900",
   cardBody: "text-slate-600",
-  pillarCard: "border border-rose-200 bg-white text-slate-600 shadow-md shadow-rose-100/40",
-  armorContainer: "bg-white shadow-[0_60px_120px_-90px_rgba(244,63,94,0.25)]",
+  pillarCard: "border border-slate-200 bg-white text-slate-600 shadow-md shadow-slate-100/40",
+  armorContainer: "bg-white shadow-[0_60px_120px_-90px_rgba(63,94,244,0.25)]",
   armorIntro: "text-slate-600",
-  armorCard: "border border-rose-200 bg-white hover:border-rose-300",
-  armorIcon: "bg-rose-100 text-rose-700",
+  armorCard: "border border-slate-200 bg-white hover:border-blue-300",
+  armorIcon: "bg-blue-100 text-blue-700",
   ztnaList: "text-slate-600",
-  ztnaBadge: "border border-rose-300 bg-rose-100 text-rose-700",
-  ztnaCard: "border border-rose-200 bg-white shadow-md shadow-rose-100/40",
+  ztnaBadge: "border border-blue-300 bg-blue-100 text-blue-800",
+  ztnaCard: "border border-slate-200 bg-white shadow-md shadow-slate-100/40",
   ztnaCardText: "text-slate-700",
   ztnaCardList: "text-slate-600",
   ztnaNote: "text-slate-600",
   solutionsTitle: "text-slate-900",
   solutionsBody: "text-slate-600",
-  solutionsCard: "border border-rose-200 bg-white shadow-md shadow-rose-100/40 hover:border-rose-300",
+  solutionsCard: "border border-slate-200 bg-white shadow-md shadow-slate-100/40 hover:border-blue-300",
   solutionsMeta: "text-slate-500",
-  solutionsPill: "border border-rose-200 text-rose-600",
+  solutionsPill: "border border-blue-200 text-blue-800",
   solutionsMain: "text-slate-900",
   solutionsList: "text-slate-600",
-  solutionsConclusion: "border border-rose-200 bg-rose-50 text-rose-700",
+  solutionsConclusion: "border border-slate-200 bg-slate-50 text-slate-700",
   finalTitle: "text-slate-900",
   finalBody: "text-slate-600",
-  outlineButton: "border border-rose-200 text-rose-600 hover:bg-rose-100/60",
-  toggleButton: "border border-rose-200 text-rose-600 hover:bg-rose-100/70",
+  outlineButton: "border border-slate-200 text-blue-600 hover:bg-blue-100/60",
+  toggleButton: "border border-slate-200 text-blue-600 hover:bg-blue-100/70",
 } as const
 
 export default function HomePage() {
@@ -387,7 +387,7 @@ export default function HomePage() {
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
               <Button
                 asChild
-                className="w-full justify-center bg-gradient-to-r from-rose-500 via-red-500 to-orange-500 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-rose-900/40 transition hover:brightness-110 sm:w-auto"
+                className="w-full justify-center bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-900/40 transition hover:brightness-110 sm:w-auto"
               >
                 <a
                   href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
@@ -434,13 +434,13 @@ export default function HomePage() {
               Enterprise leaders choose Wootzapp to:
             </p>
             <ul className={cn("space-y-4 text-sm", theme.heroPanelList)}>
-              <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-rose-400">
+              <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-blue-400">
                 Kill VDI sprawl without sacrificing control
               </li>
-              <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-rose-400">
+              <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-blue-400">
                 Embrace BYOD and contractors with policy-grade guardrails
               </li>
-              <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-rose-400">
+              <li className="relative pl-6 before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-blue-400">
                 Say &quot;yes&quot; to GenAI with deterministic DLP
               </li>
             </ul>
@@ -575,7 +575,7 @@ export default function HomePage() {
                       {step.bullets.map((bullet) => (
                         <li
                           key={bullet}
-                          className="relative pl-6 text-left before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-rose-400"
+                          className="relative pl-6 text-left before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-blue-400"
                         >
                           {bullet.includes("Personal browsing") ? <span className="italic">{bullet}</span> : bullet}
                         </li>
@@ -721,7 +721,7 @@ export default function HomePage() {
               </p>
               <ul className={cn("space-y-2 text-sm", theme.ztnaCardList)}>
                 {saasBullets.map((line) => (
-                  <li key={line} className="relative pl-6 before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-rose-400">
+                  <li key={line} className="relative pl-6 before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-blue-400">
                     {line.includes("GenAI-aware") ? (
                       <>
                         Apply <strong>GenAI-aware DLP</strong> to prompts and outputs
@@ -784,10 +784,9 @@ export default function HomePage() {
                   {value.points && (
                     <ul className={cn("space-y-2 text-sm", theme.solutionsList)}>
                       {value.points.map((point) => (
-                        <li key={point} className="relative pl-6 before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-rose-400">
-                          {point}
-                        </li>
-                      ))}
+                                              <li key={point} className="relative pl-6 before:absolute before:left-0 before:top-2 before:h-1.se before:w-1.5 before:rounded-full before:bg-blue-400">
+                                                {point}
+                                              </li>                      ))}
                     </ul>
                   )}
                   {value.conclusion && (
@@ -828,7 +827,7 @@ export default function HomePage() {
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               asChild
-              className="w-full justify-center bg-gradient-to-r from-rose-500 via-red-500 to-orange-500 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-rose-900/40 transition hover:brightness-110 sm:w-auto"
+              className="w-full justify-center bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-900/40 transition hover:brightness-110 sm:w-auto"
             >
               <a
                 href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
