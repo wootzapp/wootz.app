@@ -5,7 +5,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { OpenSourceShowcase } from "@/components/open-source-showcase"
 import { cn } from "@/lib/utils"
-import { Cloud, Lightbulb, Search, Shield, Target, Zap } from "lucide-react"
+import { Cloud, Lightbulb, Search, Shield, Zap } from "lucide-react"
 import { Particles } from "@/components/ui/particles"
 
 const containerClasses = "mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"
@@ -365,7 +365,11 @@ A browser-first control plane that understands language, evaluates posture befor
                 </div>
                 <div className="relative flex items-center justify-center rounded-2xl bg-card p-4 border border-border aspect-square overflow-hidden">
                   <div className="absolute inset-0" style={{ background: "radial-gradient(circle, rgba(128,0,128,0.2) 0%, rgba(0,0,0,0) 70%)" }}></div>
-                  <Particles className="absolute inset-0" quantity={100} color="800080" />
+                  <Particles
+                    className="absolute inset-0"
+                    quantity={200}
+                    color="200, 0, 200"
+                  />
                   <feature.icon className="h-2/5 w-2/5 text-primary/80 relative z-10" />
                 </div>
               </div>

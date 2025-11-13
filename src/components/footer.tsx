@@ -5,7 +5,7 @@ export default function Footer() {
   const linkClass = "transition-colors text-muted-foreground hover:text-primary";
 
   return (
-    <footer className="border-t border-border/40 bg-background py-8 text-sm md:py-12">
+    <footer className="border-t border-border/40 bg-gradient-to-t from-background via-background/80 to-secondary/20 py-8 text-sm md:py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
           <div className="sm:col-span-2 md:col-span-1">

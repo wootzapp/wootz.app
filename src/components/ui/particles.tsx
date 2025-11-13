@@ -1,6 +1,19 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useCallback, useEffect, useRef } from "react"
+
+type Circle = {
+  x: number
+  y: number
+  translateX: number
+  translateY: number
+  size: number
+  alpha: number
+  targetAlpha: number
+  dx: number
+  dy: number
+  magnetism: number
+}
 
 export function Particles({
   className,
@@ -9,7 +22,7 @@ export function Particles({
   ease = 50,
   size = 0.4,
   refresh = false,
-  color = "#ffffff",
+  color = "255, 255, 255",
   vx = 0,
   vy = 0,
 }: {
@@ -26,8 +39,7 @@ export function Particles({
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const canvasContainerRef = useRef<HTMLDivElement>(null)
   const context = useRef<CanvasRenderingContext2D | null>(null)
-  const circles = useRef<any[]>([])
-  const mousePosition = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
+  const circles = useRef<Circle[]>([])
   const mouse = useRef<{ x: number; y: number; vx: number; vy: number }>({
     x: 0,
     y: 0,
@@ -37,56 +49,7 @@ export function Particles({
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
   const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1
 
-  useEffect(() => {
-    if (canvasRef.current) {
-      context.current = canvasRef.current.getContext("2d")
-    }
-    initCanvas()
-    animate()
-    window.addEventListener("resize", initCanvas)
-
-    return () => {
-      window.removeEventListener("resize", initCanvas)
-    }
-  }, [])
-
-  useEffect(() => {
-    initCanvas()
-  }, [refresh])
-
-  const initCanvas = () => {
-    resizeCanvas()
-    drawParticles()
-  }
-
-  const onMouseMove = (event: MouseEvent) => {
-    if (canvasRef.current) {
-      const rect = canvasRef.current.getBoundingClientRect()
-      const { w, h } = canvasSize.current
-      const x = event.clientX - rect.left - w / 2
-      const y = event.clientY - rect.top - h / 2
-      const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2
-      if (inside) {
-        mousePosition.current.x = event.clientX - rect.left
-        mousePosition.current.y = event.clientY - rect.top
-      }
-    }
-  }
-
-  type Circle = {
-    x: number
-    y: number
-    translateX: number
-    translateY: number
-    size: number
-    alpha: number
-    targetAlpha: number
-    dx: number
-    dy: number
-    magnetism: number
-  }
-
-  const resizeCanvas = () => {
+  const resizeCanvas = useCallback(() => {
     if (canvasContainerRef.current && canvasRef.current && context.current) {
       circles.current.length = 0
       canvasSize.current.w = canvasContainerRef.current.offsetWidth
@@ -97,16 +60,16 @@ export function Particles({
       canvasRef.current.style.height = `${canvasSize.current.h}px`
       context.current.scale(dpr, dpr)
     }
-  }
+  }, [dpr])
 
-  const circleParams = (): Circle => {
+  const circleParams = useCallback((): Circle => {
     const x = Math.floor(Math.random() * canvasSize.current.w)
     const y = Math.floor(Math.random() * canvasSize.current.h)
     const translateX = 0
     const translateY = 0
     const s = Math.floor(Math.random() * 2) + size
     const alpha = 0
-    const targetAlpha = parseFloat((Math.random() * 0.6 + 0.1).toFixed(1))
+    const targetAlpha = parseFloat((Math.random() * 0.8 + 0.2).toFixed(1))
     const dx = (Math.random() - 0.5) * 0.1
     const dy = (Math.random() - 0.5) * 0.1
     const magnetism = 0.1 + Math.random() * 4
@@ -122,37 +85,50 @@ export function Particles({
       dy,
       magnetism,
     }
-  }
+  }, [size])
 
-  const drawCircle = (circle: Circle, update = false) => {
-    if (context.current) {
-      const { x, y, translateX, translateY, size, alpha } = circle
-      context.current.translate(translateX, translateY)
-      context.current.beginPath()
-      context.current.arc(x, y, size, 0, 2 * Math.PI)
-      context.current.fillStyle = `rgba(${color}, ${alpha})`
-      context.current.fill()
-      context.current.setTransform(dpr, 0, 0, dpr, 0, 0)
+  const drawCircle = useCallback(
+    (circle: Circle, update = false) => {
+      if (context.current) {
+        const { x, y, translateX, translateY, size, alpha } = circle
+        context.current.translate(translateX, translateY)
+        context.current.beginPath()
+        context.current.arc(x, y, size, 0, 2 * Math.PI)
+        context.current.fillStyle = `rgba(${color}, ${alpha})`
+        context.current.fill()
+        context.current.setTransform(dpr, 0, 0, dpr, 0, 0)
 
-      if (!update) {
-        circles.current.push(circle)
+        if (!update) {
+          circles.current.push(circle)
+        }
       }
-    }
-  }
+    },
+    [color, dpr]
+  )
 
   const clearContext = () => {
     if (context.current) {
-      context.current.clearRect(0, 0, canvasSize.current.w, canvasSize.current.h)
+      context.current.clearRect(
+        0,
+        0,
+        canvasSize.current.w,
+        canvasSize.current.h
+      )
     }
   }
 
-  const drawParticles = () => {
+  const drawParticles = useCallback(() => {
     clearContext()
     for (let i = 0; i < quantity; i++) {
       const circle = circleParams()
       drawCircle(circle)
     }
-  }
+  }, [quantity, circleParams, drawCircle])
+
+  const initCanvas = useCallback(() => {
+    resizeCanvas()
+    drawParticles()
+  }, [resizeCanvas, drawParticles])
 
   const remapValue = (
     value: number,
@@ -166,7 +142,7 @@ export function Particles({
     return remapped > 0 ? remapped : 0
   }
 
-  const animate = () => {
+  const animate = useCallback(() => {
     clearContext()
     circles.current.forEach((circle: Circle, i: number) => {
       // Handle the alpha value
@@ -191,10 +167,10 @@ export function Particles({
       circle.x += circle.dx + vx
       circle.y += circle.dy + vy
       circle.translateX +=
-        (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) /
+        (0 / (staticity / circle.magnetism) - circle.translateX) /
         ease
       circle.translateY +=
-        (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) /
+        (0 / (staticity / circle.magnetism) - circle.translateY) /
         ease
       // circle gets out of the canvas
       if (
@@ -224,7 +200,24 @@ export function Particles({
       }
     })
     window.requestAnimationFrame(animate)
-  }
+  }, [vx, vy, staticity, ease, circleParams, drawCircle])
+
+  useEffect(() => {
+    if (canvasRef.current) {
+      context.current = canvasRef.current.getContext("2d")
+    }
+    initCanvas()
+    animate()
+    window.addEventListener("resize", initCanvas)
+
+    return () => {
+      window.removeEventListener("resize", initCanvas)
+    }
+  }, [animate, initCanvas])
+
+  useEffect(() => {
+    initCanvas()
+  }, [refresh, initCanvas])
 
   return (
     <div className={className} ref={canvasContainerRef} aria-hidden="true">
