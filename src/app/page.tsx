@@ -6,6 +6,7 @@ import Footer from "@/components/footer"
 import { OpenSourceShowcase } from "@/components/open-source-showcase"
 import { cn } from "@/lib/utils"
 import { Cloud, Lightbulb, Search, Shield, Target, Zap } from "lucide-react"
+import { Particles } from "@/components/ui/particles"
 
 const containerClasses = "mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"
 
@@ -18,13 +19,13 @@ const howItWorksRoadmap = [
     bullets: [
       "Catches data as it&apos;s typed, pasted, uploaded",
       "Works with AI tools (even when paraphrased)",
-      "You set guardrails. It enforces inline",
+      "You set guardrails; it enforces inline",
     ],
     icon: Search,
   },
   {
     title: "Policy before pixels",
-    highlight: "Before a page renders, the browser evaluates",
+    highlight: "Before a page paints, the browser evaluates",
     bullets: [
       "Identity, device posture, network, location",
       "Then applies controls (mask, block, watermark)",
@@ -46,32 +47,32 @@ const coreFeatures = [
   {
     icon: Shield,
     title: "Agentic Security Control",
-    body: "The browser actively monitors user actions and can intervene in real-time to redact sensitive information, require additional authentication, or ask for human approval.",
+    body: "Treat the browser as the agent runtime. Real-time monitors watch prompts, tool invocations, file uploads, form fills, clipboard, and extension behavior.",
+    points: [
+      "Redact, quarantine, or require step-up auth",
+      "Ask for human approval for risky actions",
+      "Security that acts at the moment of action",
+    ],
   },
   {
     icon: Search,
     title: "LLM-aware Data Guard",
-    body: "Modern DLP that understands context, not just patterns. It supports GenAI workflows like paraphrasing, translation, and summarization directly within the browser.",
+    body: "Modern DLP needs classification, policy enforcement, monitoring/alerts, and granular controls. We do it all at the last mile — the browser.",
+    points: [
+      "Granular controls for copy, paste, and uploads",
+      "Explicit support for GenAI workflows",
+      "Protects against paraphrasing, translation, and summarization",
+    ],
   },
   {
     icon: Zap,
-    title: "Zero-Trust, Simplified",
-    body: "Use short-lived, mTLS connections for private apps while extending least-privilege policy into the browser itself. Stronger control, simpler rollout.",
-  },
-  {
-    icon: Shield,
-    title: "Hardened Chromium",
-    body: "Effectively blocks phishing, malware, session hijacks, and man-in-the-browser tricks — on or off VPN, without performance hits.",
-  },
-  {
-    icon: Target,
-    title: "Contextual Data Controls",
-    body: "Copy, paste, screenshots, printing, and downloads obey granular policies based on user role, network, application, and geo-fence.",
-  },
-  {
-    icon: Zap,
-    title: "Watermark & Kill-Switch",
-    body: "Every sensitive page is trace-stamped, and admins can terminate any session mid-click if a risk is detected.",
+    title: "Zero-trust, minus the machinery",
+    body: "Use short-lived, mTLS connections for private apps while extending least-privilege policy into the render process itself.",
+    points: [
+      "Simpler rollout than legacy ZTNA",
+      "Stronger control where it counts",
+      "No complex infrastructure to manage",
+    ],
   },
 ]
 
@@ -264,10 +265,10 @@ export default function HomePage() {
         <div className={containerClasses}>
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 sm:text-4xl">
-              How It Works
+              How it works (at a glance)
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Our browser-first control plane understands natural language, evaluates security posture before a page renders, and streams detailed telemetry—all without compromising user privacy.
+A browser-first control plane that understands language, evaluates posture before pixels, and streams high-fidelity telemetry — without creeping on personal browsing.
             </p>
           </div>
 
@@ -277,21 +278,39 @@ export default function HomePage() {
               {howItWorksRoadmap.map((step, index) => (
                 <div key={step.title} className="relative flex items-start">
                   <div className="absolute left-1/2 top-5 -translate-x-1/2">
-                    <div className="h-4 w-4 rounded-full bg-primary shadow-[0_0_10px_theme(colors.primary)]"></div>
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground shadow-[0_0_10px_theme(colors.primary)]">
+                      {index + 1}
+                    </div>
                   </div>
                   <div className="w-1/2 pr-8 text-right">
                     {index % 2 === 0 && (
-                      <div className="rounded-lg bg-card p-6 border border-border shadow-lg shadow-primary/5">
+                      <div className="mt-8 rounded-lg bg-card p-6 border border-border shadow-lg shadow-primary/5">
                         <h3 className="font-semibold text-foreground">{step.title}</h3>
                         <p className="mt-2 text-sm text-muted-foreground">{step.highlight}</p>
+                        <ul className="mt-4 space-y-2 text-left">
+                          {step.bullets.map((bullet) => (
+                            <li key={bullet} className="flex items-start gap-2 text-xs text-muted-foreground">
+                              <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary/50"></span>
+                              <span>{bullet}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     )}
                   </div>
                   <div className="w-1/2 pl-8">
                     {index % 2 !== 0 && (
-                      <div className="rounded-lg bg-card p-6 border border-border shadow-lg shadow-primary/5">
+                      <div className="mt-8 rounded-lg bg-card p-6 border border-border shadow-lg shadow-primary/5">
                         <h3 className="font-semibold text-foreground">{step.title}</h3>
                         <p className="mt-2 text-sm text-muted-foreground">{step.highlight}</p>
+                        <ul className="mt-4 space-y-2 text-left">
+                          {step.bullets.map((bullet) => (
+                            <li key={bullet} className="flex items-start gap-2 text-xs text-muted-foreground">
+                              <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary/50"></span>
+                              <span>{bullet}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     )}
                   </div>
@@ -307,25 +326,48 @@ export default function HomePage() {
         <div className={containerClasses}>
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 sm:text-4xl">
-              A Secure Foundation for a Modern Workforce
+              Agentic security — built into the browser
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Wootzapp isn&apos;t just a browser; it&apos;s a secure workspace. We&apos;ve built a suite of agentic security tools and hardened defenses directly into the core, giving you unparalleled control and visibility.
+              Treat the browser as your agent runtime. The Guardrails Module injects inline intelligence while the Armor Layer keeps data locked down.
             </p>
           </div>
 
-          <div className="mx-auto mt-16 grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {coreFeatures.map((feature) => (
-              <div key={feature.title} className="rounded-lg bg-card p-6 border border-border">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-secondary shadow-[0_0_20px_theme(colors.primary/20)]">
-                  <feature.icon className="h-6 w-6 text-primary" />
+          <div className="mx-auto mt-24 max-w-6xl space-y-24">
+            {coreFeatures.map((feature, index) => (
+              <div
+                key={feature.title}
+                className={cn(
+                  "grid items-center gap-12 lg:grid-cols-2",
+                  index % 2 !== 0 && "lg:grid-flow-col-dense lg:[&>*:last-child]:col-start-1"
+                )}
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-secondary">
+                      <feature.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-2xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+                      {feature.title}
+                    </h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    {feature.body}
+                  </p>
+                  <ul className="space-y-3 pt-2">
+                    {feature.points.map((point) => (
+                      <li key={point} className="flex items-start gap-3">
+                        <div className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-primary/50" />
+                        <span className="text-muted-foreground">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="mt-6 font-semibold text-foreground">
-                  {feature.title}
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {feature.body}
-                </p>
+                <div className="relative flex items-center justify-center rounded-2xl bg-card p-4 border border-border aspect-square overflow-hidden">
+                  <div className="absolute inset-0" style={{ background: "radial-gradient(circle, rgba(128,0,128,0.2) 0%, rgba(0,0,0,0) 70%)" }}></div>
+                  <Particles className="absolute inset-0" quantity={100} color="800080" />
+                  <feature.icon className="h-2/5 w-2/5 text-primary/80 relative z-10" />
+                </div>
               </div>
             ))}
           </div>
