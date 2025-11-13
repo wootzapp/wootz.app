@@ -5,33 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
-type HeaderProps = {
-  variant?: "light" | "dark";
-};
 
-export default function Header({ variant = "dark" }: HeaderProps) {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isLight = variant === "light";
 
-  const navLinkClass = cn(
-    "text-sm transition-colors whitespace-nowrap",
-    isLight ? "text-slate-600 hover:text-slate-900" : "text-white/80 hover:text-white"
-  );
-
-  const mobileLinkClass = cn(
-    "block py-2 transition-colors",
-    isLight ? "text-slate-700 hover:text-slate-900" : "text-white/85 hover:text-white"
-  );
+  const navLinkClass = "text-sm transition-colors whitespace-nowrap text-muted-foreground hover:text-foreground";
+  const mobileLinkClass = "block py-2 transition-colors text-muted-foreground hover:text-foreground";
 
   return (
-    <header
-      className={cn(
-        "relative border-b backdrop-blur",
-        isLight ? "border-black/10 bg-white/90" : "border-white/10 bg-[#080208]/95"
-      )}
-    >
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-4 md:space-x-8">
@@ -43,13 +26,8 @@ export default function Header({ variant = "dark" }: HeaderProps) {
                 height={20}
                 className="h-5"
               />
-              <span
-                className={cn(
-                  "min-w-0 break-keep text-sm font-semibold leading-tight sm:text-base md:text-xl",
-                  isLight ? "text-slate-900" : "text-white"
-                )}
-              >
-                Wootzapp GenAI Enterprise Browser
+              <span className="min-w-0 break-keep text-sm font-semibold leading-tight text-foreground sm:text-base md:text-xl">
+                Wootzapp
               </span>
             </Link>
             <nav className="hidden md:flex items-center space-x-8">
@@ -60,7 +38,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
                 href="/future-of-enterprise-browsers"
                 className={navLinkClass}
               >
-                Enterprise Browser Research
+                Research
               </Link>
               <Link href="/genai" className={navLinkClass}>
                 GenAI
@@ -68,25 +46,24 @@ export default function Header({ variant = "dark" }: HeaderProps) {
             </nav>
           </div>
 
-          <div className="flex items-center space-x-2 md:space-x-4">
-            <Button
-              asChild
-              className="bg-black px-3 py-2 text-sm text-white hover:bg-gray-800 md:px-4 sm:hidden"
-            >
-              <a
-                href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get Started
-              </a>
-            </Button>
+          <div className="flex items-center space-x-4">
+            <div className="hidden sm:flex items-center space-x-4">
+              <Link href="#" className={navLinkClass}>
+                Sign In
+              </Link>
+              <Button asChild className="bg-primary text-primary-foreground shadow-[0_0_10px_theme(colors.primary)] hover:bg-primary/90">
+                <a
+                  href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get Started
+                </a>
+              </Button>
+            </div>
             <button
               onClick={() => setIsMenuOpen((open) => !open)}
-              className={cn(
-                "transition-colors",
-                isLight ? "text-slate-700 hover:text-slate-900" : "text-white/80 hover:text-white"
-              )}
+              className="sm:hidden text-muted-foreground hover:text-foreground"
               aria-label="Toggle navigation menu"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
@@ -96,38 +73,10 @@ export default function Header({ variant = "dark" }: HeaderProps) {
           </div>
         </div>
       </div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 hidden sm:flex items-center pr-4 sm:pr-6 lg:pr-8">
-        <div className="pointer-events-auto flex items-center space-x-2 md:space-x-4">
-          <Link
-            href="#"
-            className={cn(
-              "text-sm transition-colors",
-              isLight ? "text-slate-600 hover:text-slate-900" : "text-white/80 hover:text-white"
-            )}
-          >
-            Sign In
-          </Link>
-          <Button
-            asChild
-            className="bg-black px-4 py-2 text-sm text-white hover:bg-gray-800"
-          >
-            <a
-              href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get Started
-            </a>
-          </Button>
-        </div>
-      </div>
       {isMenuOpen && (
         <nav
           id="mobile-menu"
-          className={cn(
-            "md:hidden border-t",
-            isLight ? "border-black/10 bg-white/95" : "border-white/10 bg-[#09010a]"
-          )}
+          className="sm:hidden border-t border-border bg-background"
         >
           <ul className="flex flex-col space-y-1 px-4 py-3">
             <li>
@@ -145,7 +94,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
                 className={mobileLinkClass}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Enterprise Browser Research
+                Research
               </Link>
             </li>
             <li>

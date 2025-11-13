@@ -4,20 +4,20 @@ import { OpenSourceShowcase } from "@/components/open-source-showcase";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
       <OpenSourceShowcase />
       <section className="py-12 sm:py-20 md:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-light text-gray-900 mb-6">Data Transfer Policy</h1>
-            <div className="space-y-6 text-gray-600 leading-relaxed text-sm sm:text-base">
-              <p className="text-gray-500">Last updated on April 1, 2025</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-light text-foreground mb-6">Data Transfer Policy</h1>
+            <div className="space-y-6 text-muted-foreground leading-relaxed text-sm sm:text-base">
+              <p className="text-muted-foreground/80">Last updated on April 1, 2025</p>
               <p>
                 This Data Transfer Policy explains how Wootzapp Inc. transfers and protects data
                 between jurisdictions when you use our services.
               </p>
-              <h2 className="text-xl font-semibold text-gray-900">Record 1: EU Meeting Data to US-Based Processing Infrastructure</h2>
+              <h2 className="text-xl font-semibold text-foreground">Record 1: EU Meeting Data to US-Based Processing Infrastructure</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li>
                   <strong>Destination:</strong> United States
@@ -50,7 +50,7 @@ export default function Page() {
                   </ul>
                 </li>
               </ul>
-              <h2 className="text-xl font-semibold text-gray-900">Record 2: EU User Account Data to US-Based Database Infrastructure</h2>
+              <h2 className="text-xl font-semibold text-foreground">Record 2: EU User Account Data to US-Based Database Infrastructure</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li>
                   <strong>Destination:</strong> United States
@@ -84,7 +84,7 @@ export default function Page() {
                   </ul>
                 </li>
               </ul>
-              <h2 className="text-xl font-semibold text-gray-900">Contact</h2>
+              <h2 className="text-xl font-semibold text-foreground">Contact</h2>
               <p>
                 For questions about this Data Transfer Policy, contact support@wootzapp.com.
               </p>

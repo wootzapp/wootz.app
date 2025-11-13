@@ -5,29 +5,29 @@ import { OpenSourceShowcase } from "@/components/open-source-showcase";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
       <OpenSourceShowcase />
       <section className="py-12 sm:py-20 md:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-light text-gray-900 mb-6">Privacy Policy</h1>
-            <div className="space-y-6 text-gray-600 leading-relaxed text-sm sm:text-base">
-              <p className="text-gray-500">Last updated on June 10, 2025</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-light text-foreground mb-6">Privacy Policy</h1>
+            <div className="space-y-6 text-muted-foreground leading-relaxed text-sm sm:text-base">
+              <p className="text-muted-foreground/80">Last updated on June 10, 2025</p>
               <p>
                 Your privacy is important to us. This Privacy Policy ("Policy") explains what
                 information Wootzapp Inc. ("we", "us", or "our") collects when you use our website,
                 applications, and services (collectively, the "Services"), how we use that
                 information, and the choices you have.
               </p>
-              <h2 className="text-xl font-semibold text-gray-900">Scope and Applicability</h2>
+              <h2 className="text-xl font-semibold text-foreground">Scope and Applicability</h2>
               <p>
                 This Policy applies to information collected when you visit our website or otherwise
                 use the Services. It does not apply where we process information on behalf of our
                 enterprise customers.
               </p>
-              <h2 className="text-xl font-semibold text-gray-900">Information We Collect</h2>
-              <h3 className="font-semibold text-gray-900">Information You Provide</h3>
+              <h2 className="text-xl font-semibold text-foreground">Information We Collect</h2>
+              <h3 className="font-semibold text-foreground">Information You Provide</h3>
               <ul className="list-disc pl-6 space-y-1">
                 <li>
                   <strong>Account Information:</strong> name, email, profile picture, and
@@ -46,7 +46,7 @@ export default function Page() {
                   organization when you engage with us on behalf of a company.
                 </li>
               </ul>
-              <h3 className="font-semibold text-gray-900">Information We Collect Automatically</h3>
+              <h3 className="font-semibold text-foreground">Information We Collect Automatically</h3>
               <ul className="list-disc pl-6 space-y-1">
                 <li>
                   <strong>Log Data:</strong> IP address, browser type, and how you interact with the
@@ -61,24 +61,24 @@ export default function Page() {
                     href="https://app.retention.com/optout" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-black underline hover:text-gray-700"
+                    className="text-primary underline hover:text-primary/80"
                   >
                     https://app.retention.com/optout
                   </a>.
                 </li>
               </ul>
-              <h2 className="text-xl font-semibold text-gray-900">How We Use Information</h2>
+              <h2 className="text-xl font-semibold text-foreground">How We Use Information</h2>
               <p>
                 We use the information we collect to operate, maintain, and improve the Services,
                 process transactions, provide customer support, and communicate with you about
                 updates and promotional offers.
               </p>
-              <h2 className="text-xl font-semibold text-gray-900">How We Share Information</h2>
+              <h2 className="text-xl font-semibold text-foreground">How We Share Information</h2>
               <p>
                 We do not sell your personal information. We may share it with service providers
                 that assist in delivering the Services, with your consent, or as required by law.
               </p>
-              <h2 className="text-xl font-semibold text-gray-900">Your Rights and Choices</h2>
+              <h2 className="text-xl font-semibold text-foreground">Your Rights and Choices</h2>
               <p>
                 You may request access to, correction of, or deletion of your personal information
                 by contacting us. You can also object to or restrict certain processing.
@@ -89,22 +89,22 @@ export default function Page() {
                   href="https://www.rb2b.com/rb2b-gdpr-opt-out" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-black underline hover:text-gray-700"
+                  className="text-primary underline hover:text-primary/80"
                 >
                   https://www.rb2b.com/rb2b-gdpr-opt-out
                 </a>.
               </p>
-              <h2 className="text-xl font-semibold text-gray-900">Security</h2>
+              <h2 className="text-xl font-semibold text-foreground">Security</h2>
               <p>
                 We use administrative, technical, and physical safeguards to protect your
                 information. However, no security measures are perfect or impenetrable.
               </p>
-              <h2 className="text-xl font-semibold text-gray-900">Changes to this Policy</h2>
+              <h2 className="text-xl font-semibold text-foreground">Changes to this Policy</h2>
               <p>
                 We may update this Policy from time to time. If we make material changes, we will
                 notify you by posting the new Policy on this page and updating the date above.
               </p>
-              <h2 className="text-xl font-semibold text-gray-900">Contact</h2>
+              <h2 className="text-xl font-semibold text-foreground">Contact</h2>
               <p>
                 Questions about this Privacy Policy can be sent to privacy@wootzapp.com.
               </p>

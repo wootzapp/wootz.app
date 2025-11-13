@@ -5,19 +5,19 @@ import { OpenSourceShowcase } from "@/components/open-source-showcase"
 
 export default function TransportEldPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
       <OpenSourceShowcase />
       
       <main>
         {/* Hero */}
-        <section className="w-full py-12 md:py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <section className="w-full py-12 md:py-16 lg:py-24 bg-gradient-to-br from-background via-secondary/20 to-background">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <p className="text-sm text-gray-500">Transport • Logistics • Warehousing</p>
-            <h1 className="mt-2 text-pretty text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-gray-900">
+            <p className="text-sm text-muted-foreground">Transport • Logistics • Warehousing</p>
+            <h1 className="mt-2 text-pretty text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-foreground">
               ELD compliance and VDI/SASE/MDM security implications
             </h1>
-            <p className="mt-4 max-w-2xl text-pretty text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
+            <p className="mt-4 max-w-2xl text-pretty text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
               A mobile‑first playbook for securing driver ELD tablets, handhelds, and office/warehouse workstations with
               SASE, VDI/RDS/AVD, and MDM/UEM—complete with real deployments and measurable outcomes.
             </p>
@@ -28,35 +28,35 @@ export default function TransportEldPage() {
         {/* Why secure device management */}
         <section id="why" className="w-full border-t scroll-mt-24 py-12 md:py-16 lg:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-pretty text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-pretty text-foreground">
               Why secure device management is non‑negotiable
             </h2>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-medium text-gray-900">Ransomware & safety risks</h3>
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+              <div className="rounded-lg border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-medium text-foreground">Ransomware & safety risks</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   ELDs and in‑cab tablets connect to logistics systems and vehicle data. Compromise can enable lateral
                   movement into back‑office apps and planning systems. FBI/CISA have warned operators to harden connected
                   devices.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-medium text-gray-900">Regulatory & compliance gaps</h3>
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+              <div className="rounded-lg border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-medium text-foreground">Regulatory & compliance gaps</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   The FMCSA ELD mandate emphasizes logging, not cybersecurity. Fleets must apply best‑practice controls
                   (policy enforcement, validation, monitoring) to meet internal and customer security requirements.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-medium text-gray-900">End‑to‑end control & visibility</h3>
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+              <div className="rounded-lg border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-medium text-foreground">End‑to‑end control & visibility</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   SASE consolidates Zero Trust access, secure web gateway, and threat inspection—improving performance and
                   reducing brittle VPN dependencies and hardware sprawl.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow md:col-span-2 lg:col-span-1">
-                <h3 className="font-medium text-gray-900">Reduce risk via centralization</h3>
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+              <div className="rounded-lg border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow md:col-span-2 lg:col-span-1">
+                <h3 className="font-medium text-foreground">Reduce risk via centralization</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   VDI/RDS/AVD keeps sensitive data off endpoints, speeds patching, and standardizes policy enforcement. If
                   a kiosk is compromised, core systems remain insulated.
                 </p>
@@ -66,12 +66,12 @@ export default function TransportEldPage() {
         </section>
 
         {/* Driver-facing deployments (MDM + SASE) */}
-        <section id="driver-mdm-sase" className="w-full border-t scroll-mt-24 py-12 md:py-16 lg:py-20 bg-gray-50">
+        <section id="driver-mdm-sase" className="w-full border-t scroll-mt-24 py-12 md:py-16 lg:py-20 bg-background">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-pretty text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-pretty text-foreground">
               Who&apos;s already doing it: Driver‑facing MDM + SASE
             </h2>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-muted-foreground">
               Examples of fleets using kiosk‑mode lockdown, UEM/MDM, and SASE to secure ELD tablets and handhelds.
             </p>
 
@@ -119,10 +119,10 @@ export default function TransportEldPage() {
               ].map((item) => (
                 <article
                   key={item.name}
-                  className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow h-full"
+                  className="rounded-lg border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow h-full"
                 >
-                  <h3 className="font-medium text-gray-900">{item.name}</h3>
-                  <p className="mt-3 text-sm text-gray-600 leading-relaxed">{item.detail}</p>
+                  <h3 className="font-medium text-foreground">{item.name}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
                 </article>
               ))}
             </div>
@@ -132,10 +132,10 @@ export default function TransportEldPage() {
         {/* Office / Warehouse VDI */}
         <section id="office-vdi" className="w-full border-t scroll-mt-24 py-12 md:py-16 lg:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-pretty text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-pretty text-foreground">
               Desktop virtualization in logistics offices and warehouses
             </h2>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-muted-foreground">
               Citrix / VMware Horizon / Microsoft RDS & AVD deployments that centralize IT, cut login times, and improve
               security.
             </p>
@@ -162,10 +162,10 @@ export default function TransportEldPage() {
               ].map((item) => (
                 <article
                   key={item.name}
-                  className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow h-full"
+                  className="rounded-lg border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow h-full"
                 >
-                  <h3 className="font-medium text-gray-900">{item.name}</h3>
-                  <p className="mt-3 text-sm text-gray-600 leading-relaxed">{item.detail}</p>
+                  <h3 className="font-medium text-foreground">{item.name}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
                 </article>
               ))}
             </div>
@@ -173,31 +173,32 @@ export default function TransportEldPage() {
         </section>
 
         {/* Technical ROI */}
-        <section id="roi" className="w-full border-t scroll-mt-24 py-12 md:py-16 lg:py-20 bg-gray-50">
+        <section id="roi" className="w-full border-t scroll-mt-24 py-12 md:py-16 lg:py-20 bg-background">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-pretty text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-pretty text-foreground">
               Technical ROI: what you gain
             </h2>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-              <article className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-medium text-gray-900">MDM / UEM</h3>
-                <ul className="mt-4 space-y-2 text-sm text-gray-600">
+              <article className="rounded-lg border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-medium text-foreground">MDM / UEM</h3>
+                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                   <li>Enforce kiosk‑mode, app allow‑lists, remote wipe, posture controls.</li>
                   <li>Block unauthorized installs; apply geofencing and usage monitoring.</li>
                   <li>Stop data burn; ensure only required apps run.</li>
                 </ul>
               </article>
-              <article className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-medium text-gray-900">SASE / Zero Trust</h3>
-                <ul className="mt-4 space-y-2 text-sm text-gray-600">
+              <article className="rounded-lg border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-medium text-foreground">SASE / Zero Trust</h3>
+                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                   <li>Inline inspection and SWG for mobile endpoints; remove brittle VPNs.</li>
                   <li>Least‑privilege access with continuous verification.</li>
                   <li>Threat blocking and consistent policy on road and in office.</li>
+                  <li>Threat blocking and consistent policy on road and in office.</li>
                 </ul>
               </article>
-              <article className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-medium text-gray-900">VDI / RDS / AVD</h3>
-                <ul className="mt-4 space-y-2 text-sm text-gray-600">
+              <article className="rounded-lg border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-medium text-foreground">VDI / RDS / AVD</h3>
+                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                   <li>Data stays in the DC/cloud; minimal endpoint risk.</li>
                   <li>Fast onboarding; standardized images and patching.</li>
                   <li>Measured outcomes: faster logins, reduced infra costs.</li>
@@ -210,20 +211,20 @@ export default function TransportEldPage() {
         {/* FAQ + CTA */}
         <section id="faq" className="w-full border-t scroll-mt-24 py-12 md:py-16 lg:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-pretty text-gray-900">FAQ</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-pretty text-foreground">FAQ</h2>
             <div className="mt-8 grid grid-cols-1 gap-6">
-              <details className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-                <summary className="font-medium cursor-pointer text-base sm:text-lg text-gray-900">
+              <details className="rounded-lg border border-border bg-card p-6 shadow-sm">
+                <summary className="font-medium cursor-pointer text-base sm:text-lg text-foreground">
                   Do fleets deploy full VDI on in‑cab tablets?
                 </summary>
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   We found no documented cases of VDI on driver tablets; fleets standardize on mobile apps with MDM/UEM
                   and SASE for network security. VDI is common for office/warehouse users.
                 </p>
               </details>
-              <details className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-                <summary className="font-medium cursor-pointer text-base sm:text-lg text-gray-900">Will this replace our VPN?</summary>
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+              <details className="rounded-lg border border-border bg-card p-6 shadow-sm">
+                <summary className="font-medium cursor-pointer text-base sm:text-lg text-foreground">Will this replace our VPN?</summary>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Many fleets reduce or retire legacy VPNs as SASE/SWG + Zero Trust app access come online—improving
                   reliability and removing hardware sprawl.
                 </p>
@@ -233,13 +234,13 @@ export default function TransportEldPage() {
             <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <Link
                 href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
-                className="inline-flex items-center rounded-md bg-black text-white px-6 py-3 text-sm font-medium hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
+                className="inline-flex items-center rounded-md bg-primary text-primary-foreground px-6 py-3 text-sm font-medium hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors"
               >
                 Talk to a trucking security specialist
               </Link>
               <a
                 href="#driver-mdm-sase"
-                className="inline-flex items-center rounded-md border border-gray-200 px-6 py-3 text-sm font-medium hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-black transition-colors"
+                className="inline-flex items-center rounded-md border border-border bg-card px-6 py-3 text-sm font-medium text-foreground hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary transition-colors"
               >
                 See who&apos;s already doing this
               </a>
