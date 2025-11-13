@@ -40,12 +40,6 @@ export function Particles({
   const canvasContainerRef = useRef<HTMLDivElement>(null)
   const context = useRef<CanvasRenderingContext2D | null>(null)
   const circles = useRef<Circle[]>([])
-  const mouse = useRef<{ x: number; y: number; vx: number; vy: number }>({
-    x: 0,
-    y: 0,
-    vx: 0,
-    vy: 0,
-  })
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
   const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1
 
