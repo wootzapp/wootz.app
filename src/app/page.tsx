@@ -19,9 +19,15 @@ import {
   UserCheck,
   LayoutGrid,
   Eye,
-  Bot
+  Bot,
+  FileText,
+  AlertTriangle,
+  Server,
+  Globe,
+  User
 } from "lucide-react"
 import { Particles } from "@/components/ui/particles"
+import { ComparisonTable } from "@/components/comparison-table"
 
 const containerClasses = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
 
@@ -228,9 +234,16 @@ export default function HomePage() {
         </div>
 
         <div className={cn(containerClasses, "relative z-10 text-center")}>
-          <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary backdrop-blur-md mb-8 animate-fade-in-up">
-            <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-            The Enterprise Browser for Secure, Modern Work
+          <div className="mb-10 flex flex-col items-center animate-fade-in-up">
+            <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6 p-4 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300">
+               <span className="font-mono font-black text-3xl md:text-4xl text-primary tracking-tight drop-shadow-[0_0_15px_rgba(213,4,217,0.5)]">
+                 Wootzapp ASB
+               </span>
+               <span className="hidden md:block h-8 w-px bg-white/20"></span>
+               <span className="font-serif text-xl md:text-2xl text-white/90 tracking-wide">
+                 Agentic Security Browser
+               </span>
+            </div>
           </div>
 
           <h1 className="mx-auto max-w-5xl text-5xl font-bold font-serif tracking-tight sm:text-7xl mb-8 drop-shadow-2xl">
@@ -303,6 +316,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ComparisonTable />
 
       {/* How It Works - Darker Contrast BG */}
       <section className="py-24 relative overflow-hidden bg-[#08021C]">
@@ -395,33 +410,173 @@ export default function HomePage() {
                     
                     {/* Visual Side */}
                     <div className={cn(
-                      "relative h-[400px] rounded-3xl overflow-hidden border border-white/10 bg-[#130630] shadow-2xl",
+                      "relative h-[400px] rounded-3xl overflow-hidden border border-white/10 bg-[#130630] shadow-2xl group-hover:shadow-primary/20 transition-shadow duration-500",
                       index % 2 !== 0 ? "md:order-1" : ""
                     )}>
                        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/20" />
                        <Particles
-                          className="absolute inset-0 opacity-50"
-                          quantity={60}
-                          staticity={40}
-                          color="147, 3, 166" // #9303A6
+                          className="absolute inset-0 opacity-30"
+                          quantity={40}
+                          staticity={50}
+                          color="147, 3, 166"
                        />
-                       {/* Decorative Elements representing the feature */}
-                       <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="relative z-10 p-8 bg-[#0B0326]/90 backdrop-blur-md border border-white/10 rounded-2xl max-w-[280px] w-full transform group-hover:scale-105 transition-duration-500 shadow-xl">
-                             <feature.icon className="h-10 w-10 text-primary mb-4" />
-                             <div className="space-y-3">
-                                <div className="h-2 bg-white/20 rounded w-3/4" />
-                                <div className="h-2 bg-white/10 rounded w-full" />
-                                <div className="h-2 bg-white/10 rounded w-5/6" />
-                             </div>
-                             <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                                <span className={cn("text-xs font-mono font-bold tracking-wider uppercase", feature.statusColor)}>
-                                  {feature.status}
-                                </span>
-                                <div className={cn("h-2.5 w-2.5 rounded-full animate-pulse", feature.dotColor)}>
+                       
+                       <div className="absolute inset-0 flex items-center justify-center p-8">
+                          {/* Feature 1: Agentic Control (Chat Interface) */}
+                          {index === 0 && (
+                             <div className="relative w-full max-w-sm bg-[#0B0326]/95 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-2xl">
+                                <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-white/5">
+                                   <div className="flex gap-1.5">
+                                      <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+                                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+                                      <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+                                   </div>
+                                   <span className="text-xs text-muted-foreground ml-2 font-mono">agent_runtime.exe</span>
+                                </div>
+                                <div className="p-4 space-y-4">
+                                   {/* User Message */}
+                                   <div className="flex gap-3">
+                                      <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                         <User className="w-4 h-4 text-white/70" />
+                                      </div>
+                                      <div className="space-y-1">
+                                         <div className="bg-white/10 rounded-lg rounded-tl-none px-3 py-2 text-sm text-white/90">
+                                            Analyze this customer DB dump...
+                                         </div>
+                                      </div>
+                                   </div>
+                                   
+                                   {/* Scanning Indicator */}
+                                   <div className="flex items-center gap-2 text-xs text-primary animate-pulse pl-11">
+                                      <Bot className="w-3 h-3" />
+                                      <span>Analyzing intent...</span>
+                                   </div>
+
+                                   {/* Blocked Response */}
+                                   <div className="relative overflow-hidden rounded-lg border border-red-500/30 bg-red-500/10 p-3 ml-11">
+                                      <div className="flex items-start gap-3">
+                                         <AlertTriangle className="w-5 h-5 text-red-400 shrink-0" />
+                                         <div className="space-y-1">
+                                            <p className="text-sm font-bold text-red-400">Action Blocked</p>
+                                            <p className="text-xs text-red-300/80 leading-relaxed">
+                                               Sensitive PII detected in prompt. Supervisor approval required.
+                                            </p>
+                                         </div>
+                                      </div>
+                                      {/* Animated Scan Line */}
+                                      <div className="absolute top-0 bottom-0 left-0 w-1 bg-red-500/50 animate-pulse" />
+                                   </div>
+                                   
+                                   <div className="flex justify-end gap-2 pt-2">
+                                      <div className="px-3 py-1.5 rounded bg-primary/20 text-primary text-xs font-medium border border-primary/30 hover:bg-primary/30 cursor-pointer transition-colors">
+                                         Request Approval
+                                      </div>
+                                   </div>
                                 </div>
                              </div>
-                          </div>
+                          )}
+
+                          {/* Feature 2: Data Guard (Document Scanning) */}
+                          {index === 1 && (
+                             <div className="relative w-full max-w-sm">
+                                {/* Floating 'Files' */}
+                                <div className="absolute -right-4 -top-4 w-24 h-32 bg-white/5 border border-white/10 rounded-lg transform rotate-6 z-0" />
+                                <div className="absolute -left-2 bottom-4 w-24 h-32 bg-white/5 border border-white/10 rounded-lg transform -rotate-3 z-0" />
+                                
+                                {/* Main Document */}
+                                <div className="relative z-10 bg-[#0B0326]/95 backdrop-blur-xl border border-white/10 rounded-xl p-6 shadow-2xl">
+                                   <div className="flex items-center justify-between mb-6">
+                                      <div className="flex items-center gap-2">
+                                         <div className="p-1.5 rounded bg-primary/20 text-primary">
+                                            <FileText className="w-4 h-4" />
+                                         </div>
+                                         <span className="text-sm font-medium text-white/90">confidential_report.pdf</span>
+                                      </div>
+                                      <div className="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 text-[10px] font-bold uppercase border border-amber-500/30">
+                                         Scanning
+                                      </div>
+                                   </div>
+                                   
+                                   <div className="space-y-3 relative">
+                                      {/* Animated Scanner Line */}
+                                      <div className="absolute left-0 right-0 h-0.5 bg-amber-400/50 shadow-[0_0_10px_theme(colors.amber.400)] z-20 animate-[scan_3s_ease-in-out_infinite]" style={{ top: '40%' }} />
+                                      
+                                      {/* Text Lines */}
+                                      <div className="h-2 bg-white/20 rounded w-full" />
+                                      <div className="h-2 bg-white/20 rounded w-11/12" />
+                                      <div className="h-2 bg-white/20 rounded w-full" />
+                                      
+                                      {/* Redacted Section */}
+                                      <div className="flex gap-2 py-1">
+                                         <div className="h-2 bg-white/20 rounded w-1/4" />
+                                         <div className="h-2 bg-amber-500/40 rounded w-1/3 animate-pulse" /> {/* Detected PII */}
+                                         <div className="h-2 bg-white/20 rounded w-1/4" />
+                                      </div>
+                                      
+                                      <div className="h-2 bg-white/20 rounded w-5/6" />
+                                      <div className="h-2 bg-white/20 rounded w-full" />
+                                   </div>
+
+                                   {/* Detection Popup */}
+                                   <div className="absolute bottom-4 right-4 bg-[#130630] border border-amber-500/30 rounded-lg p-3 shadow-xl animate-fade-in-up">
+                                      <div className="flex items-center gap-2">
+                                         <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                                         <span className="text-xs font-medium text-white/80">SSN Detected</span>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                          )}
+
+                          {/* Feature 3: Zero Trust (Network/Device) */}
+                          {index === 2 && (
+                             <div className="relative w-full h-full flex items-center justify-center">
+                                {/* Center Node (Browser) */}
+                                <div className="relative z-20 flex flex-col items-center">
+                                   <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-secondary p-[1px] shadow-[0_0_30px_theme(colors.primary)]">
+                                      <div className="w-full h-full rounded-2xl bg-[#0B0326] flex items-center justify-center relative overflow-hidden">
+                                         <div className="absolute inset-0 bg-primary/10 animate-pulse" />
+                                         <Shield className="w-10 h-10 text-white relative z-10" />
+                                      </div>
+                                   </div>
+                                   <div className="mt-4 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-xs font-bold flex items-center gap-1.5">
+                                      <CheckCircle2 className="w-3 h-3" />
+                                      Device Verified
+                                   </div>
+                                </div>
+
+                                {/* Connected Nodes */}
+                                <div className="absolute inset-0">
+                                   {/* Node 1 */}
+                                   <div className="absolute top-1/4 left-10 flex flex-col items-center animate-fade-in opacity-80">
+                                      <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-2">
+                                         <Server className="w-6 h-6 text-white/50" />
+                                      </div>
+                                      <div className="h-[2px] w-24 bg-emerald-500/30 absolute left-12 top-6 rotate-[25deg] origin-left">
+                                         <div className="absolute right-0 -top-[3px] w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_5px_theme(colors.emerald.400)]" />
+                                      </div>
+                                   </div>
+
+                                   {/* Node 2 */}
+                                   <div className="absolute bottom-1/3 right-12 flex flex-col items-center animate-fade-in opacity-80">
+                                      <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-2">
+                                         <Globe className="w-6 h-6 text-white/50" />
+                                      </div>
+                                      <div className="h-[2px] w-24 bg-emerald-500/30 absolute right-12 top-6 rotate-[155deg] origin-right">
+                                          <div className="absolute left-0 -top-[3px] w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_5px_theme(colors.emerald.400)]" />
+                                      </div>
+                                   </div>
+                                   
+                                   {/* Node 3 */}
+                                   <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-fade-in opacity-60">
+                                      <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                                         <Lock className="w-5 h-5 text-white/30" />
+                                      </div>
+                                      <div className="h-[2px] w-16 bg-white/10 absolute bottom-10 left-1/2 -translate-x-1/2 rotate-90 origin-bottom" />
+                                   </div>
+                                </div>
+                             </div>
+                          )}
                        </div>
                     </div>
                  </div>
