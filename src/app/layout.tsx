@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import AnalyticsProvider from "@/components/analytics-provider";
 import { GoogleTagManager, GoogleTagManagerNoscript } from "@/components/google-tag-manager";
@@ -10,6 +10,12 @@ const playfair = Playfair_Display({
   display: "swap",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -31,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playfair.variable} ${geistMono.variable} antialiased`}
+        className={`${playfair.variable} ${inter.variable} ${geistMono.variable} antialiased`}
       >
         <GoogleTagManagerNoscript />
         <GoogleTagManager />
