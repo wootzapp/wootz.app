@@ -10,27 +10,27 @@ import { Button } from "@/components/ui/button";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navLinkClass = "text-sm transition-colors whitespace-nowrap text-muted-foreground hover:text-foreground";
-  const mobileLinkClass = "block py-2 transition-colors text-muted-foreground hover:text-foreground";
+  const navLinkClass = "text-[15px] font-medium transition-colors whitespace-nowrap text-muted-foreground hover:text-foreground";
+  const mobileLinkClass = "block py-2 text-[15px] transition-colors text-muted-foreground hover:text-foreground";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-4 md:space-x-8">
+      <div className="container-stripe">
+        <div className="flex items-center justify-between h-14">
+          <div className="flex items-center gap-6 md:gap-8">
             <Link href="/" className="flex min-w-0 items-center gap-2">
               <Image
                 src="/logo.png"
                 alt="Wootzapp Logo"
-                width={32}
-                height={20}
-                className="h-5"
+                width={28}
+                height={18}
+                className="h-[18px] w-auto"
               />
-              <span className="min-w-0 break-keep text-sm font-semibold leading-tight text-foreground sm:text-base md:text-xl">
+              <span className="min-w-0 break-keep text-[15px] font-semibold leading-tight text-foreground">
                 Wootzapp
               </span>
             </Link>
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center gap-6">
               <Link href="/industries" className={navLinkClass}>
                 Industries
               </Link>
@@ -46,12 +46,12 @@ export default function Header() {
             </nav>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <div className="hidden sm:flex items-center space-x-4">
+          <div className="flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-3">
               <Link href="#" className={navLinkClass}>
                 Sign In
               </Link>
-              <Button asChild className="bg-primary text-primary-foreground shadow-[0_0_10px_theme(colors.primary)] hover:bg-primary/90">
+              <Button asChild size="sm" className="bg-primary text-primary-foreground shadow-[0_0_10px_theme(colors.primary)] hover:bg-primary/90">
                 <a
                   href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"
                   target="_blank"
@@ -68,7 +68,7 @@ export default function Header() {
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>

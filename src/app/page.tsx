@@ -29,7 +29,7 @@ import {
 import { Particles } from "@/components/ui/particles"
 import { ComparisonTable } from "@/components/comparison-table"
 
-const containerClasses = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+const containerClasses = "container-stripe"
 
 // --- Original Content Data Structures ---
 
@@ -246,8 +246,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <h1 className="mx-auto max-w-5xl text-5xl font-bold font-serif tracking-tight sm:text-7xl mb-8 drop-shadow-2xl">
-            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70 pb-2">
+          <h1 className="mx-auto max-w-4xl text-hero font-bold font-serif mb-6 drop-shadow-2xl">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70 pb-1">
               Unify Security &
             </span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">
@@ -255,15 +255,15 @@ export default function HomePage() {
             </span>
           </h1>
 
-          <p className="mx-auto max-w-3xl text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed">
+          <p className="mx-auto max-w-2xl text-body-lg text-muted-foreground mb-8">
             Wootzapp provides <strong>GenAI-native DLP</strong>, <strong>agentic controls</strong>, and <strong>zero-trust access</strong> in one seamless browsing experience.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button
               asChild
-              size="lg"
-              className="w-full sm:w-auto bg-primary text-white font-bold text-lg px-8 py-6 rounded-full shadow-[0_0_30px_-5px_rgba(213,4,217,0.6)] hover:shadow-[0_0_50px_-10px_rgba(213,4,217,0.8)] hover:bg-primary/90 transition-all duration-300"
+              size="xl"
+              className="w-full sm:w-auto bg-primary text-white shadow-[0_0_20px_-5px_rgba(213,4,217,0.5)] hover:shadow-[0_0_30px_-5px_rgba(213,4,217,0.7)] hover:bg-primary/90 transition-all duration-300"
             >
               <a href="https://calendar.app.google/UCdRbHAHJYTwUEgF6" target="_blank">
                 Schedule a Demo
@@ -272,8 +272,8 @@ export default function HomePage() {
             <Button
               asChild
               variant="outline"
-              size="lg"
-              className="w-full sm:w-auto border-white/10 bg-white/5 text-white hover:bg-white/10 hover:border-white/20 px-8 py-6 rounded-full backdrop-blur-sm transition-all duration-300"
+              size="xl"
+              className="w-full sm:w-auto border-white/10 bg-white/5 text-white hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all duration-300"
             >
               <a href="#features">
                 Explore Features
@@ -284,34 +284,34 @@ export default function HomePage() {
       </section>
 
       {/* Three Pillars (Why Wootzapp) - Slightly Different BG Shade */}
-      <section id="features" className="relative z-10 -mt-20 pb-20">
+      <section id="features" className="relative z-10 -mt-16 pb-16">
         <div className={containerClasses}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="group relative p-8 rounded-2xl border border-white/5 bg-[#0B0326]/90 backdrop-blur-xl shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="group relative p-6 rounded-lg border border-white/5 bg-[#0B0326]/90 backdrop-blur-xl shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="h-12 w-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-300">
-                <Zap className="h-6 w-6" />
+              <div className="h-10 w-10 rounded-md bg-white/5 flex items-center justify-center mb-5 text-primary group-hover:scale-110 transition-transform duration-300">
+                <Zap className="h-5 w-5" />
               </div>
-              <h3 className="text-xl font-bold font-serif text-white mb-3">Deploy in Minutes</h3>
-              <p className="text-muted-foreground leading-relaxed">Install one app, and cloud-native policies handle the rest. No complex infrastructure or backhauling required.</p>
+              <h3 className="text-subsection font-semibold font-serif text-white mb-2">Deploy in Minutes</h3>
+              <p className="text-body-sm text-muted-foreground">Install one app, and cloud-native policies handle the rest. No complex infrastructure or backhauling required.</p>
             </div>
 
-            <div className="group relative p-8 rounded-2xl border border-white/5 bg-[#0B0326]/90 backdrop-blur-xl shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+            <div className="group relative p-6 rounded-lg border border-white/5 bg-[#0B0326]/90 backdrop-blur-xl shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="h-12 w-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform duration-300">
-                <Shield className="h-6 w-6" />
+              <div className="h-10 w-10 rounded-md bg-white/5 flex items-center justify-center mb-5 text-accent group-hover:scale-110 transition-transform duration-300">
+                <Shield className="h-5 w-5" />
               </div>
-              <h3 className="text-xl font-bold font-serif text-white mb-3">GenAI-Native DLP</h3>
-              <p className="text-muted-foreground leading-relaxed">Our browser understands context and nuance, stopping data leaks in GenAI tools that pattern-based DLP would miss.</p>
+              <h3 className="text-subsection font-semibold font-serif text-white mb-2">GenAI-Native DLP</h3>
+              <p className="text-body-sm text-muted-foreground">Our browser understands context and nuance, stopping data leaks in GenAI tools that pattern-based DLP would miss.</p>
             </div>
 
-            <div className="group relative p-8 rounded-2xl border border-white/5 bg-[#0B0326]/90 backdrop-blur-xl shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+            <div className="group relative p-6 rounded-lg border border-white/5 bg-[#0B0326]/90 backdrop-blur-xl shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="h-12 w-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 text-secondary group-hover:scale-110 transition-transform duration-300">
-                <Cloud className="h-6 w-6" />
+              <div className="h-10 w-10 rounded-md bg-white/5 flex items-center justify-center mb-5 text-secondary group-hover:scale-110 transition-transform duration-300">
+                <Cloud className="h-5 w-5" />
               </div>
-              <h3 className="text-xl font-bold font-serif text-white mb-3">Full Visibility</h3>
-              <p className="text-muted-foreground leading-relaxed">Get high-fidelity, click-level events streamed to your SIEM for complete last-mile visibility without compromising user privacy.</p>
+              <h3 className="text-subsection font-semibold font-serif text-white mb-2">Full Visibility</h3>
+              <p className="text-body-sm text-muted-foreground">Get high-fidelity, click-level events streamed to your SIEM for complete last-mile visibility without compromising user privacy.</p>
             </div>
           </div>
         </div>
@@ -320,14 +320,14 @@ export default function HomePage() {
       <ComparisonTable />
 
       {/* How It Works - Darker Contrast BG */}
-      <section className="py-24 relative overflow-hidden bg-[#08021C]">
+      <section className="section-py relative overflow-hidden bg-[#08021C]">
          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#260259]/20 via-transparent to-transparent" />
          <div className={containerClasses + " relative z-10"}>
-            <div className="text-center max-w-3xl mx-auto mb-20">
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-white mb-6">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <h2 className="text-section font-semibold font-serif text-white mb-4">
                 How it works (at a glance)
               </h2>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-body-lg text-muted-foreground">
                 A browser-first control plane that understands language, evaluates posture before pixels, and streams high-fidelity telemetry.
               </p>
             </div>
@@ -348,17 +348,17 @@ export default function HomePage() {
                       </div>
 
                       {/* Content Card */}
-                      <div className="ml-12 md:ml-0 w-full md:w-1/2 md:px-8">
-                        <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300 group">
-                          <div className={cn("mb-4 inline-block p-2 rounded-lg bg-white/5", step.color)}>
-                             <step.icon className="h-6 w-6" />
+                      <div className="ml-12 md:ml-0 w-full md:w-1/2 md:px-6">
+                        <div className="p-5 rounded-lg bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300 group">
+                          <div className={cn("mb-3 inline-block p-2 rounded-md bg-white/5", step.color)}>
+                             <step.icon className="h-5 w-5" />
                           </div>
-                          <h3 className="text-xl font-bold font-serif text-white mb-2">{step.title}</h3>
-                          <p className="text-sm font-medium text-primary mb-3">{step.highlight}</p>
-                          <ul className="space-y-2">
+                          <h3 className="text-[1.125rem] font-semibold font-serif text-white mb-1.5">{step.title}</h3>
+                          <p className="text-caption font-medium text-primary mb-2">{step.highlight}</p>
+                          <ul className="space-y-1.5">
                             {step.bullets.map((bullet, bIdx) => (
-                              <li key={bIdx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                <CheckCircle2 className="h-4 w-4 text-white/50 shrink-0 mt-0.5" />
+                              <li key={bIdx} className="flex items-start gap-2 text-caption text-muted-foreground">
+                                <CheckCircle2 className="h-3.5 w-3.5 text-white/50 shrink-0 mt-0.5" />
                                 <span>{bullet}</span>
                               </li>
                             ))}
@@ -376,41 +376,41 @@ export default function HomePage() {
       </section>
 
       {/* Core Features - Gradient BG */}
-      <section className="py-24 relative bg-gradient-to-b from-[#08021C] to-[#150530]">
+      <section className="section-py relative bg-gradient-to-b from-[#08021C] to-[#150530]">
         <div className={containerClasses}>
-           <div className="text-center max-w-4xl mx-auto mb-20">
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-white mb-6">
+           <div className="text-center max-w-2xl mx-auto mb-16">
+              <h2 className="text-section font-semibold font-serif text-white mb-4">
                  Agentic security — built into the browser
               </h2>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-body-lg text-muted-foreground">
                  Treat the browser as your agent runtime. The Guardrails Module injects inline intelligence while the Armor Layer keeps data locked down.
               </p>
            </div>
 
-           <div className="space-y-24">
+           <div className="space-y-20">
               {coreFeatures.map((feature, index) => (
-                 <div key={index} className="grid md:grid-cols-2 gap-12 items-center group">
-                    <div className={cn("space-y-6", index % 2 !== 0 ? "md:order-2" : "")}>
-                       <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-secondary/20 text-primary">
-                          <feature.icon className="h-7 w-7" />
+                 <div key={index} className="grid md:grid-cols-2 gap-10 items-center group">
+                    <div className={cn("space-y-5", index % 2 !== 0 ? "md:order-2" : "")}>
+                       <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-secondary/20 text-primary">
+                          <feature.icon className="h-6 w-6" />
                        </div>
-                       <h3 className="text-3xl font-bold font-serif text-white">{feature.title}</h3>
-                       <p className="text-lg text-muted-foreground leading-relaxed">
+                       <h3 className="text-subsection font-semibold font-serif text-white">{feature.title}</h3>
+                       <p className="text-body-sm text-muted-foreground">
                           {feature.body}
                        </p>
-                       <ul className="space-y-4 pt-2">
+                       <ul className="space-y-3 pt-1">
                           {feature.points.map((point, pIdx) => (
-                             <li key={pIdx} className="flex items-start gap-3 text-white/80">
-                                <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0 shadow-[0_0_8px_theme(colors.primary)]" />
+                             <li key={pIdx} className="flex items-start gap-2.5 text-body-sm text-white/80">
+                                <div className="mt-2 h-1.5 w-1.5 rounded-full bg-primary shrink-0 shadow-[0_0_8px_theme(colors.primary)]" />
                                 <span>{point}</span>
                              </li>
                           ))}
                        </ul>
                     </div>
-                    
+
                     {/* Visual Side */}
                     <div className={cn(
-                      "relative h-[400px] rounded-3xl overflow-hidden border border-white/10 bg-[#130630] shadow-2xl group-hover:shadow-primary/20 transition-shadow duration-500",
+                      "relative h-[360px] rounded-xl overflow-hidden border border-white/10 bg-[#130630] shadow-xl group-hover:shadow-primary/20 transition-shadow duration-500",
                       index % 2 !== 0 ? "md:order-1" : ""
                     )}>
                        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/20" />
@@ -586,27 +586,27 @@ export default function HomePage() {
       </section>
 
       {/* ZTNA Steps - Dark BG */}
-      <section className="py-20 bg-[#0B0326] border-y border-white/5">
+      <section className="section-py-sm bg-[#0B0326] border-y border-white/5">
         <div className={containerClasses}>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
-              <h2 className="text-3xl font-bold font-serif text-white mb-6">
+              <h2 className="text-section font-semibold font-serif text-white mb-4">
                 Browser-Native Zero Trust
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-body-sm text-muted-foreground mb-6">
                 Move beyond network-level controls. Wootzapp makes the browser the core of your zero-trust architecture, enforcing access policies at the last possible moment—right before a page renders.
               </p>
-              <Button variant="outline" className="text-white border-white/10 hover:bg-white/10">
+              <Button variant="outline" size="lg" className="text-white border-white/10 hover:bg-white/10">
                 Technical Architecture <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-4">
               {ztnaSteps.map((step, idx) => (
-                <div key={idx} className="flex items-start gap-4 p-4 rounded-lg hover:bg-white/5 transition-colors border border-transparent hover:border-white/5">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white shadow-[0_0_10px_theme(colors.primary)]">
+                <div key={idx} className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors border border-transparent hover:border-white/5">
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white shadow-[0_0_10px_theme(colors.primary)]">
                     {idx + 1}
                   </div>
-                  <p className="pt-1 text-muted-foreground leading-relaxed">{step}</p>
+                  <p className="pt-0.5 text-body-sm text-muted-foreground">{step}</p>
                 </div>
               ))}
             </div>
@@ -615,40 +615,40 @@ export default function HomePage() {
       </section>
 
       {/* All Solutions Showcase - Lighter Card-Like BG */}
-      <section className="py-24 bg-[#150530]">
+      <section className="section-py bg-[#150530]">
         <div className={containerClasses}>
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif text-white mb-6">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-section font-semibold font-serif text-white mb-4">
               Solutions for Every Use Case
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-body-lg text-muted-foreground">
               From securing contractors to enabling BYOD, the Wootzapp browser adapts to your most critical security challenges.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {solutions.map((sol) => (
               <div
                 key={sol.key}
-                className="flex flex-col p-6 rounded-xl bg-[#0B0326] border border-white/5 hover:border-primary/40 hover:bg-[#0B0326]/80 transition-all duration-300 group h-full shadow-lg"
+                className="flex flex-col p-5 rounded-lg bg-[#0B0326] border border-white/5 hover:border-primary/40 hover:bg-[#0B0326]/80 transition-all duration-300 group h-full shadow-md"
               >
-                <div className="mb-4 inline-flex p-3 rounded-lg bg-white/5 text-primary group-hover:text-white group-hover:bg-primary transition-colors duration-300 w-fit">
-                  <sol.icon className="h-6 w-6" />
+                <div className="mb-3 inline-flex p-2.5 rounded-md bg-white/5 text-primary group-hover:text-white group-hover:bg-primary transition-colors duration-300 w-fit">
+                  <sol.icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold font-serif text-white mb-2">{sol.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4 flex-grow">{sol.main}</p>
-                
-                <div className="space-y-2 mt-auto pt-4 border-t border-white/5">
+                <h3 className="text-[1rem] font-semibold font-serif text-white mb-1.5">{sol.title}</h3>
+                <p className="text-caption text-muted-foreground mb-3 flex-grow">{sol.main}</p>
+
+                <div className="space-y-1.5 mt-auto pt-3 border-t border-white/5">
                   {sol.points.map((point, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs text-white/70">
+                    <div key={i} className="flex items-start gap-1.5 text-[11px] text-white/70">
                       <div className="mt-1 h-1 w-1 rounded-full bg-accent shrink-0" />
                       <span>{point}</span>
                     </div>
                   ))}
                 </div>
-                
+
                 {sol.conclusion && (
-                   <p className="mt-4 text-xs font-medium text-white/50 italic border-t border-white/5 pt-2">
+                   <p className="mt-3 text-[11px] font-medium text-white/50 italic border-t border-white/5 pt-2">
                       &quot;{sol.conclusion}&quot;
                    </p>
                 )}
@@ -662,24 +662,24 @@ export default function HomePage() {
       <OpenSourceShowcase />
 
       {/* Final CTA - Gradient BG */}
-      <section className="py-24 relative overflow-hidden bg-gradient-to-t from-[#08021C] to-[#150530]">
+      <section className="section-py relative overflow-hidden bg-gradient-to-t from-[#08021C] to-[#150530]">
         <div className={containerClasses + " relative z-10"}>
-          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-[#0B0326]/80 backdrop-blur-xl p-12 text-center md:p-16 shadow-2xl">
+          <div className="relative mx-auto max-w-3xl overflow-hidden rounded-xl border border-white/10 bg-[#0B0326]/80 backdrop-blur-xl p-10 text-center md:p-12 shadow-xl">
             <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/20 via-secondary/10 to-transparent"></div>
-            
-            <h2 className="text-3xl font-bold font-serif tracking-tighter text-white sm:text-4xl md:text-5xl mb-6">
+
+            <h2 className="text-section font-semibold font-serif text-white mb-4">
               Ready to Simplify Your Security?
             </h2>
 
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground mb-10">
+            <p className="mx-auto max-w-xl text-body-sm text-muted-foreground mb-8">
               Fewer moving parts, faster users, and guardrails that actually understand language. See how the Wootzapp Enterprise Browser can transform your security posture.
             </p>
 
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button
                 asChild
-                size="lg"
-                className="w-full sm:w-auto bg-white text-black hover:bg-gray-200 font-bold text-lg px-10 py-6 rounded-full shadow-lg transition-all duration-300"
+                size="xl"
+                className="w-full sm:w-auto bg-white text-black hover:bg-gray-200 shadow-md transition-all duration-300"
               >
                 <a
                   href="https://calendar.app.google/UCdRbHAHJYTwUEgF6"

@@ -113,11 +113,129 @@
   --sidebar-ring: #D504D9;
 }
 
+/* Stripe-inspired typography scale */
+:root {
+  /* Typography sizes - matching Stripe */
+  --text-hero: clamp(3rem, 5vw, 3.5rem); /* 48px → 56px */
+  --text-h2: clamp(2.125rem, 3vw, 2.375rem); /* 34px → 38px */
+  --text-h3: 1.5rem; /* 24px */
+  --text-h4: 0.9375rem; /* 15px */
+  --text-body: 1.125rem; /* 18px */
+  --text-body-sm: 0.9375rem; /* 15px */
+  --text-caption: 0.8125rem; /* 13px */
+
+  /* Line heights - matching Stripe */
+  --leading-hero: 1.17;
+  --leading-h2: 1.29;
+  --leading-h3: 1.33;
+  --leading-body: 1.56;
+  --leading-sm: 1.6;
+  --leading-caption: 1.84;
+
+  /* Letter spacing - Stripe uses tighter for headings */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0.01em;
+
+  /* Container - Stripe uses 1112px */
+  --container-max: 69.5rem; /* 1112px */
+
+  /* Section spacing - Stripe uses 72-128px */
+  --section-py: clamp(4.5rem, 8vw, 8rem); /* 72px → 128px */
+  --section-py-sm: clamp(3rem, 5vw, 4.5rem); /* 48px → 72px */
+
+  /* Card padding - Stripe uses 24-28px */
+  --card-padding: 1.5rem; /* 24px */
+  --card-padding-lg: 1.75rem; /* 28px */
+
+  /* Border radius - Stripe uses smaller values */
+  --radius-card: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-pill: 1rem; /* 16px for buttons */
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    font-size: var(--text-body-sm);
+    line-height: var(--leading-sm);
+    letter-spacing: var(--tracking-normal);
+  }
+
+  /* Stripe-style heading defaults */
+  h1 {
+    font-size: var(--text-hero);
+    line-height: var(--leading-hero);
+    letter-spacing: var(--tracking-tight);
+  }
+  h2 {
+    font-size: var(--text-h2);
+    line-height: var(--leading-h2);
+    letter-spacing: var(--tracking-tight);
+  }
+  h3 {
+    font-size: var(--text-h3);
+    line-height: var(--leading-h3);
+    letter-spacing: var(--tracking-tight);
+  }
+  p {
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+  }
+}
+
+/* Stripe-inspired utility classes */
+@layer utilities {
+  .container-stripe {
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .container-stripe {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .section-py {
+    padding-top: var(--section-py);
+    padding-bottom: var(--section-py);
+  }
+  .section-py-sm {
+    padding-top: var(--section-py-sm);
+    padding-bottom: var(--section-py-sm);
+  }
+
+  .text-hero {
+    font-size: var(--text-hero);
+    line-height: var(--leading-hero);
+    letter-spacing: var(--tracking-tight);
+  }
+  .text-section {
+    font-size: var(--text-h2);
+    line-height: var(--leading-h2);
+    letter-spacing: var(--tracking-tight);
+  }
+  .text-subsection {
+    font-size: var(--text-h3);
+    line-height: var(--leading-h3);
+    letter-spacing: var(--tracking-tight);
+  }
+  .text-body-lg {
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+  }
+  .text-body-sm {
+    font-size: var(--text-body-sm);
+    line-height: var(--leading-sm);
+  }
+  .text-caption {
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
   }
 }
